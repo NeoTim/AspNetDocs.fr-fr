@@ -1,39 +1,39 @@
 ---
 uid: webhooks/receiving/handlers
-title: Gestionnaires de webhooks ASP.NET | Microsoft Docs
+title: ASP.NET les gestionnaires de WebHooks (fr) Microsoft Docs
 author: rick-anderson
-description: Comment gérer les requêtes dans des webhooks ASP.NET.
+description: Comment traiter les demandes dans ASP.NET WebHooks.
 ms.author: riande
 ms.date: 01/17/2012
 ms.assetid: a55b0d20-9c90-4bd3-a471-20da6f569f0c
-ms.openlocfilehash: 01c9a283d105c4a0973ff88c8de646c5f49a34db
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: ff12dd8df167eca17ecbd9f03a71807d44af2b30
+ms.sourcegitcommit: ce28244209db8615bc9bdd576a2e2c88174d318d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78637871"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80675217"
 ---
-# <a name="aspnet-webhooks-handlers"></a>Gestionnaires de webhooks ASP.NET
+# <a name="aspnet-webhooks-handlers"></a>ASP.NET les gestionnaires de WebHooks
 
-Une fois que les demandes de webhooks ont été validées par un récepteur webhook, elles sont prêtes à être traitées par le code utilisateur. C’est là qu’interviennent les *gestionnaires* . Les gestionnaires dérivent de l’interface [IWebHookHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookHandler.cs) , mais utilisent généralement la classe [WebHookHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookHandler.cs) au lieu de dériver directement de l’interface.
+Une fois que les demandes de WebHooks ont été validées par un récepteur WebHook, elle est prête à être traitée par code utilisateur. C’est là que *les gestionnaires* entrent en question. Les manutentionnaires dérivent de l’interface [IWebHookHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookHandler.cs) mais utilisent généralement la classe [WebHookHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookHandler.cs) au lieu de dériver directement de l’interface.
 
-Une demande de webhook peut être traitée par un ou plusieurs gestionnaires. Les gestionnaires sont appelés dans l’ordre en fonction de leur propriété de *classement* respective, de la plus petite à la plus élevée, où l’ordre est un entier simple (suggéré pour être compris entre 1 et 100) :
+Une demande WebHook peut être traitée par un ou plusieurs gestionnaires. Les manutentionnaires sont appelés dans l’ordre en fonction de leur propriété *de commande* respective allant du plus bas au plus haut où l’ordre est un simple intégrier (suggéré d’être entre 1 et 100):
 
-![Diagramme des propriétés d’ordre du gestionnaire de webhook](_static/Handlers.png)
+![Diagramme de propriété de commande de gestionnaire de WebHook](_static/Handlers.png)
 
-Un gestionnaire peut éventuellement définir la propriété *Response* sur le WebHookHandlerContext, ce qui entraînera l’arrêt du traitement et la réponse à renvoyer en tant que réponse http au webhook. Dans le cas ci-dessus, le gestionnaire C n’est pas appelé, car il a un ordre supérieur à B et B définit la réponse.
+Un gestionnaire peut régler la propriété *Response* sur le WebHookHandlerContext qui conduira le traitement à s’arrêter et la réponse à renvoyer comme réponse HTTP au WebHook. Dans le cas ci-dessus, Handler C ne sera pas appelé parce qu’il a un ordre plus élevé que B et B définit la réponse.
 
-La définition de la réponse est généralement uniquement applicable aux webhooks où la réponse peut retransmettre des informations à l’API d’origine. C’est par exemple le cas avec des webhooks de marge où la réponse est publiée sur le canal d’où provient le webhook. Les gestionnaires peuvent définir la propriété Receiver s’ils veulent uniquement recevoir des webhooks de ce récepteur particulier. Si elles ne définissent pas le récepteur, elles sont appelées pour chacune d’elles.
+La configuration de la réponse n’est généralement pertinente que pour Les WebHooks où la réponse peut rapporter des informations à l’API d’origine. C’est par exemple le cas avec Slack WebHooks où la réponse est affichée sur la chaîne d’où vient le WebHook. Les manutentionnaires peuvent définir la propriété du récepteur s’ils ne veulent recevoir des WebHooks de ce récepteur particulier. S’ils ne réglent pas le récepteur, ils sont appelés pour chacun d’eux.
 
-Une autre utilisation courante d’une réponse consiste à utiliser une réponse *410 disparu* pour indiquer que le webhook n’est plus actif et qu’aucune autre demande ne doit être envoyée.
+Une autre utilisation courante d’une réponse est d’utiliser une réponse *410 Gone* pour indiquer que le WebHook n’est plus actif et qu’aucune autre demande ne doit être présentée.
 
-Par défaut, un gestionnaire est appelé par tous les récepteurs de webhook. Toutefois, si la propriété *Receiver* est définie sur le nom d’un gestionnaire, ce gestionnaire recevra uniquement les demandes webhook de ce récepteur.
+Par défaut, un gestionnaire sera appelé par tous les récepteurs WebHook. Toutefois, si la propriété *du récepteur* est réglée au nom d’un gestionnaire, ce gestionnaire ne recevra que les demandes de WebHook de ce récepteur.
 
-## <a name="processing-a-webhook"></a>Traitement d’un webhook
+## <a name="processing-a-webhook"></a>Traitement d’un WebHook
 
-Lorsqu’un gestionnaire est appelé, il obtient un [WebHookHandlerContext](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookHandlerContext.cs) contenant des informations sur la demande de webhook. Les données, généralement le corps de la requête HTTP, sont disponibles à partir de la propriété de *données* .
+Lorsqu’un gestionnaire est appelé, il reçoit un [texte WebHookHandlerContext](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookHandlerContext.cs) contenant des informations sur la demande WebHook. Les données, généralement l’organisme de demande HTTP, sont disponibles à partir de la propriété *Data.*
 
-Le type des données est généralement JSON ou des données de formulaire HTML, mais il est possible d’effectuer un cast en un type plus spécifique si vous le souhaitez. Par exemple, les webhooks personnalisés générés par les webhooks ASP.NET peuvent être convertis en type [CustomNotifications](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers.Custom/WebHooks/CustomNotifications.cs) comme suit :
+Le type de données est généralement JSON ou données de formulaire HTML, mais il est possible de jeter à un type plus spécifique si désiré. Par exemple, les WebHook personnalisés générés par ASP.NET WebHooks peuvent être jetés sur le type [CustomNotifications](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers.Custom/WebHooks/CustomNotifications.cs) comme suit :
 
 ```csharp
 public class MyWebHookHandler : WebHookHandler
@@ -57,11 +57,11 @@ public class MyWebHookHandler : WebHookHandler
 
   ## <a name="queued-processing"></a>Traitement en file d’attente
 
-La plupart des expéditeurs webhook renvoient un webhook si aucune réponse n’est générée dans un délai de quelques secondes. Cela signifie que votre gestionnaire doit terminer le traitement dans ce laps de temps afin de ne pas l’appeler à nouveau.
+La plupart des expéditeurs WebHook réinduquent un WebHook si une réponse n’est pas générée en quelques secondes. Cela signifie que votre gestionnaire doit terminer le traitement dans ce délai afin de ne pas être appelé à nouveau.
 
-Si le traitement prend plus de temps ou est mieux géré séparément, le [WebHookQueueHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookQueueHandler.cs) peut être utilisé pour envoyer la demande de webhook à une file d’attente, par exemple la [file d’attente de stockage Azure](https://msdn.microsoft.com/library/azure/dd179353.aspx).
+Si le traitement prend plus de temps, ou est mieux géré séparément, puis le [WebHookQueueHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookQueueHandler.cs) peut être utilisé pour soumettre la demande WebHook à une file d’attente, par exemple [Azure Storage Queue](https://msdn.microsoft.com/library/azure/dd179353.aspx).
 
-Un plan d’implémentation de [WebHookQueueHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookQueueHandler.cs) est fourni ici :
+Voici les grandes lignes d’une implémentation [WebHookQueueHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookQueueHandler.cs) :
 
 ```csharp
 public class QueueHandler : WebHookQueueHandler

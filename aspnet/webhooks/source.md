@@ -1,30 +1,30 @@
 ---
 uid: webhooks/source
-title: ASP.NET webhooks code source et packages NuGet | Microsoft Docs
+title: ASP.NET code source WebHooks et forfaits NuGet Microsoft Docs
 author: rick-anderson
-description: Liens vers le code source et les packages NuGet ASP.NET
+description: Liens vers ASP.NET code source WebHooks et forfaits NuGet
 ms.author: riande
 ms.date: 01/17/2012
 ms.assetid: 91a62bfa-ea3a-41f9-a2e1-e90d2c8fc8ca
-ms.openlocfilehash: 8d07848754d9efda9c893b8ba54ac6d0c0214a53
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: ad368125878871c0e38f35152c86fe4eea143924
+ms.sourcegitcommit: ce28244209db8615bc9bdd576a2e2c88174d318d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78633062"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80675323"
 ---
-# <a name="aspnet-webhooks-source-code-and-nuget-packages"></a>ASP.NET webhooks code source et packages NuGet
+# <a name="aspnet-webhooks-source-code-and-nuget-packages"></a>ASP.NET code source WebHooks et forfaits NuGet
 
-Microsoft ASP.NET webhooks fait partie de la famille de modules Microsoft ASP.NET et est hébergé en tant que [projet open source sur GitHub](https://github.com/aspnet/WebHooks). Cela signifie que nous acceptons les contributions, mais examinez les [recommandations de contribution](https://github.com/aspnet/Home/blob/master/CONTRIBUTING.md) avant de soumettre une demande de tirage (pull request).
+Microsoft ASP.NET WebHooks fait partie de la famille de modules Microsoft ASP.NET et est hébergé comme un [projet Open Source sur GitHub](https://github.com/aspnet/WebHooks). Cela signifie que nous acceptons les contributions, mais s’il vous plaît regarder les [lignes directrices sur](https://github.com/aspnet/Home/blob/master/CONTRIBUTING.md) la contribution avant de soumettre une demande de retrait.
 
-Cette documentation en ligne que vous lisez maintenant est également hébergée en tant que [Open source sur GitHub](http://docs.asp.net/en/latest/contribute/style-guide.html#style-guide) et accepte également les contributions.
+Cette documentation en ligne que vous lisez maintenant est également hébergée sous le titre [Open Source sur GitHub](http://docs.asp.net/en/latest/contribute/style-guide.html#style-guide) et accepte également les contributions.
 
 ## <a name="nuget-packages"></a>Packages NuGet
 
-Les [packages NuGet](https://nuget.org/packages?q=Microsoft.AspNet.WebHooks) sont divisés en trois parties :
+Les [paquets NuGet](https://nuget.org/packages?q=Microsoft.AspNet.WebHooks) sont divisés en trois parties :
 
-* [Commun](https://www.nuget.org/packages?q=Microsoft.AspNet.WebHooks.Common): un package commun qui est partagé entre les expéditeurs et les destinataires.
+* [Commun](https://www.nuget.org/packages?q=Microsoft.AspNet.WebHooks.Common): Un paquet commun qui est partagé entre les expéditeurs et les récepteurs.
 
-* [Expéditeur](https://www.nuget.org/packages?q=Microsoft.AspNet.WebHooks.Custom): ensemble de packages prenant en charge l’envoi de vos propres webhooks à d’autres utilisateurs. La fonctionnalité d’envoi de webhook est décrite plus en détail dans la rubrique [envoi de webhooks](sending/senders.md).
+* [Sender](https://www.nuget.org/packages?q=Microsoft.AspNet.WebHooks.Custom): Un ensemble de paquets qui soutiennent l’envoi de vos propres WebHooks à d’autres. La fonctionnalité pour l’envoi de WebHooks est décrite plus en détail dans [l’envoi de WebHooks](sending/senders.md).
 
-* [Destinataires](https://www.nuget.org/packages?q=Microsoft.AspNet.WebHooks.Receivers): ensemble de packages prenant en charge la réception de webhooks d’autres utilisateurs. La fonctionnalité de réception de webhook est décrite plus en détail dans [réception de webhooks](receiving/index.md).
+* [Récepteurs](https://www.nuget.org/packages?q=Microsoft.AspNet.WebHooks.Receivers): Un ensemble de paquets qui favorisent la réception de WebHooks d’autres personnes. La fonctionnalité pour recevoir WebHooks est décrite plus en détail dans [Recevoir WebHooks](receiving/index.md).

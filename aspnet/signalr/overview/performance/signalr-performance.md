@@ -1,6 +1,6 @@
 ---
 uid: signalr/overview/performance/signalr-performance
-title: Performances de signalr | Microsoft Docs
+title: Performance Signalr Microsoft Docs
 author: bradygaster
 description: Performances de SignalR
 ms.author: bradyg
@@ -9,114 +9,114 @@ ms.assetid: 3751f5e7-59db-4be0-a290-50abc24e5c84
 msc.legacyurl: /signalr/overview/performance/signalr-performance
 msc.type: authoredcontent
 ms.openlocfilehash: b8a44f4c924c94cdfff1ce7630539b45fe269bbf
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.sourcegitcommit: ce28244209db8615bc9bdd576a2e2c88174d318d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78558323"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80676089"
 ---
 # <a name="signalr-performance"></a>Performances de SignalR
 
-de [Patrick Fletcher](https://github.com/pfletcher)
+par [Patrick Fletcher](https://github.com/pfletcher)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-> Cette rubrique explique comment concevoir, mesurer et améliorer les performances dans une application Signalr.
+> Ce sujet décrit comment concevoir, mesurer et améliorer les performances dans une application SignalR.
 >
-> ## <a name="software-versions-used-in-this-topic"></a>Versions logicielles utilisées dans cette rubrique
->
->
-> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
-> - .NET 4.5
-> - Signalr version 2
+> ## <a name="software-versions-used-in-this-topic"></a>Versions logicielles utilisées dans ce sujet
 >
 >
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
+> - .NET 4.5
+> - Version SignalR 2
 >
-> ## <a name="previous-versions-of-this-topic"></a>Versions précédentes de cette rubrique
 >
-> Pour plus d’informations sur les versions antérieures de Signalr, consultez [versions antérieures de signalr](../older-versions/index.md).
+>
+> ## <a name="previous-versions-of-this-topic"></a>Versions précédentes de ce sujet
+>
+> Pour plus d’informations sur les versions antérieures de SignalR, voir [SignalR Older Versions](../older-versions/index.md).
 >
 > ## <a name="questions-and-comments"></a>Questions et commentaires
 >
-> N’hésitez pas à nous faire part de vos commentaires sur la façon dont vous aimez ce didacticiel et sur ce que nous pourrions améliorer dans les commentaires en bas de la page. Si vous avez des questions qui ne sont pas directement liées au didacticiel, vous pouvez les poster sur le [forum ASP.net signalr](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) ou [StackOverflow.com](http://stackoverflow.com/).
+> S’il vous plaît laisser des commentaires sur la façon dont vous avez aimé ce tutoriel et ce que nous pourrions améliorer dans les commentaires au bas de la page. Si vous avez des questions qui ne sont pas directement liées au tutoriel, vous pouvez les poster sur le [ASP.NET Forum SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) ou [StackOverflow.com](http://stackoverflow.com/).
 
-Pour obtenir une présentation récente des performances et de la mise à l’échelle de Signalr, consultez [mise à l’échelle du Web en temps réel avec ASP.net signalr](https://channel9.msdn.com/Events/Build/2013/3-502).
+Pour une présentation récente sur la performance SignalR et la mise à l’échelle, voir [L’échelle du Web en temps réel avec ASP.NET SignalR](https://channel9.msdn.com/Events/Build/2013/3-502).
 
-Cette rubrique contient les sections suivantes :
+Cette rubrique contient les sections suivantes :
 
 - [Remarques relatives à la conception](#design)
-- [Réglage des performances de votre serveur Signalr](#tuning)
+- [Réglage de votre serveur SignalR pour les performances](#tuning)
 - [Résolution des problèmes de performances](#troubleshooting)
-- [Utilisation des compteurs de performance Signalr](#perfcounters)
-- [Utilisation d’autres compteurs de performances](#othercounters)
+- [Utilisation de compteurs de performance SignalR](#perfcounters)
+- [Utilisation d’autres compteurs de performance](#othercounters)
 - [Autres ressources](#otherresources)
 
 <a id="design"></a>
 
 ## <a name="design-considerations"></a>Remarques relatives à la conception
 
-Cette section décrit les modèles qui peuvent être implémentés lors de la conception d’une application Signalr, afin de garantir que les performances ne sont pas gênées par la génération d’un trafic réseau inutile.
+Cette section décrit les modèles qui peuvent être mis en œuvre lors de la conception d’une application SignalR, afin de s’assurer que les performances ne sont pas entravées par la génération de trafic réseau inutile.
 
-### <a name="throttling-message-frequency"></a>Limitation de la fréquence des messages
+### <a name="throttling-message-frequency"></a>Fréquence de message de limitation
 
-Même dans une application qui envoie des messages à une fréquence élevée (par exemple, une application de jeu en temps réel), la plupart des applications n’ont pas besoin d’envoyer plus de quelques messages par seconde. Pour réduire le volume de trafic généré par chaque client, il est possible d’implémenter une boucle de messages qui met en file d’attente et envoie des messages plus fréquemment qu’un taux fixe (autrement dit, jusqu’à un certain nombre de messages sont envoyés chaque seconde, s’il y a des messages dans ce délai en onstruction à envoyer). Pour obtenir un exemple d’application qui limite les messages à un certain taux (à partir du client et du serveur), consultez [temps réel haute fréquence avec signalr](../getting-started/tutorial-high-frequency-realtime-with-signalr.md).
+Même dans une application qui envoie des messages à haute fréquence (comme une application de jeu en temps réel), la plupart des applications n’ont pas besoin d’envoyer plus de quelques messages par seconde. Pour réduire la quantité de trafic que chaque client génère, une boucle de message peut être implémentée que les files d’attente et envoie des messages pas plus fréquemment qu’un taux fixe (c’est-à-dire que jusqu’à un certain nombre de messages seront envoyés chaque seconde, s’il y a des messages dans cet intervalle de temps à envoyer). Pour une application d’échantillon qui limite les messages à un certain taux (à partir du client et du serveur), voir [High-Frequency Realtime avec SignalR](../getting-started/tutorial-high-frequency-realtime-with-signalr.md).
 
-### <a name="reducing-message-size"></a>Réduction de la taille des messages
+### <a name="reducing-message-size"></a>Réduire la taille du message
 
-Vous pouvez réduire la taille d’un message Signalr en réduisant la taille de vos objets sérialisés. Dans le code serveur, si vous envoyez un objet qui contient des propriétés qui n’ont pas besoin d’être transmises, empêchez la sérialisation de ces propriétés à l’aide de l’attribut `JsonIgnore`. Les noms des propriétés sont également stockés dans le message. vous pouvez raccourcir les noms des propriétés à l’aide de l’attribut `JsonProperty`. L’exemple de code suivant montre comment exclure une propriété de l’envoi au client et comment raccourcir les noms de propriété :
+Vous pouvez réduire la taille d’un message SignalR en réduisant la taille de vos objets sérialisés. Dans le code serveur, si vous envoyez un objet qui contient des propriétés qui n’ont `JsonIgnore` pas besoin d’être transmises, empêcher ces propriétés d’être sérialisées en utilisant l’attribut. Les noms des propriétés sont également stockés dans le message; les noms des propriétés peuvent `JsonProperty` être raccourcis à l’aide de l’attribut. L’échantillon de code suivant montre comment exclure une propriété d’être envoyée au client, et comment raccourcir les noms de propriété :
 
-**Code du serveur .NET illustrant l’attribut JsonIgnore pour empêcher l’envoi de données au client et l’attribut JsonProperty pour réduire la taille des messages**
+**.NET code serveur qui démontre l’attribut JsonIgnore pour exclure les données d’être envoyé au client, et l’attribut JsonProperty pour réduire la taille du message**
 
 [!code-csharp[Main](signalr-performance/samples/sample1.cs?highlight=5,7,10)]
 
-Afin de conserver la lisibilité et la maintenabilité dans le code client, les noms de propriété abrégés peuvent être remappés à des noms conviviaux une fois le message reçu. L’exemple de code suivant montre une manière possible de remapper les noms abrégés à des noms plus longs, en définissant un contrat de message (mappage) et en utilisant la fonction `reMap` pour appliquer le contrat à la classe de message optimisée :
+Afin de conserver la lisibilité/la maintenance du code client, les noms de propriétés abrégées peuvent être rembpés sur des noms adaptés à l’homme après la réception du message. L’échantillon de code suivant démontre un moyen possible de réapprevrer les noms raccourcis `reMap` à des noms plus longs, en définissant un contrat de message (cartographie), et en utilisant la fonction pour appliquer le contrat à la classe de message optimisée :
 
-**Code JavaScript côté client qui remappe les noms de propriété abrégés à des noms explicites**
+**Code JavaScript côté client qui remaps raccourci les noms de propriété à des noms lisibles par l’homme**
 
 [!code-javascript[Main](signalr-performance/samples/sample2.js)]
 
-Il est également possible de raccourcir les noms des messages du client au serveur, en utilisant la même méthode.
+Les noms peuvent également être raccourcis dans les messages du client au serveur, en utilisant la même méthode.
 
-La réduction de l’encombrement mémoire (c’est-à-dire la quantité de mémoire utilisée pour le message) de l’objet message peut également améliorer les performances. Par exemple, si la plage complète d’un `int` n’est pas nécessaire, un `short` ou `byte` peut être utilisé à la place.
+La réduction de l’empreinte mémoire (c’est-à-dire la quantité de mémoire utilisée pour le message) de l’objet du message peut également améliorer les performances. Par exemple, si la `int` gamme complète d’un n’est pas nécessaire, a `short` ou `byte` peut être utilisé à la place.
 
-Étant donné que les messages sont stockés dans le bus de messages dans la mémoire du serveur, la réduction de la taille des messages peut également résoudre les problèmes de mémoire du serveur.
+Étant donné que les messages sont stockés dans le bus de message dans la mémoire du serveur, la réduction de la taille des messages peut également résoudre les problèmes de mémoire du serveur.
 
 <a id="tuning"></a>
 
-### <a name="tuning-your-signalr-server-for-performance"></a>Réglage des performances de votre serveur Signalr
+### <a name="tuning-your-signalr-server-for-performance"></a>Réglage de votre serveur SignalR pour les performances
 
-Les paramètres de configuration suivants peuvent être utilisés pour adapter votre serveur afin d’améliorer les performances dans une application Signalr. Pour obtenir des informations générales sur l’amélioration des performances dans une application ASP.NET, consultez [amélioration des performances des ASP.net](https://msdn.microsoft.com/library/ff647787.aspx).
+Les paramètres de configuration suivants peuvent être utilisés pour régler votre serveur pour de meilleures performances dans une application SignalR. Pour plus d’informations générales sur la façon d’améliorer les performances dans une application ASP.NET, voir [Améliorer ASP.NET performance](https://msdn.microsoft.com/library/ff647787.aspx).
 
-**Paramètres de configuration de signalr**
+**Paramètres de configuration SignalR**
 
-- **DefaultMessageBufferSize**: par défaut, signalr conserve 1000 messages en mémoire par concentrateur par connexion. Si des messages volumineux sont utilisés, cela peut créer des problèmes de mémoire qui peuvent être atténués en réduisant cette valeur. Ce paramètre peut être défini dans le gestionnaire d’événements `Application_Start` dans une application ASP.NET ou dans la méthode `Configuration` d’une classe de démarrage OWIN dans une application auto-hébergée. L’exemple suivant montre comment réduire cette valeur afin de réduire l’encombrement mémoire de votre application afin de réduire la quantité de mémoire du serveur utilisée :
+- **DefaultMessageBufferSize**: Par défaut, SignalR conserve 1000 messages dans la mémoire par hub par connexion. Si de gros messages sont utilisés, cela peut créer des problèmes de mémoire qui peuvent être atténués en réduisant cette valeur. Ce paramètre peut `Application_Start` être défini dans le gestionnaire d’événements `Configuration` dans une application ASP.NET, ou dans la méthode d’une classe de démarrage OWIN dans une application auto-hébergée. L’échantillon suivant montre comment réduire cette valeur afin de réduire l’empreinte mémoire de votre application afin de réduire la quantité de mémoire du serveur utilisée :
 
-    **Code du serveur .NET dans Startup.cs pour la réduction de la taille de la mémoire tampon des messages par défaut**
+    **.NET code serveur en Startup.cs pour la diminution de la taille de mémoire tampon message par défaut**
 
     [!code-csharp[Main](signalr-performance/samples/sample3.cs)]
 
 **Paramètres de configuration IIS**
 
-- Nombre **maximal de demandes simultanées par application**: l’augmentation du nombre de demandes IIS simultanées augmente les ressources serveur disponibles pour traiter les demandes. La valeur par défaut est 5000 ; pour augmenter ce paramètre, exécutez les commandes suivantes dans une invite de commandes avec élévation de privilèges :
+- **Demandes simultanées maximales par application**: L’augmentation du nombre de demandes d’IIS simultanées augmentera les ressources du serveur disponibles pour les demandes de service. La valeur par défaut est de 5000; pour augmenter ce paramètre, exécutez les commandes suivantes dans une invite de commande élevée :
 
     [!code-console[Main](signalr-performance/samples/sample4.cmd)]
-- **ApplicationPool QueueLength**: il s’agit du nombre maximal de demandes que les files d’attente http. sys pour le pool d’applications. Lorsque la file d’attente est pleine, les nouvelles demandes reçoivent une réponse 503 « Service indisponible ». La valeur par défaut est 1000.
+- **ApplicationPool QueueLength**: Il s’agit du nombre maximum de demandes que Http.sys files d’attente pour le pool d’applications. Lorsque la file d’attente est complète, les nouvelles demandes reçoivent une réponse 503 « Service Indisponible ». La valeur par défaut est 1000.
 
-    La réduction de la longueur de la file d’attente pour le processus de travail dans le pool d’applications qui héberge votre application permet d’économiser les ressources mémoire. Pour plus d’informations, consultez [gestion, paramétrage et configuration des pools d’applications](https://technet.microsoft.com/library/cc745955.aspx).
+    Le raccourcissement de la longueur de file d’attente pour le processus de travail dans le pool d’applications hébergeant votre application permettra de conserver les ressources de mémoire. Pour plus d’informations, voir [Gérer, Tuning et Configurer les pools d’applications](https://technet.microsoft.com/library/cc745955.aspx).
 
-**Paramètres de configuration de ASP.NET**
+**ASP.NET paramètres de configuration**
 
-Cette section comprend des paramètres de configuration qui peuvent être définis dans le fichier `aspnet.config`. Ce fichier se trouve dans l’un des deux emplacements, en fonction de la plateforme :
+Cette section comprend les paramètres de `aspnet.config` configuration qui peuvent être définis dans le fichier. Ce fichier se trouve dans l’un des deux emplacements, selon la plate-forme:
 
 - `%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet.config`
 - `%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet.config`
 
-Les paramètres ASP.NET qui peuvent améliorer les performances de signaler sont les suivants :
+ASP.NET paramètres qui peuvent améliorer les performances de SignalR comprennent les éléments suivants :
 
-- **Nombre maximal de demandes simultanées par UC**: l’amélioration de ce paramètre peut réduire les goulots d’étranglement de performances. Pour augmenter ce paramètre, ajoutez le paramètre de configuration suivant au fichier `aspnet.config` :
+- **Demandes simultanées maximales par processeur**: L’augmentation de ce paramètre peut atténuer les goulots d’étranglement des performances. Pour augmenter ce paramètre, ajoutez `aspnet.config` le paramètre de configuration suivant au fichier :
 
     [!code-xml[Main](signalr-performance/samples/sample5.xml?highlight=4)]
-- **Limite de la file d’attente des demandes**: lorsque le nombre total de connexions dépasse le paramètre `maxConcurrentRequestsPerCPU`, ASP.net commence à limiter les demandes à l’aide d’une file d’attente. Pour augmenter la taille de la file d’attente, vous pouvez augmenter le paramètre `requestQueueLimit`. Pour ce faire, ajoutez le paramètre de configuration suivant au nœud `processModel` dans `config/machine.config` (plutôt que `aspnet.config`) :
+- **Limite de file d’attente**de demande `maxConcurrentRequestsPerCPU` : Lorsque le nombre total de connexions dépasse le paramètre, ASP.NET commencera à étrangler les demandes à l’aide d’une file d’attente. Pour augmenter la taille de la `requestQueueLimit` file d’attente, vous pouvez augmenter le réglage. Pour ce faire, ajoutez le `processModel` réglage de `config/machine.config` configuration `aspnet.config`suivant au nœud (plutôt que ):
 
     [!code-xml[Main](signalr-performance/samples/sample6.xml)]
 
@@ -124,160 +124,160 @@ Les paramètres ASP.NET qui peuvent améliorer les performances de signaler sont
 
 ## <a name="troubleshooting-performance-issues"></a>Résolution des problèmes de performances
 
-Cette section décrit les méthodes permettant de trouver des goulots d’étranglement au niveau des performances dans votre application.
+Cette section décrit les moyens de trouver des goulots d’étranglement de performance dans votre application.
 
-### <a name="verifying-that-websocket-is-being-used"></a>Vérification de l’utilisation de WebSocket
+### <a name="verifying-that-websocket-is-being-used"></a>Vérifier que WebSocket est utilisé
 
-Alors que Signalr peut utiliser un grand nombre de transports pour la communication entre le client et le serveur, WebSocket présente un avantage significatif en termes de performances et doit être utilisé si le client et le serveur le prennent en charge. Pour déterminer si votre client et votre serveur satisfont à la configuration requise pour WebSocket, consultez [transports et secours](../getting-started/introduction-to-signalr.md#transports). Pour déterminer le transport utilisé dans votre application, vous pouvez utiliser les outils de développement du navigateur et examiner les journaux pour voir quel transport est utilisé pour la connexion. Pour plus d’informations sur l’utilisation des outils de développement de navigateur dans Internet Explorer et chrome, consultez [transports et secours](../getting-started/introduction-to-signalr.md#transports).
+Bien que SignalR puisse utiliser une variété de transports pour la communication entre le client et le serveur, WebSocket offre un avantage de performance significatif, et doit être utilisé si le client et le serveur le prennent en charge. Pour déterminer si votre client et votre serveur répondent aux exigences de WebSocket, consultez [Transports et Fallbacks](../getting-started/introduction-to-signalr.md#transports). Pour déterminer quel transport est utilisé dans votre application, vous pouvez utiliser les outils de développeur de navigateur, et examiner les journaux pour voir quel transport est utilisé pour la connexion. Pour plus d’informations sur l’utilisation des outils de développement du navigateur dans Internet Explorer et Chrome, voir [Transports et Fallbacks](../getting-started/introduction-to-signalr.md#transports).
 
 <a id="perfcounters"></a>
 
-## <a name="using-signalr-performance-counters"></a>Utilisation des compteurs de performance Signalr
+## <a name="using-signalr-performance-counters"></a>Utilisation de compteurs de performance SignalR
 
-Cette section décrit comment activer et utiliser les compteurs de performance Signalr, qui se trouvent dans le package `Microsoft.AspNet.SignalR.Utils`.
+Cette section décrit comment activer et utiliser les compteurs de performance SignalR, que l’on trouve dans l’emballage. `Microsoft.AspNet.SignalR.Utils`
 
-### <a name="installing-signalrexe"></a>Installation de signalr. exe
+### <a name="installing-signalrexe"></a>Installation signalur.exe
 
-Les compteurs de performances peuvent être ajoutés au serveur à l’aide d’un utilitaire appelé Signalr. exe. Pour installer cet utilitaire, procédez comme suit :
+Les compteurs de performance peuvent être ajoutés au serveur à l’aide d’un utilitaire appelé SignalR.exe. Pour installer cet utilitaire, suivez ces étapes :
 
-1. Dans Visual Studio, sélectionnez **outils** > **Gestionnaire de package NuGet** > **gérer les packages NuGet pour la solution**
-2. Recherchez **signalr. utils**, puis sélectionnez Installer.
+1. Dans Visual Studio, sélectionnez **Tools** > **NuGet Package Manager** > **Gérer les paquets NuGet pour la solution**
+2. Recherchez **signalr.utils**, et sélectionnez Installer.
 
     ![](signalr-performance/_static/image1.png)
-3. Acceptez le contrat de licence pour installer le package.
-4. Signalr. exe sera installé dans `<project folder>/packages/Microsoft.AspNet.SignalR.Utils.<version>/tools`.
+3. Accepter l’accord de licence pour installer le paquet.
+4. SignalR.exe sera installé `<project folder>/packages/Microsoft.AspNet.SignalR.Utils.<version>/tools`pour .
 
-### <a name="installing-performance-counters-with-signalrexe"></a>Installation des compteurs de performances avec Signalr. exe
+### <a name="installing-performance-counters-with-signalrexe"></a>Installation de compteurs de performance avec SignalR.exe
 
-Pour installer les compteurs de performance Signalr, exécutez Signalr. exe dans une invite de commandes avec élévation de privilèges avec le paramètre suivant :
+Pour installer des compteurs de performance SignalR, exécutez SignalR.exe dans une invite de commande élevée avec le paramètre suivant :
 
 [!code-console[Main](signalr-performance/samples/sample7.cmd)]
 
-Pour supprimer les compteurs de performance Signalr, exécutez Signalr. exe dans une invite de commandes avec élévation de privilèges avec le paramètre suivant :
+Pour supprimer les compteurs de performance SignalR, exécutez SignalR.exe dans une invite de commande élevée avec le paramètre suivant :
 
 [!code-console[Main](signalr-performance/samples/sample8.cmd)]
 
-### <a name="signalr-performance-counters"></a>Compteurs de performance signalr
+### <a name="signalr-performance-counters"></a>Compteurs SignalR Performance
 
-Le package utilitaires installe les compteurs de performances suivants. Les compteurs « total » mesurent le nombre d’événements depuis le dernier redémarrage du pool d’applications ou du serveur.
+Le paquet utilitaires installe les compteurs de performance suivants. Les compteurs "Total" mesurent le nombre d’événements depuis le dernier pool d’applications ou le redémarrage du serveur.
 
 **Métriques de connexion**
 
-Les métriques suivantes mesurent les événements de durée de vie de la connexion qui se produisent. Pour plus d’informations, consultez [comprendre et gérer les événements de durée de vie des connexions](../guide-to-the-api/handling-connection-lifetime-events.md).
+Les mesures suivantes mesurent les événements de la durée de vie des connexions qui se produisent. Pour plus d’informations, voir [Comprendre et gérer les événements à vie de connexion](../guide-to-the-api/handling-connection-lifetime-events.md).
 
 - **Connexions connectées**
 - **Connexions reconnectées**
 - **Connexions déconnectées**
-- **Connexions en cours**
+- **Connexions actuelles**
 
-**Métriques du message**
+**Métriques de message**
 
-Les métriques suivantes mesurent le trafic de messages généré par Signalr.
+Les mesures suivantes mesurent le trafic de messages généré par SignalR.
 
-- **Nombre total de messages de connexion reçus**
-- **Nombre total de messages de connexion envoyés**
-- **Messages de connexion reçus/s**
-- **Messages de connexion envoyés/s**
+- **Messages de connexion reçus Total**
+- **Messages de connexion envoyés Total**
+- **Messages de connexion reçus/Sec**
+- **Messages de connexion Envoyés/Sec**
 
-**Métriques du bus de messages**
+**Mesures d’autobus de message**
 
-Les métriques suivantes mesurent le trafic via le bus de messages Signalr interne, la file d’attente dans laquelle tous les messages entrants et sortants Signalr sont placés. Un message est **publié** lors de son envoi ou de sa diffusion. Un **abonné** dans ce contexte est un abonnement sur le bus de messages ; Cela doit être égal au nombre de clients plus le serveur lui-même. Un **Worker alloué** est un composant qui envoie des données à des connexions actives. un **Worker occupé est un Worker** qui envoie activement un message.
+Les mesures suivantes mesurent le trafic à travers le bus à messages SignalR interne, la file d’attente dans laquelle tous les messages SignalR entrants et sortants sont placés. Un message est **publié** lorsqu’il est envoyé ou diffusé. Un **abonné** dans ce contexte est un abonnement sur le bus message; cela devrait égaler le nombre de clients plus le serveur lui-même. Un **travailleur alloué** est un composant qui envoie des données à des connexions actives; un **travailleur occupé** est un travailleur qui envoie activement un message.
 
-- **Nombre total de messages reçus par le bus de messages**
-- **Messages du bus de messages reçus/s**
-- **Nombre total de messages publiés par le bus de messages**
-- **Messages du bus de messages publiés/s**
-- **Abonnés au bus de messages actuel**
-- **Nombre total d’abonnés au bus de messages**
-- **Abonnés au bus de messages/s**
-- **Threads de messagerie alloués**
-- **Threads occupés par le bus de messages**
-- **Rubriques du bus de messages en cours**
+- **Messages d’autobus reçus Total**
+- **Messages d’autobus reçus/Sec**
+- **Messages d’autobus publiés Total**
+- **Messages d’autobus publiés/Sec**
+- **Abonnés Message Bus En cours**
+- **Abonnés Message Bus Total**
+- **Message Bus Abonnés/Sec**
+- **Message Bus Allocated Workers**
+- **Message Bus Travailleurs occupés**
+- **Sujets d’autobus de message actuels**
 
-**Métriques d’erreur**
+**Mesures d’erreur**
 
-Les métriques suivantes mesurent les erreurs générées par le trafic des messages Signalr. Des erreurs de **résolution de concentrateur** se produisent lorsqu’une méthode de concentrateur ou de concentrateur ne peut pas être résolue. Les erreurs d' **appel de concentrateur** sont des exceptions levées lors de l’appel d’une méthode de concentrateur. Les erreurs de **transport** sont des erreurs de connexion levées au cours d’une requête ou d’une réponse http.
+Les mesures suivantes mesurent les erreurs générées par le trafic de messages SignalR. **Les** erreurs de résolution du Hub se produisent lorsqu’une méthode de moyeu ou de moyeu ne peut pas être résolue. Les erreurs **d’invocation du Hub** sont des exceptions lancées lors de l’invocation d’une méthode de moyeu. **Les** erreurs de transport sont des erreurs de connexion lancées lors d’une demande ou d’une réponse HTTP.
 
-- **Erreurs : total**
-- **Erreurs : toutes les/s**
-- **Erreurs : total de résolution de concentrateur**
-- **Erreurs : résolution de concentrateur/s**
-- **Erreurs : total d’invocation de concentrateur**
-- **Erreurs : appel de Hub/s**
-- **Erreurs : transport total**
-- **Erreurs : transport/s**
+- **Erreurs: Tous les total**
+- **Erreurs: All/Sec**
+- **Erreurs: Résolution du hub Total**
+- **Erreurs: Résolution du Hub/Sec**
+- **Erreurs: Hub Invocation Total**
+- **Erreurs: Hub Invocation/Sec**
+- **Erreurs: Transport Total**
+- **Erreurs: Transport/Sec**
 
 <a id="scaleout_metrics"></a>
 
-**Mesures ScaleOut**
+**Mesures d’échelle**
 
-Les métriques suivantes mesurent le trafic et les erreurs générées par le fournisseur ScaleOut. Un **flux** dans ce contexte est une unité d’échelle utilisée par le fournisseur ScaleOut. Il s’agit d’une table si SQL Server est utilisé, une rubrique si Service Bus est utilisé et un abonnement si Redims est utilisé. Chaque flux garantit des opérations de lecture et d’écriture ordonnées ; un flux unique est un goulot d’étranglement de mise à l’échelle potentiel. le nombre de flux peut donc être augmenté pour réduire ce goulot d’étranglement. Si plusieurs flux sont utilisés, Signalr répartit automatiquement les messages (partition) sur ces flux de manière à garantir que les messages envoyés à partir d’une connexion donnée sont dans l’ordre.
+Les mesures suivantes mesurent le trafic et les erreurs générées par le fournisseur de scaleout. Un **flux** dans ce contexte est une unité d’échelle utilisée par le fournisseur d’échelle; il s’agit d’une table si SQL Server est utilisé, un sujet si Service Bus est utilisé, et un abonnement si Redis est utilisé. Chaque flux assure la lecture et l’écriture des opérations commandées; un seul flux est un goulot d’étranglement à l’échelle potentielle, de sorte que le nombre de flux peut être augmenté pour aider à réduire ce goulot d’étranglement. Si plusieurs flux sont utilisés, SignalR distribuera automatiquement des messages (shard) sur ces flux d’une manière qui garantit que les messages envoyés à partir d’une connexion donnée sont en ordre.
 
-Le paramètre [MaxQueueLength](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx) contrôle la longueur de la file d’attente d’envoi ScaleOut conservée par signalr. Si vous définissez cette valeur sur une valeur supérieure à 0, tous les messages d’une file d’attente d’envoi sont envoyés un à la fois au fond de panier de la messagerie configurée. Si la taille de la file d’attente dépasse la longueur configurée, les appels suivants à Send échouent immédiatement avec une [exception InvalidOperationException](https://msdn.microsoft.com/library/system.invalidoperationexception(v=vs.118).aspx) jusqu’à ce que le nombre de messages dans la file d’attente soit inférieur au paramètre. La mise en file d’attente est désactivée par défaut, car les plans de mise en file d’attente implémentés ont généralement leur propre mise en file d’attente ou contrôle de Flow en place. Dans le cas de SQL Server, le regroupement de connexions limite efficacement le nombre d’envois en cours d’exécution à un moment donné.
+Le paramètre [MaxQueueLength](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx) contrôle la longueur de la file d’attente d’envoi d’échelle entretenue par SignalR. Le définir à une valeur supérieure à 0 placera tous les messages dans une file d’attente d’envoi pour être envoyé un à la fois à l’avion de messagerie configuré. Si la taille de la file d’attente dépasse la longueur configurée, les appels ultérieurs à envoyer échoueront immédiatement avec une [analyse d’opération invalideEnlaçation](https://msdn.microsoft.com/library/system.invalidoperationexception(v=vs.118).aspx) jusqu’à ce que le nombre de messages dans la file d’attente soit à nouveau inférieur au réglage. La file d’attente est désactivée par défaut parce que les backplanes mis en œuvre ont généralement leur propre file d’attente ou de contrôle du débit en place. Dans le cas de SQL Server, la mise en commun des connexions limite effectivement le nombre d’envois en cours à tout moment.
 
-Par défaut, un seul flux est utilisé pour les SQL Server et les ReDim, cinq flux sont utilisés pour Service Bus et la mise en file d’attente est désactivée, mais ces paramètres peuvent être modifiés via la configuration sur SQL Server et Service Bus :
+Par défaut, un seul flux est utilisé pour SQL Server et Redis, cinq flux sont utilisés pour Service Bus, et la file d’attente est désactivée, mais ces paramètres peuvent être modifiés grâce à la configuration sur SQL Server et Service Bus:
 
-**Code du serveur .NET pour la configuration du nombre de tables et de la longueur de la file d’attente pour SQL Server fond de panier**
+**.NET Server Code pour configurer le nombre de tables et la longueur de file d’attente pour l’avion de fond SQL Server**
 
 [!code-csharp[Main](signalr-performance/samples/sample9.cs)]
 
-**Code du serveur .NET pour la configuration du nombre de rubriques et de la longueur de file d’attente pour Service Bus fond de panier**
+**.NET Code serveur pour configurer le nombre de sujets et la longueur de file d’attente pour l’avion de soutien de bus de service**
 
 [!code-csharp[Main](signalr-performance/samples/sample10.cs)]
 
-Un flux de **mise en mémoire tampon** est un flux qui est entré dans un état d’erreur ; Lorsque le flux est dans l’état Faulted, tous les messages envoyés au backplane échouent immédiatement jusqu’à ce que le flux ne génère plus de défaillance. La **longueur de la file d’attente d’envoi** est le nombre de messages qui ont été publiés mais pas encore envoyés.
+Un flux **tamponné** est celui qui est entré dans un état défectueux; lorsque le flux est dans l’état défectueux, tous les messages envoyés à l’avion de fond échoueront immédiatement jusqu’à ce que le flux ne soit plus défectueux. La **durée de file d’attente d’envoi** est le nombre de messages qui ont été postés mais pas encore envoyés.
 
-- **Messages du bus des messages ScaleOut reçus/s**
-- **Total des flux ScaleOut**
-- **Flux ScaleOut ouverts**
-- **Mise en mémoire tampon des flux ScaleOut**
-- **Nombre total d’erreurs ScaleOut**
-- **Erreurs de ScaleOut/s**
-- **Longueur de la file d’attente d’envoi ScaleOut**
+- **Messages d’autobus à l’échelle reçus/Sec**
+- **Scaleout Streams Total**
+- **Streams Scaleout Ouvert**
+- **Scaleout Streams Buffering**
+- **Erreurs d’échelle Total**
+- **Erreurs d’échelle/Sec**
+- **Scaleout Envoyer la longueur de file d’attente**
 
-Pour plus d’informations sur la mesure de ces compteurs, consultez [signalr ScaleOut avec Azure Service bus](scaleout-with-windows-azure-service-bus.md).
+Pour plus d’informations sur ce que ces compteurs mesurent, voir [SignalR Scaleout avec Azure Service Bus](scaleout-with-windows-azure-service-bus.md).
 
 <a id="othercounters"></a>
 
-## <a name="using-other-performance-counters"></a>Utilisation d’autres compteurs de performances
+## <a name="using-other-performance-counters"></a>Utilisation d’autres compteurs de performance
 
-Les compteurs de performances suivants peuvent également être utiles pour analyser les performances de votre application.
+Les compteurs de performances suivants peuvent également être utiles pour surveiller les performances de votre application.
 
 **Mémoire**
 
-- Mémoire CLR .NET\\nombre d’octets dans tous les tas (pour w3wp)
+- .NET CLR\\Memory ' octets dans tous les tas (pour w3wp)
 
 **ASP.NET**
 
-- ASP. asp.net \ requêtes actuel
-- ASP.NET\Queued
-- ASP. NET\Rejected
+- ASP.NET-Demandes actuelles
+- ASP.NET-File
+- ASP.NET-Rejeté
 
-**Processeur**
+**UC**
 
-- Temps de Information\Processor du processeur
+- Informations processeur-Processeur Temps
 
 **TCP/IP**
 
-- TCPv6/connexions établies
-- TCPv4/connexions établies
+- TCPv6/Connexions établies
+- TCPv4/Connexions établies
 
-**Service Web**
+**Web Service**
 
-- Connexions Web Web\connexions
-- Connexions Web Service\Maximum
+- Service Web-Connexions actuelles
+- Service Web-Connexions maximales
 
 **Thread**
 
-- Threads et verrous CLR .NET\\nombre de threads logiques actuels
-- Threads et verrous CLR .NET\\nombre de threads physiques actuels
+- .NET CLR Locks\\And Threads - de threads logiques actuels
+- .NET CLR Locks\\And Threads - de threads physiques actuels
 
 <a id="otherresources"></a>
 
 ## <a name="other-resources"></a>Autres ressources
 
-Pour plus d’informations sur l’analyse et le réglage des performances ASP.NET, consultez les rubriques suivantes :
+Pour plus d’informations sur ASP.NET le suivi et l’accord des performances, consultez les sujets suivants :
 
 - [Vue d’ensemble des performances ASP.NET](https://msdn.microsoft.com/library/cc668225(v=vs.100).aspx)
-- [Utilisation des threads ASP.NET sur IIS 7,5, IIS 7,0 et IIS 6,0](https://blogs.msdn.com/b/tmarq/archive/2007/07/21/asp-net-thread-usage-on-iis-7-0-and-6-0.aspx)
-- [&lt;applicationPool&gt;, élément (paramètres Web)](https://msdn.microsoft.com/library/dd560842.aspx)
+- [ASP.NET Utilisation du fil sur IIS 7.5, IIS 7.0, et IIS 6.0](https://blogs.msdn.com/b/tmarq/archive/2007/07/21/asp-net-thread-usage-on-iis-7-0-and-6-0.aspx)
+- [&lt;applicationPool&gt; Element (Paramètres Web)](https://msdn.microsoft.com/library/dd560842.aspx)

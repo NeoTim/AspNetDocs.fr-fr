@@ -6,12 +6,12 @@ author: Rick-Anderson
 ms.author: riande
 title: Documentation d’ASP.NET
 ms.date: 08/24/2018
-description: Découvrez comment développer des applications web ASP.NET. Obtenez de la documentation, des exemples de code, des tutoriels et bien plus encore.
+description: Découvrez comment développer des applications web ASP.NET. Accédez à la documentation associée, à des exemples de code, à des tutoriels et bien plus encore.
 ms.openlocfilehash: 6309704444d60d42d49c3a8f1683045dc503e761
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.sourcegitcommit: ce28244209db8615bc9bdd576a2e2c88174d318d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 04/06/2020
 ms.locfileid: "78616423"
 ---
 <!-- markdownlint-disable MD033 -->
@@ -20,10 +20,10 @@ ms.locfileid: "78616423"
         <h1>Documentation d’ASP.NET</h1>
         <ul class="pivots">
             <li>
-                <a href="#core">ASP.NET Core</a>
+                <a href="#core">ASP.NET cœur</a>
                 <ul id="core">
                     <li>
-                        <a href="#core_overview">Vue d’ensemble</a>
+                        <a href="#core_overview">Aperçu</a>
                         <ul id="core_overview" class="cardsC">
                             <li>
                                 <div class="container intro">
@@ -80,7 +80,7 @@ ms.locfileid: "78616423"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Informations de référence sur les API</h3>
+                                                    <h3>Référence API</h3>
                                                     <p>Explorez la bibliothèque de classes d’ASP.NET Core.</p>
                                                 </div>
                                             </div>
@@ -99,7 +99,7 @@ ms.locfileid: "78616423"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Vue d’ensemble d’ASP.NET Core MVC</h3>
+                                                    <h3>Vue d’ensemble du modèle MVC d’ASP.NET Core</h3>
                                                     <p>Découvrez comment créer des applications web et des API avec le modèle de conception MVC.</p>
                                                 </div>
                                             </div>
@@ -147,13 +147,13 @@ ms.locfileid: "78616423"
                             </li>
                             <li class="fullSpan">
                                 <div class="container footer">
-                                    <p><a href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">Contribuez aux documents et aux exemples ASP.NET Core</a></p>
+                                    <p><a href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">Contribuer à la documentation et aux exemples ASP.NET Core</a></p>
                                 </div>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#core_tutorials">Didacticiels</a>
+                        <a href="#core_tutorials">Tutoriels</a>
                         <ul id="core_tutorials" class="cardsZ">
                             <li>
                                 <div class="container intro">
@@ -278,8 +278,8 @@ ms.locfileid: "78616423"
                             </li>
                             <li class="fullSpan">
                                 <div class="container footer">
-                                    <p><a href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">Contribuez aux documents et aux exemples ASP.NET Core</a></p>
-                                    <p><a href="https://docs.microsoft.com/dotnet/articles/project-json">Recherche de la version Visual Studio 2015/project.json de la documentation</a></p>
+                                    <p><a href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">Contribuer à la documentation et aux exemples ASP.NET Core</a></p>
+                                    <p><a href="https://docs.microsoft.com/dotnet/articles/project-json">Rechercher la version Visual Studio 2015/project.json de la documentation</a></p>
                                 </div>
                             </li>
                         </ul>
@@ -290,7 +290,7 @@ ms.locfileid: "78616423"
                 <a href="#aspnet">ASP.NET</a>
                 <ul id="aspnet">
                     <li>
-                        <a href="#aspnet_overview">Vue d’ensemble</a>
+                        <a href="#aspnet_overview">Aperçu</a>
                         <ul id="aspnet_overview" class="cardsC">
                             <li>
                                 <div class="container intro">
@@ -366,7 +366,7 @@ ms.locfileid: "78616423"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Sites Web</h3>
+                                                    <h3>Sites web</h3>
                                                     <p>Découvrez comment créer un site web avec ASP.NET MVC 5 et Visual Studio.</p>
                                                 </div>
                                             </div>
@@ -385,7 +385,7 @@ ms.locfileid: "78616423"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>API web</h3>
+                                                    <h3>API Web</h3>
                                                     <p>Découvrez comment créer une API web avec ASP.NET Web API 2 et Visual Studio.</p>
                                                 </div>
                                             </div>
@@ -433,13 +433,13 @@ ms.locfileid: "78616423"
                             </li>
                             <li class="fullSpan">
                                 <div class="container footer">
-                                    <p><a href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">Contribuez aux documents et aux exemples ASP.NET</a></p>
+                                    <p><a href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">Contribuer à la documentation et aux exemples ASP.NET</a></p>
                                 </div>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#aspnet_framework">Frameworks</a>
+                        <a href="#aspnet_framework">Cadres</a>
                         <ul id="aspnet_framework" class="cardsC">
                             <li>
                                 <div class="container intro">
@@ -514,7 +514,7 @@ ms.locfileid: "78616423"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>API web</h3>
+                                                    <h3>API Web</h3>
                                                     <p>Créez facilement des services HTTP destinés à une large gamme de clients, y compris des navigateurs et des appareils mobiles.</p>
                                                 </div>
                                             </div>
@@ -562,13 +562,13 @@ ms.locfileid: "78616423"
                             </li>
                             <li class="fullSpan">
                                 <div class="container footer">
-                                    <p><a href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">Contribuez aux documents et aux exemples ASP.NET</a></p>
+                                    <p><a href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">Contribuer à la documentation et aux exemples ASP.NET</a></p>
                                 </div>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#aspnet_tutorials">Didacticiels</a>
+                        <a href="#aspnet_tutorials">Tutoriels</a>
                         <ul id="aspnet_tutorials" class="cardsZ">
                             <li>
                                 <div class="container intro">
@@ -695,7 +695,7 @@ ms.locfileid: "78616423"
                             </li>
                             <li class="fullSpan">
                                 <div class="container footer">
-                                    <p><a href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">Contribuez aux documents et aux exemples ASP.NET</a></p>
+                                    <p><a href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">Contribuer à la documentation et aux exemples ASP.NET</a></p>
                                 </div>
                             </li>
                         </ul>
