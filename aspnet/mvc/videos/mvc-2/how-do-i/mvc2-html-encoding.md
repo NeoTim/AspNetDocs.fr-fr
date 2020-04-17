@@ -1,28 +1,28 @@
 ---
 uid: mvc/videos/mvc-2/how-do-i/mvc2-html-encoding
-title: MVC2-encodage HTML | Microsoft Docs
-author: microsoft
-description: Dans cette vidéo, vous allez apprendre à utiliser la nouvelle syntaxe de raccourci d’encodage HTML dans ASP.NET pour vous protéger contre l’injection de script, et pour utiliser le MvcHtmlString quand...
+title: MVC2 - Encodage html Microsoft Docs
+author: rick-anderson
+description: Dans cette vidéo, vous apprendrez à utiliser la nouvelle syntaxe HTML Encoding shortcut dans ASP.NET pour se prémunir contre l’injection de script, et d’utiliser le MvcHtmlString quand ...
 ms.author: riande
 ms.date: 03/23/2010
 ms.assetid: d8d2d4fc-780a-48bb-82f1-4125cce03b2a
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/mvc2-html-encoding
 msc.type: video
-ms.openlocfilehash: 6f0e1aa85b5715ce602e94d2d94a5e96b9f93008
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: d1a437986eb7b679c736559f2f454960ebf43f78
+ms.sourcegitcommit: 022f79dbc1350e0c6ffaa1e7e7c6e850cdabf9af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78558981"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81539911"
 ---
 # <a name="mvc2---html-encoding"></a>MVC2 - Html Encoding
 
 par [Microsoft](https://github.com/microsoft)
 
-Dans cette vidéo, vous allez apprendre à utiliser la nouvelle syntaxe de raccourci d’encodage HTML dans ASP.NET pour vous protéger contre l’injection de script, et pour utiliser le MvcHtmlString lorsque vous souhaitez inclure du code HTML dans vos chaînes.
+Dans cette vidéo, vous apprendrez à utiliser la nouvelle syntaxe HTML Encoding shortcut dans ASP.NET pour se prémunir contre l’injection de script, et d’utiliser le MvcHtmlString lorsque vous souhaitez inclure HTML dans vos cordes.
 
-[&#9654;Regarder la vidéo (2 minutes)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/mvc2-html-encoding)
+[&#9654; Regarder la vidéo (2 minutes)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/mvc2-html-encoding)
 
 > [!div class="step-by-step"]
-> [Précédent](how-do-i-use-httpverbs-attributes-in-an-mvc-application.md)
-> [Suivant](mvc2-stronglytyped-helpers.md)
+> [Suivant précédent](how-do-i-use-httpverbs-attributes-in-an-mvc-application.md)
+> [Next](mvc2-stronglytyped-helpers.md)

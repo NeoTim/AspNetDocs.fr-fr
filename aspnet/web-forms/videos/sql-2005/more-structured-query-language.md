@@ -1,28 +1,28 @@
 ---
 uid: web-forms/videos/sql-2005/more-structured-query-language
-title: Plus d’langage SQL | Microsoft Docs
-author: microsoft
-description: SQL Server débutants découvrira d’autres instructions SQL telles que la sous-sélection et l’apprentissage des procédures stockées C# et de leurs équivalents dans les méthodes et VB.
+title: Langage de requête plus structurée (en anglais) Microsoft Docs
+author: rick-anderson
+description: Les débutants de SQL Server découvriront d’autres déclarations SQL comme la sous-sélection et l’apprentissage des procédures stockées et de leurs homologues dans les méthodes C et VB.
 ms.author: riande
 ms.date: 03/29/2006
 ms.assetid: f86aee1e-958a-4604-a593-dc40a1149239
 msc.legacyurl: /web-forms/videos/sql-2005/more-structured-query-language
 msc.type: video
-ms.openlocfilehash: e43f125c5232c3edbe3e5f4bf651eff8fac2724f
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: 2520fb22d554dfdae2d1d4568ae044bc966fdd1b
+ms.sourcegitcommit: 022f79dbc1350e0c6ffaa1e7e7c6e850cdabf9af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78547928"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81543247"
 ---
 # <a name="more-structured-query-language"></a>En savoir plus sur le langage SQL (Structured Query Language)
 
 par [Microsoft](https://github.com/microsoft)
 
-SQL Server débutants découvrira d’autres instructions SQL telles que la sous-sélection et l’apprentissage des procédures stockées C# et de leurs équivalents dans les méthodes et VB.
+Les débutants de SQL Server découvriront d’autres déclarations SQL comme la sous-sélection et l’apprentissage des procédures stockées et de leurs homologues dans les méthodes C et VB.
 
-[&#9654;Regarder la vidéo (23 minutes)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/more-structured-query-language)
+[&#9654; Regarder la vidéo (23 minutes)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/more-structured-query-language)
 
 > [!div class="step-by-step"]
-> [Précédent](manipulating-database-data.md)
-> [Suivant](understanding-security-and-network-connectivity.md)
+> [Suivant précédent](manipulating-database-data.md)
+> [Next](understanding-security-and-network-connectivity.md)

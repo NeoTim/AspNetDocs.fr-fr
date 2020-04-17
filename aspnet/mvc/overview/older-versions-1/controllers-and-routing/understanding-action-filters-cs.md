@@ -1,124 +1,124 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-cs
-title: Fonctionnement des filtres d'C#action () | Microsoft Docs
-author: microsoft
-description: L’objectif de ce didacticiel est d’expliquer les filtres d’action. Un filtre d’action est un attribut que vous pouvez appliquer à une action de contrôleur ou à un contrôleur entier...
+title: Comprendre les filtres d’action (C) Microsoft Docs
+author: rick-anderson
+description: Le but de ce tutoriel est d’expliquer les filtres d’action. Un filtre d’action est un attribut que vous pouvez appliquer à une action de contrôleur - ou un contrôleur entier ...
 ms.author: riande
 ms.date: 10/16/2008
 ms.assetid: a94e4e81-40c1-47b7-8613-126a1a6cc93d
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d1c72c2355c6122f851351a8c1e8f04fa63ae04e
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: 75ba7b1dce280a45cd092de97c464eade5f49838
+ms.sourcegitcommit: 022f79dbc1350e0c6ffaa1e7e7c6e850cdabf9af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78581822"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81542181"
 ---
 # <a name="understanding-action-filters-c"></a>Présentation des filtres d’actions (C#)
 
 par [Microsoft](https://github.com/microsoft)
 
-[Télécharger PDF](https://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_14_CS.pdf)
+[Télécharger le PDF](https://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_14_CS.pdf)
 
-> L’objectif de ce didacticiel est d’expliquer les filtres d’action. Un filtre d’action est un attribut que vous pouvez appliquer à une action de contrôleur, ou à un contrôleur entier, qui modifie la manière dont l’action est exécutée.
+> Le but de ce tutoriel est d’expliquer les filtres d’action. Un filtre d’action est un attribut que vous pouvez appliquer à une action de contrôleur -- ou à un contrôleur entier -- qui modifie la façon dont l’action est exécutée.
 
-## <a name="understanding-action-filters"></a>Fonctionnement des filtres d’action
+## <a name="understanding-action-filters"></a>Comprendre les filtres d’action
 
-L’objectif de ce didacticiel est d’expliquer les filtres d’action. Un filtre d’action est un attribut que vous pouvez appliquer à une action de contrôleur, ou à un contrôleur entier, qui modifie la manière dont l’action est exécutée. L’infrastructure MVC ASP.NET comprend plusieurs filtres d’action :
+Le but de ce tutoriel est d’expliquer les filtres d’action. Un filtre d’action est un attribut que vous pouvez appliquer à une action de contrôleur -- ou à un contrôleur entier -- qui modifie la façon dont l’action est exécutée. Le cadre MVC ASP.NET comprend plusieurs filtres d’action :
 
-- OutputCache : ce filtre d’action met en cache la sortie d’une action de contrôleur pendant un laps de temps spécifié.
-- HandleError : ce filtre d’action gère les erreurs déclenchées lors de l’exécution d’une action de contrôleur.
-- Authorize : ce filtre d’action vous permet de restreindre l’accès à un utilisateur ou à un rôle particulier.
+- OutputCache - Ce filtre d’action cache la sortie d’une action de contrôleur pendant un certain temps.
+- PoignéeError - Ce filtre d’action gère les erreurs soulevées lorsqu’une action du contrôleur s’exécute.
+- Autoriser ce filtre d’action vous permet de restreindre l’accès à un utilisateur ou à un rôle particulier.
 
-Vous pouvez également créer vos propres filtres d’action personnalisés. Par exemple, vous souhaiterez peut-être créer un filtre d’action personnalisé afin d’implémenter un système d’authentification personnalisé. Vous pouvez également créer un filtre d’action qui modifie les données d’affichage retournées par une action de contrôleur.
+Vous pouvez également créer vos propres filtres d’action personnalisés. Par exemple, vous pouvez créer un filtre d’action personnalisé afin d’implémenter un système d’authentification personnalisé. Ou, vous pouvez créer un filtre d’action qui modifie les données de vue retournées par une action de contrôleur.
 
-Dans ce didacticiel, vous allez apprendre à créer un filtre d’action à partir de zéro. Nous créons un filtre d’action de journal qui journalise différentes étapes du traitement d’une action dans la fenêtre sortie de Visual Studio.
+Dans ce tutoriel, vous apprenez à construire un filtre d’action à partir de zéro. Nous créons un filtre d’action Log qui enregistre différentes étapes du traitement d’une action à la fenêtre Visual Studio Output.
 
 ### <a name="using-an-action-filter"></a>Utilisation d’un filtre d’action
 
-Un filtre d’action est un attribut. Vous pouvez appliquer la plupart des filtres d’action à une action de contrôleur individuel ou à un contrôleur entier.
+Un filtre d’action est un attribut. Vous pouvez appliquer la plupart des filtres d’action à une action individuelle ou à un contrôleur entier.
 
-Par exemple, le contrôleur de données de la liste 1 expose une action nommée `Index()` qui retourne l’heure actuelle. Cette action est décorée avec le filtre d’action `OutputCache`. Ce filtre entraîne la mise en cache de la valeur retournée par l’action pendant 10 secondes.
+Par exemple, le contrôleur de données dans `Index()` la liste 1 expose une action nommée qui renvoie l’heure actuelle. Cette action est décorée `OutputCache` avec le filtre d’action. Ce filtre fait que la valeur retournée par l’action est mise en cache pendant 10 secondes.
 
-**Liste 1 – `Controllers\DataController.cs`**
+**Liste 1`Controllers\DataController.cs`**
 
 [!code-csharp[Main](understanding-action-filters-cs/samples/sample1.cs)]
 
-Si vous appelez de manière répétée l’action `Index()` en entrant l’URL/Data/Index dans la barre d’adresses de votre navigateur et en appuyant plusieurs fois sur le bouton actualiser, vous verrez la même durée pendant 10 secondes. La sortie de l’action `Index()` est mise en cache pendant 10 secondes (voir la figure 1).
+Si vous invoquez à plusieurs reprises l’action `Index()` en entrant l’URL /Data/Index dans la barre d’adresse de votre navigateur et en appuyant sur le bouton Rafraîchir plusieurs fois, alors vous verrez le même temps pendant 10 secondes. La sortie `Index()` de l’action est mise en cache pendant 10 secondes (voir la figure 1).
 
-[temps mis en cache ![](understanding-action-filters-cs/_static/image2.png)](understanding-action-filters-cs/_static/image1.png)
+[![Temps caché](understanding-action-filters-cs/_static/image2.png)](understanding-action-filters-cs/_static/image1.png)
 
-**Figure 01**: temps mis en cache ([cliquez pour afficher l’image en taille réelle](understanding-action-filters-cs/_static/image3.png))
+**Figure 01**: Temps de cache[(Cliquez pour voir l’image grandeur nature](understanding-action-filters-cs/_static/image3.png))
 
-Dans la liste 1, un filtre d’action unique, le filtre d’action `OutputCache`, est appliqué à la méthode `Index()`. Si vous le souhaitez, vous pouvez appliquer plusieurs filtres d’action à la même action. Par exemple, vous souhaiterez peut-être appliquer à la fois les filtres d’action `OutputCache` et `HandleError` à la même action.
+Dans la liste 1, un `OutputCache` filtre d’action `Index()` unique , le filtre d’action, est appliqué à la méthode. Si vous en avez besoin, vous pouvez appliquer plusieurs filtres d’action à la même action. Par exemple, vous pouvez appliquer `OutputCache` `HandleError` les filtres à la fois et d’action à la même action.
 
-Dans la liste 1, le filtre d’action `OutputCache` est appliqué à l’action `Index()`. Vous pouvez également appliquer cet attribut à la classe `DataController` elle-même. Dans ce cas, le résultat retourné par une action exposée par le contrôleur est mis en cache pendant 10 secondes.
+Dans la liste `OutputCache` 1, le `Index()` filtre d’action est appliqué à l’action. Vous pouvez également appliquer `DataController` cet attribut à la classe elle-même. Dans ce cas, le résultat retourné par toute action exposée par le contrôleur serait mis en cache pendant 10 secondes.
 
 ### <a name="the-different-types-of-filters"></a>Les différents types de filtres
 
-L’infrastructure MVC ASP.NET prend en charge quatre types de filtres :
+Le cadre MVC ASP.NET prend en charge quatre types différents de filtres :
 
-1. Filtres d’autorisation : implémente l’attribut `IAuthorizationFilter`.
-2. Filtres d’action : implémente l’attribut `IActionFilter`.
-3. Filtres de résultats : implémente l’attribut `IResultFilter`.
-4. Filtres d’exception : implémente l’attribut `IExceptionFilter`.
+1. Filtres d’autorisation `IAuthorizationFilter` - Implémente l’attribut.
+2. Filtres d’action `IActionFilter` - Implémente l’attribut.
+3. Filtres de résultat `IResultFilter` - Implémente l’attribut.
+4. Filtres d’exception `IExceptionFilter` - Implémente l’attribut.
 
-Les filtres sont exécutés dans l’ordre indiqué ci-dessus. Par exemple, les filtres d’autorisation sont toujours exécutés avant que les filtres d’action et les filtres d’exception soient toujours exécutés après chaque autre type de filtre.
+Les filtres sont exécutés dans l’ordre indiqué ci-dessus. Par exemple, les filtres d’autorisation sont toujours exécutés avant que les filtres d’action et les filtres d’exception soient toujours exécutés après tous les autres types de filtre.
 
-Les filtres d’autorisation sont utilisés pour implémenter l’authentification et l’autorisation pour les actions du contrôleur. Par exemple, le filtre authorize est un exemple de filtre d’autorisation.
+Les filtres d’autorisation sont utilisés pour implémenter l’authentification et l’autorisation des actions de contrôleur. Par exemple, le filtre Autoriser est un exemple de filtre d’autorisation.
 
-Les filtres d’action contiennent une logique qui est exécutée avant et après l’exécution d’une action de contrôleur. Vous pouvez utiliser un filtre d’action, par exemple, pour modifier les données d’affichage retournées par une action de contrôleur.
+Les filtres d’action contiennent une logique qui est exécutée avant et après l’exécution d’une action du contrôleur. Vous pouvez utiliser un filtre d’action, par exemple, pour modifier les données de vue qu’une action de contrôleur renvoie.
 
-Les filtres de résultats contiennent une logique qui est exécutée avant et après l’exécution d’un résultat de vue. Par exemple, vous souhaiterez peut-être modifier un résultat d’affichage juste avant que la vue ne soit rendue dans le navigateur.
+Les filtres de résultat contiennent une logique qui est exécutée avant et après l’exécution d’un résultat de vue. Par exemple, vous pouvez modifier un résultat de vue juste avant que la vue ne soit rendue au navigateur.
 
-Les filtres d’exceptions sont le dernier type de filtre à exécuter. Vous pouvez utiliser un filtre d’exception pour gérer les erreurs générées par les actions du contrôleur ou les résultats de l’action du contrôleur. Vous pouvez également utiliser des filtres d’exception pour consigner les erreurs.
+Les filtres d’exception sont le dernier type de filtre à exécuter. Vous pouvez utiliser un filtre d’exception pour gérer les erreurs soulevées par vos actions de contrôleur ou les résultats d’action du contrôleur. Vous pouvez également utiliser des filtres d’exception pour enregistrer des erreurs.
 
 Chaque type de filtre est exécuté dans un ordre particulier. Si vous souhaitez contrôler l’ordre dans lequel les filtres du même type sont exécutés, vous pouvez définir la propriété d’ordre d’un filtre.
 
-La classe de base pour tous les filtres d’action est la classe `System.Web.Mvc.FilterAttribute`. Si vous souhaitez implémenter un type particulier de filtre, vous devez créer une classe qui hérite de la classe de filtre de base et implémente une ou plusieurs des interfaces `IAuthorizationFilter`, `IActionFilter`, `IResultFilter`ou `IExceptionFilter`.
+La classe de base pour `System.Web.Mvc.FilterAttribute` tous les filtres d’action est la classe. Si vous souhaitez implémenter un type particulier de filtre, alors vous devez créer une classe `IAuthorizationFilter`qui `IActionFilter` `IResultFilter`hérite `IExceptionFilter` de la classe de filtre de base et implémente un ou plusieurs des , , , ou des interfaces.
 
-### <a name="the-base-actionfilterattribute-class"></a>Classe de base ActionFilterAttribute
+### <a name="the-base-actionfilterattribute-class"></a>La catégorie Base ActionFilterAttribute
 
-Pour faciliter l’implémentation d’un filtre d’action personnalisé, l’infrastructure MVC ASP.NET comprend une classe de `ActionFilterAttribute` de base. Cette classe implémente à la fois les interfaces `IActionFilter` et `IResultFilter` et hérite de la classe `Filter`.
+Afin de vous faciliter la mise en œuvre d’un filtre d’action personnalisé, le cadre MVC ASP.NET comprend une classe de base. `ActionFilterAttribute` Cette classe implémente à la fois les `IActionFilter` interfaces et `IResultFilter` hérite de la `Filter` classe.
 
-La terminologie ici n’est pas entièrement cohérente. Techniquement, une classe qui hérite de la classe ActionFilterAttribute est à la fois un filtre d’action et un filtre de résultat. Toutefois, dans le sens approximatif, le filtre d’action Word est utilisé pour faire référence à n’importe quel type de filtre dans l’infrastructure MVC ASP.NET.
+La terminologie ici n’est pas tout à fait cohérente. Techniquement, une classe qui hérite de la classe ActionFilterAttribute est à la fois un filtre d’action et un filtre de résultat. Cependant, dans le sens lâche, le filtre d’action mot est utilisé pour se référer à n’importe quel type de filtre dans le cadre ASP.NET MVC.
 
-La classe de base `ActionFilterAttribute` possède les méthodes suivantes que vous pouvez substituer :
+La `ActionFilterAttribute` classe de base a les méthodes suivantes que vous pouvez remplacer:
 
-- OnActionExecuting : cette méthode est appelée avant l’exécution d’une action de contrôleur.
-- OnActionExecuted : cette méthode est appelée après l’exécution d’une action de contrôleur.
-- OnResultExecuting : cette méthode est appelée avant l’exécution d’un résultat d’action de contrôleur.
-- OnResultExecuted : cette méthode est appelée après l’exécution d’un résultat d’action de contrôleur.
+- OnActionExecuting - Cette méthode est appelée avant qu’une action de contrôleur ne soit exécutée.
+- OnActionExecuted - Cette méthode est appelée après l’exécution d’une action de contrôleur.
+- OnResultExecuting - Cette méthode est appelée avant qu’un résultat d’action de contrôleur soit exécuté.
+- OnResultExecuted - Cette méthode est appelée après un résultat d’action de contrôleur est exécuté.
 
-Dans la section suivante, nous verrons comment vous pouvez implémenter chacune de ces différentes méthodes.
+Dans la section suivante, nous verrons comment vous pouvez mettre en œuvre chacune de ces différentes méthodes.
 
-### <a name="creating-a-log-action-filter"></a>Création d’un filtre d’action de journal
+### <a name="creating-a-log-action-filter"></a>Création d’un filtre d’action en rondins
 
-Pour illustrer la façon dont vous pouvez créer un filtre d’action personnalisé, nous allons créer un filtre d’action personnalisé qui journalise les étapes de traitement d’une action de contrôleur dans la fenêtre sortie de Visual Studio. Notre `LogActionFilter` est contenu dans la liste 2.
+Afin d’illustrer comment vous pouvez construire un filtre d’action personnalisé, nous allons créer un filtre d’action personnalisé qui enregistre les étapes de traitement d’une action contrôleur à la fenêtre Visual Studio Output. Notre `LogActionFilter` est contenu dans la liste 2.
 
-**Liste 2 – `ActionFilters\LogActionFilter.cs`**
+**Liste 2`ActionFilters\LogActionFilter.cs`**
 
 [!code-csharp[Main](understanding-action-filters-cs/samples/sample2.cs)]
 
-Dans la liste 2, les méthodes `OnActionExecuting()`, `OnActionExecuted()`, `OnResultExecuting()`et `OnResultExecuted()` appellent toutes la méthode `Log()`. Le nom de la méthode et les données d’itinéraire actuelles sont passés à la méthode `Log()`. La méthode `Log()` écrit un message dans la fenêtre sortie de Visual Studio (voir la figure 2).
+Dans la liste `OnActionExecuting()`2, le `OnActionExecuted()`, , `OnResultExecuting()`et `OnResultExecuted()` les méthodes appellent tous la `Log()` méthode. Le nom de la méthode et les `Log()` données d’itinéraire actuelles sont transmis à la méthode. La `Log()` méthode écrit un message à la fenêtre Visual Studio Output (voir la figure 2).
 
-[![l’écriture dans la fenêtre sortie de Visual Studio](understanding-action-filters-cs/_static/image5.png)](understanding-action-filters-cs/_static/image4.png)
+[![Écrire à la fenêtre Visual Studio Output](understanding-action-filters-cs/_static/image5.png)](understanding-action-filters-cs/_static/image4.png)
 
-**Figure 02**: écriture dans la fenêtre sortie de Visual Studio ([cliquez pour afficher l’image en taille réelle](understanding-action-filters-cs/_static/image6.png))
+**Figure 02**: Écrire à la fenêtre Visual Studio Output ([Cliquez pour voir l’image grandeur nature](understanding-action-filters-cs/_static/image6.png))
 
-Le contrôleur d’hébergement de la liste 3 montre comment vous pouvez appliquer le filtre d’action de journal à une classe de contrôleur entière. Chaque fois que l’une des actions exposées par le contrôleur d’hébergement est appelée, soit la méthode `Index()` soit la méthode `About()` : les étapes de traitement de l’action sont enregistrées dans la fenêtre sortie de Visual Studio.
+Le contrôleur à domicile dans la liste 3 illustre comment vous pouvez appliquer le filtre d’action Log à toute une classe de contrôleur. Chaque fois que l’une des actions exposées `Index()` par le `About()` contrôleur à domicile sont invoquées - soit la méthode ou la méthode - les étapes de traitement de l’action sont enregistrées à la fenêtre Visual Studio Output.
 
-**Liste 3 – `Controllers\HomeController.cs`**
+**Liste 3`Controllers\HomeController.cs`**
 
 [!code-csharp[Main](understanding-action-filters-cs/samples/sample3.cs)]
 
 ### <a name="summary"></a>Récapitulatif
 
-Dans ce didacticiel, vous avez introduit les filtres d’action MVC ASP.NET. Vous avez appris les quatre types de filtres : les filtres d’autorisation, les filtres d’action, les filtres de résultats et les filtres d’exception. Vous avez également appris sur la classe de base `ActionFilterAttribute`.
+Dans ce tutoriel, vous avez été présenté à ASP.NET filtres d’action MVC. Vous avez pris connaissance des quatre types de filtres : filtres d’autorisation, filtres d’action, filtres de résultat et filtres d’exception. Vous avez aussi `ActionFilterAttribute` appris la classe de base.
 
-Enfin, vous avez appris à implémenter un filtre d’action simple. Nous avons créé un filtre d’action de journal qui journalise les étapes de traitement d’une action de contrôleur dans la fenêtre sortie de Visual Studio.
+Enfin, vous avez appris à implémenter un filtre d’action simple. Nous avons créé un filtre d’action Log qui enregistre les étapes du traitement d’une action de contrôleur à la fenêtre Visual Studio Output.
 
 > [!div class="step-by-step"]
-> [Précédent](asp-net-mvc-routing-overview-cs.md)
-> [Suivant](improving-performance-with-output-caching-cs.md)
+> [Suivant précédent](asp-net-mvc-routing-overview-cs.md)
+> [Next](improving-performance-with-output-caching-cs.md)

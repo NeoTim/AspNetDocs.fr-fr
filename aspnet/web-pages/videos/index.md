@@ -1,6 +1,6 @@
 ---
 uid: web-pages/videos/index
-title: Vidéos | Microsoft Docs
+title: Vidéos Microsoft Docs
 author: rick-anderson
 description: ''
 ms.author: riande
@@ -8,17 +8,17 @@ ms.date: 05/18/2012
 ms.assetid: febf2824-4e3d-4dc6-84c5-f99777ec6144
 msc.legacyurl: /web-pages/videos
 msc.type: book
-ms.openlocfilehash: 4c22b024240740d971740e9f043231ccbcdc47fb
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: 8c24a01b592bead86369a0a9cebeca05f566de53
+ms.sourcegitcommit: 022f79dbc1350e0c6ffaa1e7e7c6e850cdabf9af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78631746"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81543039"
 ---
-# <a name="videos"></a>Vidéos
+# <a name="videos"></a>Videos
 
 > [!NOTE] 
-> WebMatrix n’est plus recommandé en tant qu’environnement de développement intégré pour pages Web ASP.NET. Utilisez [Visual Studio](xref:aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio) ou [Visual Studio code](https://code.visualstudio.com/).
+> WebMatrix n’est plus recommandé comme environnement de développement intégré pour ASP.NET pages Web. Utilisez [Visual Studio](xref:web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio) ou Visual Studio [Code](https://code.visualstudio.com/).
 
 - [Introduction](introduction/index.md)
 
@@ -46,7 +46,7 @@ ms.locfileid: "78631746"
     - [Affichage de données dans un graphique (Partie 1)](aspnet-razor-pages/displaying-data-in-a-chart-part-1.md)
     - [Affichage de données dans un graphique (Partie 2)](aspnet-razor-pages/displaying-data-in-a-chart-part-2.md)
     - [Utilisation de fichiers](aspnet-razor-pages/working-with-files.md)
-    - [Utilisation d’images](aspnet-razor-pages/working-with-images.md)
+    - [Travailler avec Images](aspnet-razor-pages/working-with-images.md)
     - [Utilisation de la vidéo](aspnet-razor-pages/working-with-video.md)
     - [Ajout de fonctionnalités d’e-mail à votre site web](aspnet-razor-pages/adding-email-to-your-web-site.md)
     - [Ajout de fonctionnalités de recherche à votre site web](aspnet-razor-pages/adding-search-to-your-web-site.md)

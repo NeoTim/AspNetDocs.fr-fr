@@ -1,75 +1,75 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/re-use-ui-using-master-pages-and-partials
-title: Réutilisation de l’interface utilisateur à l’aide des pages maîtres et des partiels | Microsoft Docs
-author: microsoft
-description: L’étape 7 vous apprendra comment appliquer le « principe sec » dans nos modèles de vue pour éliminer la duplication de code, en utilisant des modèles de vue partiels et des pages maîtres.
+title: Réutilisation de l’interface utilisateur à l’aide de Pages Et de partielles Microsoft Docs
+author: rick-anderson
+description: L’étape 7 examine les moyens d’appliquer le « principe DRY » dans nos modèles de vue afin d’éliminer la duplication du code, en utilisant des modèles de vue partiel et des pages maîtresses.
 ms.author: riande
 ms.date: 07/27/2010
 ms.assetid: d4243a4a-e91c-4116-9ae0-5c08e5285677
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/re-use-ui-using-master-pages-and-partials
 msc.type: authoredcontent
-ms.openlocfilehash: 0b17cb6ac14b7f187bf1f175097a37907689d46e
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: f381c4424a9fa0718cd234beeb01ce41bc4ca61e
+ms.sourcegitcommit: 022f79dbc1350e0c6ffaa1e7e7c6e850cdabf9af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78580331"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81542597"
 ---
 # <a name="re-use-ui-using-master-pages-and-partials"></a>Réutiliser l’interface utilisateur avec des pages maîtres et des vues partielles
 
 par [Microsoft](https://github.com/microsoft)
 
-[Télécharger PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
+[Télécharger le PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
-> Il s’agit de l’étape 7 d’un [didacticiel d’application « NerdDinner »](introducing-the-nerddinner-tutorial.md) gratuit qui vous guide dans la création d’une application Web de petite taille, mais complète, à l’aide de ASP.NET MVC 1.
+> Il s’agit de l’étape 7 d’un tutoriel gratuit ["NerdDinner" application](introducing-the-nerddinner-tutorial.md) qui marche à travers la façon de construire une petite, mais complète, application web en utilisant ASP.NET MVC 1.
 > 
-> L’étape 7 vous apprendra comment appliquer le « principe sec » dans nos modèles de vue pour éliminer la duplication de code, en utilisant des modèles de vue partiels et des pages maîtres.
+> L’étape 7 examine les moyens d’appliquer le « principe DRY » dans nos modèles de vue afin d’éliminer la duplication du code, en utilisant des modèles de vue partiel et des pages maîtresses.
 > 
-> Si vous utilisez ASP.NET MVC 3, nous vous recommandons de suivre les [prise en main avec](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md) les didacticiels du [magasin de musique](../../older-versions/mvc-music-store/mvc-music-store-part-1.md) MVC 3 ou Mvc.
+> Si vous utilisez ASP.NET MVC 3, nous vous recommandons de suivre les tutoriels [Getting Started With MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md) ou [MVC Music Store.](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)
 
-## <a name="nerddinner-step-7-partials-and-master-pages"></a>NerdDinner étape 7 : partielles et pages maîtres
+## <a name="nerddinner-step-7-partials-and-master-pages"></a>NerdDinner Step 7: Partielles et Pages Maîtresses
 
-L’une des philosophies de conception utilisées par ASP.NET MVC est le principe de « ne pas se répéter » (communément appelé « sécher »). Une conception sèche permet d’éliminer la duplication du code et de la logique, ce qui accélère le développement et la gestion des applications.
+L’une des philosophies de conception ASP.NET MVC embrasse est le principe «Ne vous répétez pas» (communément appelé «DRY»). Une conception DRY permet d’éliminer la duplication du code et de la logique, ce qui rend finalement les applications plus rapides à construire et plus faciles à entretenir.
 
-Nous avons déjà vu le principe à sec appliqué dans plusieurs de nos scénarios NerdDinner. Quelques exemples : notre logique de validation est implémentée dans notre couche de modèle, ce qui lui permet de s’appliquer à la fois dans les scénarios de modification et de création dans notre contrôleur. Nous utilisons à nouveau le modèle de vue « NotFound » dans les méthodes d’action Edit, Details et DELETE. Nous utilisons un modèle d’attribution de noms de convention avec nos modèles de vue, ce qui évite d’avoir à spécifier explicitement le nom quand nous appelons la méthode d’assistance View (). et nous utilisons à nouveau la classe DinnerFormViewModel pour les scénarios d’action de modification et de création.
+Nous avons déjà vu le principe DRY appliqué dans plusieurs de nos scénarios NerdDinner. Quelques exemples : notre logique de validation est mise en œuvre dans notre couche de modèle, ce qui lui permet d’être appliquée à la fois à travers modifier et créer des scénarios dans notre contrôleur ; nous ré utilisons le modèle de vue « NotFound » dans les méthodes d’action Edit, Détails et Supprimer ; nous utilisons un modèle de nommage de convention avec nos modèles de vue, qui élimine la nécessité de spécifier explicitement le nom lorsque nous appelons la méthode d’aide View() ; et nous ré utilisons la classe DinnerFormViewModel pour les scénarios d’action Edit et Create.
 
-Voyons maintenant comment nous pouvons appliquer le « principe sec » dans nos modèles de vue pour éliminer également la duplication de code.
+Examinons maintenant les moyens d’appliquer le « principe DRY » dans nos modèles de vue afin d’éliminer également la duplication du code.
 
-### <a name="re-visiting-our-edit-and-create-view-templates"></a>Revisiter les modèles de vue Edit et Create
+### <a name="re-visiting-our-edit-and-create-view-templates"></a>Re-visiter nos modèles d’édition et de création de vue
 
-Actuellement, nous utilisons deux modèles de vue : « Edit. aspx » et « Create. aspx » pour afficher l’interface utilisateur du dîner. Une comparaison visuelle rapide de celles-ci met en évidence la façon dont elles sont similaires. Voici à quoi ressemble le formulaire de création :
+Actuellement, nous utilisons deux modèles de vue différents - "Edit.aspx" et "Create.aspx" - pour afficher notre interface utilisateur forme de dîner. Une comparaison visuelle rapide d’entre eux met en évidence la similitude qu’ils sont. Voici à quoi ressemble la forme de création :
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image1.png)
 
-Voici à quoi ressemble le formulaire « Edit » :
+Et voici à quoi ressemble notre formulaire "Edit":
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image2.png)
 
-Il n’y a pas vraiment de différence. En dehors du titre et du texte d’en-tête, la disposition du formulaire et les contrôles d’entrée sont identiques.
+Il n’y a pas beaucoup de différence? Outre le titre et le texte d’en-tête, la disposition du formulaire et les contrôles d’entrée sont identiques.
 
-Si nous avions ouvert les modèles de vue « Edit. aspx » et « Create. aspx », nous allons constater qu’ils contiennent des données de mise en page et de contrôle d’entrée identiques. Cette duplication signifie que nous devons apporter des modifications à deux reprises chaque fois que vous introduisez ou modifiez une nouvelle propriété de dîner, ce qui n’est pas correct.
+Si nous ouvrons les modèles de vue "Edit.aspx" et "Create.aspx", nous constaterons qu’ils contiennent la mise en page de formulaires identiques et le code de contrôle des entrées. Cette duplication signifie que nous finissons par avoir à faire des changements deux fois chaque fois que nous introduisons ou changer une nouvelle propriété de dîner - ce qui n’est pas bon.
 
 ### <a name="using-partial-view-templates"></a>Utilisation de modèles de vue partielle
 
-ASP.NET MVC prend en charge la possibilité de définir des modèles de « vue partielle » qui peuvent être utilisés pour encapsuler la logique de rendu de vue pour une sous-partie d’une page. Les « partiels » offrent un moyen utile de définir une fois la logique de rendu de la vue, puis de la réutiliser dans plusieurs emplacements d’une application.
+ASP.NET MVC prend en charge la capacité de définir des modèles de « vue partielle » qui peuvent être utilisés pour encapsuler la logique de rendu de vue pour une sous-partie d’une page. Les « partielles » fournissent un moyen utile de définir la logique de rendu de vue une fois, puis de la réutiliser à plusieurs endroits à travers une application.
 
-Pour aider à « sécher » notre modification. aspx et à créer la duplication du modèle de vue. aspx, nous pouvons créer un modèle de vue partielle nommé « DinnerForm. ascx » qui encapsule la disposition de formulaire et les éléments d’entrée communs aux deux. Pour ce faire, cliquez avec le bouton droit sur le répertoire/Views/Dinners et choisissez la commande de menu « Add-&gt;View » :
+Pour aider à "DRY-up" notre Edit.aspx et Create.aspx voir le modèle de duplication, nous pouvons créer un modèle de vue partiel nommé "DinnerForm.ascx" qui encapsule la disposition du formulaire et les éléments d’entrée communs aux deux. Nous le ferons en cliquant à droite sur notre répertoire /Vues/Dîners et en choisissant la commande du menu "Add-&gt;View":
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image3.png)
 
-La boîte de dialogue « Ajouter une vue » s’affiche. Nous allons nommer la nouvelle vue que nous voulons créer « DinnerForm », activer la case à cocher « créer une vue partielle » dans la boîte de dialogue et indiquer que nous lui transmettons une classe DinnerFormViewModel :
+Ceci affichera le dialogue " Add View ". Nous nommerons la nouvelle vue que nous voulons créer "DinnerForm", sélectionnez la case à cocher "Créer une vue partielle" dans le dialogue, et indiquer que nous allons lui passer une classe DinnerFormViewModel:
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image4.png)
 
-Lorsque nous cliquons sur le bouton « Ajouter », Visual Studio crée un nouveau modèle de vue « DinnerForm. ascx » pour nous dans le répertoire « \Views\Dinners ».
+Lorsque nous cliquez sur le bouton "Ajouter", Visual Studio créera pour nous un nouveau modèle de vue "DinnerForm.ascx".
 
-Nous pouvons ensuite copier/coller la disposition de formulaire/le code de contrôle d’entrée en double à partir des modèles de vue Edit. aspx/Create. aspx dans notre nouveau modèle de vue partielle « DinnerForm. ascx » :
+Nous pouvons ensuite copier /coller la mise en page du formulaire en double / code de contrôle des entrées de notre Edit.aspx/ Create.aspx modèles de vue dans notre nouveau "DinnerForm.ascx" modèle de vue partielle:
 
 [!code-aspx[Main](re-use-ui-using-master-pages-and-partials/samples/sample1.aspx)]
 
-Nous pouvons ensuite mettre à jour les modèles de vue Edit et Create pour appeler le modèle partiel DinnerForm et éliminer la duplication de formulaire. Pour ce faire, nous appelons html. RenderPartial (« DinnerForm ») dans nos modèles de vue :
+Nous pouvons ensuite mettre à jour nos modèles de vue Edit et Créer pour appeler le modèle partiel DinnerForm et éliminer la duplication du formulaire. Nous pouvons le faire en appelant Html.RenderPartial ("DinnerForm") dans nos modèles de vue:
 
-##### <a name="createaspx"></a>Créer. aspx
+##### <a name="createaspx"></a>Create.aspx
 
 [!code-aspx[Main](re-use-ui-using-master-pages-and-partials/samples/sample2.aspx)]
 
@@ -77,62 +77,62 @@ Nous pouvons ensuite mettre à jour les modèles de vue Edit et Create pour appe
 
 [!code-aspx[Main](re-use-ui-using-master-pages-and-partials/samples/sample3.aspx)]
 
-Vous pouvez qualifier explicitement le chemin d’accès du modèle partiel souhaité lors de l’appel de html. RenderPartial (par exemple : ~ views/dîners/DinnerForm. ascx "). Dans notre code ci-dessus, toutefois, nous utilisons le modèle d’affectation de noms basé sur des conventions dans ASP.NET MVC et spécifions simplement « DinnerForm » comme nom du partiel à restituer. Dans ce cas, ASP.NET MVC regarde d’abord dans le répertoire des vues basées sur des conventions (pour DinnersController, il s’agit de/Views/Dinners). S’il ne trouve pas le modèle partiel, il le recherche dans le répertoire/Views/Shared
+Vous pouvez explicitement qualifier le chemin du modèle partiel que vous souhaitez lorsque vous appelez Html.RenderPartial (par exemple : «Vues/Dîners/DinnerForm.ascx»). Dans notre code ci-dessus, cependant, nous profitons du modèle de nommage basé sur la convention au sein de ASP.NET MVC, et il suffit de spécifier "DinnerForm" comme le nom de la partie à rendre. Lorsque nous faisons cela ASP.NET MVC regardera d’abord dans le répertoire de vues basée sur la convention (pour DinnersController ce serait /Vues / Dîners). S’il ne trouve pas le modèle partiel là-bas, il sera alors le chercher dans le /Views / Répertoire partagé.
 
-Lorsque html. RenderPartial () est appelé uniquement avec le nom de la vue partielle, ASP.NET MVC passe à la vue partielle les mêmes objets dictionary Model et ViewData que ceux utilisés par le modèle de vue appelant. En guise d’alternative, il existe des versions surchargées de html. RenderPartial () qui vous permettent de passer un autre objet de modèle et/ou un dictionnaire ViewData pour la vue partielle à utiliser. Cela est utile dans les scénarios où vous souhaitez uniquement passer un sous-ensemble du modèle/ViewModel complet.
+Lorsque Html.RenderPartial() est appelé avec juste le nom de la vue partielle, ASP.NET MVC passera à la vue partielle des mêmes objets de dictionnaire de modèle et de ViewData utilisés par le modèle de vue d’appel. Alternativement, il existe des versions surchargées de Html.RenderPartial () qui vous permettent de passer un autre objet modèle et / ou ViewData dictionnaire pour la vue partielle à utiliser. Ceci est utile pour les scénarios où vous ne voulez passer qu’un sous-ensemble du modèle complet / ViewModel.
 
-| **Rubrique secondaire : pourquoi &lt;%%&gt; au lieu de &lt;% =%&gt;?** |
+| **Sujet secondaire: &lt;Pourquoi&gt; % &lt;%&gt;au lieu de % ?** |
 | --- |
-| L’une des choses subtiles que vous avez pu remarquer avec le code ci-dessus est que nous utilisons un bloc &lt;%%&gt; au lieu d’un bloc &lt;% =%&gt; lors de l’appel de html. RenderPartial (). &lt;% =%&gt; blocs dans ASP.NET indiquent qu’un développeur souhaite afficher une valeur spécifiée (par exemple : &lt;% = "Hello"%&gt; affiche "Hello"). à la place, &lt;%%&gt; blocs indiquent que le développeur souhaite exécuter du code, et que toute sortie rendue à l’intérieur doit être effectuée explicitement (par exemple : &lt;% Response. Write ("Hello")%&gt;. La raison pour laquelle nous utilisons un bloc &lt;%%&gt; avec notre code html. RenderPartial ci-dessus est que la méthode html. RenderPartial () ne retourne pas de chaîne et renvoie le contenu directement au flux de sortie du modèle de vue appelant. Pour des raisons d’efficacité des performances, cela évite d’avoir à créer un objet de chaîne temporaire (potentiellement très volumineux). Cela réduit l’utilisation de la mémoire et améliore le débit global de l’application. Une erreur courante lors de l’utilisation de html. RenderPartial () consiste à oublier d’ajouter un point-virgule à la fin de l’appel lorsque celui-ci se trouve dans un bloc &lt;%%&gt;. Par exemple, ce code génère une erreur du compilateur : &lt;% html. RenderPartial ("DinnerForm")%&gt; vous devez écrire : &lt;% html. RenderPartial ("DinnerForm"); %&gt; cela est dû au fait que &lt;les blocs de%%&gt; sont des instructions de code C# autonomes, et quand les instructions de code doivent se terminer par un point-virgule. |
+| Une des choses subtiles que vous pourriez avoir remarqué &lt;avec&gt; le code &lt;ci-dessus, c’est que nous utilisons un bloc % % au lieu d’un bloc de % à %&gt; lorsque vous appelez Html.RenderPartial(). &lt;% blocs&gt; de % dans ASP.NET indiquent qu’un développeur veut rendre &lt;une valeur spécifiée (par exemple : % « Bonjour » %&gt; rendrait « Bonjour »). &lt;%&gt; % blocs au lieu d’indiquer que le développeur veut exécuter le code, &lt;et que toute sortie rendue&gt;en eux doit être faite explicitement (par exemple: % Response.Write ("Bonjour") % . La raison pour &lt;laquelle&gt; nous utilisons un bloc % % avec notre code Html.RenderPartial ci-dessus est parce que la méthode Html.RenderPartial() ne retourne pas une chaîne, et extrade plutôt le contenu directement sur le flux de sortie du modèle de vue d’appel. Il le fait pour des raisons d’efficacité de performance, et ce faisant, il évite la nécessité de créer un objet à chaîne temporaire (potentiellement très grand). Cela réduit l’utilisation de la mémoire et améliore le débit global d’application. Une erreur commune lors de l’utilisation html.RenderPartial() est d’oublier d’ajouter &lt;un&gt; semi-colon à la fin de l’appel quand il est dans un bloc % % %. Par exemple, ce code provoquera une &lt;erreur de compilateur: % Html.RenderPartial ("DinnerForm") %&gt; Vous devez plutôt écrire: &lt;% Html.RenderPartial ("DinnerForm"); %&gt; C’est parce que &lt;% %&gt; blocs sont des instructions de code autonomes, et lors de l’utilisation des instructions de code C doit être résiliée avec un semi-colon. |
 
 ### <a name="using-partial-view-templates-to-clarify-code"></a>Utilisation de modèles de vue partiel pour clarifier le code
 
-Nous avons créé le modèle de vue partielle « DinnerForm » pour éviter de dupliquer la logique de rendu de la vue à plusieurs endroits. Il s’agit de la raison la plus courante pour créer des modèles de vue partiels.
+Nous avons créé le modèle de vue partiel "DinnerForm" pour éviter de dupliquer la logique de rendu de vue dans plusieurs endroits. C’est la raison la plus courante pour créer des modèles de vue partiel.
 
-Il est parfois judicieux de créer des vues partielles, même quand elles sont appelées uniquement à un seul emplacement. Les modèles de vue très complexes peuvent souvent devenir beaucoup plus faciles à lire lorsque la logique de rendu de leur vue est extraite et partitionnée en un ou plusieurs modèles partiels bien nommés.
+Parfois, il est toujours logique de créer des vues partielles, même quand ils ne sont appelés qu’en un seul endroit. Les modèles de vue très compliqués peuvent souvent devenir beaucoup plus faciles à lire lorsque leur logique de rendu de vue est extraite et divisée en un ou plusieurs modèles partiels bien nommés.
 
-Par exemple, considérez l’extrait de code ci-dessous à partir du fichier site. Master dans notre projet (que nous examinerons bientôt). Le code est relativement simple à lire, en partie parce que la logique permettant d’afficher un lien de connexion/déconnexion en haut à droite de l’écran est encapsulée dans la partie « contrôle LogOnUserControl » :
+Par exemple, considérez l’extrait de code ci-dessous du fichier Site.master dans notre projet (que nous examinerons sous peu). Le code est relativement simple à lire - en partie parce que la logique d’afficher un lien de connexion / logout en haut à droite de l’écran est encapsulé dans le "LogOnUserControl" partielle:
 
 [!code-aspx[Main](re-use-ui-using-master-pages-and-partials/samples/sample4.aspx)]
 
-Chaque fois que vous vous rendez compte que vous tentez de comprendre le balisage HTML/code dans un modèle de vue, déterminez s’il n’est pas plus clair si une partie de celui-ci a été extraite et refactorie en vues partielles bien nommées.
+Chaque fois que vous vous trouvez se confondre en essayant de comprendre le balisage html / code dans un view-template, considérez si elle ne serait pas plus claire si certains d’entre eux a été extrait et refactorisé en vues partielles bien nommées.
 
 ### <a name="master-pages"></a>Pages maîtres
 
-En plus de prendre en charge les vues partielles, ASP.NET MVC prend également en charge la possibilité de créer des modèles de « page maître » qui peuvent être utilisés pour définir la disposition commune et le code HTML de niveau supérieur d’un site. Les contrôles d’espace réservé de contenu peuvent ensuite être ajoutés à la page maître pour identifier les régions remplaçables qui peuvent être remplacées ou « remplies » par les vues. Cela offre un moyen très efficace (et sec) pour appliquer une disposition commune à l’échelle d’une application.
+En plus de prendre en charge des vues partielles, ASP.NET MVC prend également en charge la possibilité de créer des modèles de « page maîtresse » qui peuvent être utilisés pour définir la mise en page commune et le html de haut niveau d’un site. Les contrôles des titulaires de places de contenu peuvent ensuite être ajoutés à la page principale pour identifier les régions remplaçables qui peuvent être remplacées ou « remplies » par des vues. Cela fournit un moyen très efficace (et DRY) d’appliquer une mise en page commune à travers une application.
 
-Par défaut, les nouveaux projets MVC ASP.NET ont un modèle de page maître qui leur est automatiquement ajouté. Cette page maître est nommée « site. Master » et se trouve dans le dossier \Views\Shared\ :
+Par défaut, les nouveaux projets MVC ASP.NET ont un modèle de page principale qui leur est automatiquement ajouté. Cette page principale s’appelle "Site.master" et vit dans le dossier "Views"Partagés:
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image5.png)
 
-Le fichier site. Master par défaut se présente comme indiqué ci-dessous. Il définit le code html externe du site, ainsi qu’un menu de navigation en haut. Il contient deux contrôles d’espace réservé de contenu remplaçables : un pour le titre et l’autre pour l’emplacement où le contenu principal d’une page doit être remplacé :
+Le fichier Par défaut Site.master ressemble ci-dessous. Il définit le html extérieur du site, ainsi qu’un menu pour la navigation en haut. Il contient deux contrôles remplaçables des titulaires de places de contenu , l’un pour le titre, et l’autre pour l’endroit où le contenu principal d’une page doit être remplacé :
 
 [!code-aspx[Main](re-use-ui-using-master-pages-and-partials/samples/sample5.aspx)]
 
-Tous les modèles de vue que nous avons créés pour notre application NerdDinner (« List », « Details », « Edit », « Create », « NotFound », etc.) ont été basés sur ce modèle site. Master. Cela est indiqué par le biais de l’attribut « MasterPageFile » qui a été ajouté par défaut au haut &lt;la directive% @ page%&gt; quand nous avons créé nos vues à l’aide de la boîte de dialogue « Ajouter une vue » :
+Tous les modèles de vue que nous avons créés pour notre application NerdDinner ("List", "Détails", "Edit", "Create", "NotFound", etc.) ont été basés sur ce modèle Site.master. Ceci est indiqué via l’attribut "MasterPageFile" qui &lt;a été&gt; ajouté par défaut à la directive top % - Page % lorsque nous avons créé nos vues à l’aide du dialogue "Add View":
 
 [!code-aspx[Main](re-use-ui-using-master-pages-and-partials/samples/sample6.aspx)]
 
-Cela signifie que nous pouvons modifier le contenu site. Master et faire en sorte que les modifications soient automatiquement appliquées et utilisées lors du rendu de l’un de nos modèles de vue.
+Ce que cela signifie, c’est que nous pouvons modifier le contenu Site.master, et avoir les modifications automatiquement appliquées et utilisées lorsque nous rendons l’un de nos modèles de vue.
 
-Nous allons mettre à jour la section d’en-tête de site. Master afin que l’en-tête de notre application soit « NerdDinner » au lieu de « mon application MVC ». Nous allons également mettre à jour notre menu de navigation pour que le premier onglet soit « Rechercher un dîner » (géré par la méthode d’action d’index () du HomeController) et ajouter un nouvel onglet appelé « héberger un dîner » (géré par la méthode d’action Create () de DinnersController) :
+Mettons à jour la section d’en-tête de notre site.master afin que l’en-tête de notre application soit "NerdDinner" au lieu de "My MVC Application". Mettons également à jour notre menu de navigation afin que le premier onglet soit « Trouver un dîner » (géré par la méthode d’action HomeController’s Index() ), et ajoutons un nouvel onglet appelé « Host a Dinner » (manipulé par la méthode d’action Créer du DinnersController)) :
 
 [!code-aspx[Main](re-use-ui-using-master-pages-and-partials/samples/sample7.aspx)]
 
-Lorsque nous enregistrons le fichier site. Master et actualisons notre navigateur, nous voyons que les modifications de l’en-tête s’affichent dans toutes les vues de notre application. Exemple :
+Lorsque nous lisons le fichier Site.master et actualisons notre navigateur, nous verrons nos modifications d’en-tête apparaître sur toutes les vues de notre application. Par exemple :
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image6.png)
 
-Et avec l’URL */dinners/Edit/[id]* :
+Et avec l’URL */Dinners/Edit/[id]:*
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image7.png)
 
-### <a name="next-step"></a>Étape suivante
+### <a name="next-step"></a>étape suivante
 
-Les sections partielles et les pages maîtres fournissent des options très flexibles qui vous permettent d’organiser correctement les vues. Vous constaterez qu’elles vous permettent d’éviter de dupliquer le contenu et le code de la vue, et de rendre vos modèles de vue plus faciles à lire et à gérer.
+Les partielles et les pages maîtresses offrent des options très flexibles qui vous permettent d’organiser proprement les vues. Vous constaterez qu’ils vous aideront à éviter de dupliquer le contenu/code de vue, et à rendre vos modèles de vue plus faciles à lire et à entretenir.
 
-Nous allons maintenant revoir le scénario de liste que nous avons créé précédemment et activer la prise en charge de la pagination évolutive.
+Revoyons maintenant le scénario d’inscription que nous avons construit plus tôt et permettons un support de mise à l’emploi évolutif.
 
 > [!div class="step-by-step"]
-> [Précédent](use-viewdata-and-implement-viewmodel-classes.md)
-> [Suivant](implement-efficient-data-paging.md)
+> [Suivant précédent](use-viewdata-and-implement-viewmodel-classes.md)
+> [Next](implement-efficient-data-paging.md)

@@ -1,28 +1,28 @@
 ---
 uid: web-forms/videos/sql-2005/understanding-database-tables-and-records
-title: Comprendre les tables et les enregistrements de base de données | Microsoft Docs
-author: microsoft
-description: SQL Server débutants découvrira les tables et les définitions des types de données, des propriétés, des clés, etc. dans cette seconde vidéo. Découvrez comment les lignes de table, les colonnes, un...
+title: Comprendre les tableaux et les dossiers de base de données Microsoft Docs
+author: rick-anderson
+description: Les débutants de SQL Server en apprendront davantage sur les tableaux et les définitions des types de données, des propriétés, des clés, etc. dans cette deuxième vidéo. Découvrez comment les rangées de table, les colonnes,...
 ms.author: riande
 ms.date: 03/29/2006
 ms.assetid: 9ebe8ebc-eae6-41c1-83a6-38410b610331
 msc.legacyurl: /web-forms/videos/sql-2005/understanding-database-tables-and-records
 msc.type: video
-ms.openlocfilehash: f88c1725b990ba67cf4b9d3356f3aaa49459be01
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: 012eea9991c51c0e9047f9b8adf18fab014bab9d
+ms.sourcegitcommit: 022f79dbc1350e0c6ffaa1e7e7c6e850cdabf9af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78547949"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81543234"
 ---
 # <a name="understanding-database-tables-and-records"></a>Fonctionnement des tables et des enregistrements de base de données
 
 par [Microsoft](https://github.com/microsoft)
 
-SQL Server débutants découvrira les tables et les définitions des types de données, des propriétés, des clés, etc. dans cette seconde vidéo. Découvrez comment les lignes, les colonnes et les champs de table interfèrent et si les colonnes peuvent être vides.
+Les débutants de SQL Server en apprendront davantage sur les tableaux et les définitions des types de données, des propriétés, des clés, etc. dans cette deuxième vidéo. Découvrez comment les rangées de table, les colonnes et les champs interagissent et si les colonnes peuvent être vides.
 
-[&#9654;Regarder la vidéo (24 minutes)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/understanding-database-tables-and-records)
+[&#9654; Regarder la vidéo (24 minutes)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/understanding-database-tables-and-records)
 
 > [!div class="step-by-step"]
-> [Précédent](what-is-a-database.md)
-> [Suivant](more-about-column-data-types-and-other-properties.md)
+> [Suivant précédent](what-is-a-database.md)
+> [Next](more-about-column-data-types-and-other-properties.md)

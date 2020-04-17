@@ -1,24 +1,24 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-customize-my-site-with-profiles-and-themes
-title: '[Comment faire :] Personnaliser mon site avec des profils et des thèmes ? | Microsoft Docs'
-author: microsoft
-description: Découvrez comment utiliser des profils pour collecter des informations de configuration par utilisateur et appliquer des thèmes pour étendre une apparence et une convivialité cohérentes dans le site Web.
+title: '[Comment puis-je:] Personnaliser mon site avec des profils et des thèmes ? | Microsoft Docs'
+author: rick-anderson
+description: Apprenez à utiliser les profils pour recueillir des informations de configuration par utilisateur et appliquez des thèmes pour étendre un look-and-feel cohérent sur l’ensemble du site Web.
 ms.author: riande
 ms.date: 01/06/2006
 ms.assetid: b837358b-ed14-44cd-b9fa-54910dd3e8b9
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-customize-my-site-with-profiles-and-themes
 msc.type: video
-ms.openlocfilehash: 14ca6675bf8024e7dbc5f22497a4bc8ab236dd69
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: 66e84e08481a4f63006848080b3c8678251fe827
+ms.sourcegitcommit: 022f79dbc1350e0c6ffaa1e7e7c6e850cdabf9af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78572827"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81543546"
 ---
-# <a name="how-do-i-customize-my-site-with-profiles-and-themes"></a>[Comment faire :] Personnaliser mon site avec des profils et des thèmes ?
+# <a name="how-do-i-customize-my-site-with-profiles-and-themes"></a>[Comment puis-je:] Personnaliser mon site avec des profils et des thèmes ?
 
 par [Microsoft](https://github.com/microsoft)
 
-Découvrez comment utiliser des profils pour collecter des informations de configuration par utilisateur et appliquer des thèmes pour étendre une apparence et une convivialité cohérentes dans le site Web.
+Apprenez à utiliser les profils pour recueillir des informations de configuration par utilisateur et appliquez des thèmes pour étendre un look-and-feel cohérent sur l’ensemble du site Web.
 
-[&#9654;Regarder la vidéo (12 minutes)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-customize-my-site-with-profiles-and-themes)
+[&#9654; Regarder la vidéo (12 minutes)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-customize-my-site-with-profiles-and-themes)

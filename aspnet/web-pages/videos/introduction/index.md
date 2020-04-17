@@ -1,26 +1,26 @@
 ---
 uid: web-pages/videos/introduction/index
-title: Présentation des vidéos sur les pages Web | Microsoft Docs
+title: Introduction aux vidéos de pages Web (en anglais) Microsoft Docs
 author: rick-anderson
-description: Les vidéos que vous pouvez consulter pour en savoir plus sur les pages Web et WebMatrix.
+description: Quelles vidéos vous pouvez visionner pour connaître les bases des pages Web et WebMatrix.
 ms.author: riande
 ms.date: 05/18/2012
 ms.assetid: b8a43660-177f-4a00-bb51-be887364c607
 msc.legacyurl: /web-pages/videos/introduction
 msc.type: chapter
-ms.openlocfilehash: e4e9d63ddc701205d9f102e05fe47dd2c552bdf1
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: e1720cf4fc9cdbec216ae0043a14d7118a388d9b
+ms.sourcegitcommit: 022f79dbc1350e0c6ffaa1e7e7c6e850cdabf9af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78631690"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81542979"
 ---
-# <a name="introduction-to-web-pages-videos"></a>Présentation des vidéos sur les pages Web
+# <a name="introduction-to-web-pages-videos"></a>Introduction aux vidéos de pages Web
 
-> Les vidéos que vous pouvez consulter pour en savoir plus sur les pages Web et WebMatrix.
+> Quelles vidéos vous pouvez visionner pour connaître les bases des pages Web et WebMatrix.
 
 > [!NOTE] 
-> WebMatrix n’est plus recommandé en tant qu’environnement de développement intégré pour pages Web ASP.NET. Utilisez [Visual Studio](xref:aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio) ou [Visual Studio code](https://code.visualstudio.com/).
+> WebMatrix n’est plus recommandé comme environnement de développement intégré pour ASP.NET pages Web. Utilisez [Visual Studio](xref:web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio) ou Visual Studio [Code](https://code.visualstudio.com/).
 
 - [Introduction à ASP.NET Web Pages (5 minutes)](5-minute-introduction-to-aspnet-web-pages.md)
 - [Installer et utiliser l’outil Microsoft WebMatrix](install-and-use-the-microsoft-webmatrix-tool.md)

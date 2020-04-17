@@ -1,19 +1,19 @@
 ---
 uid: mvc/overview/older-versions-1/views/creating-custom-html-helpers-cs
 title: Création d’aides HTML personnalisées (C) Microsoft Docs
-author: microsoft
+author: rick-anderson
 description: Le but de ce tutoriel est de démontrer comment vous pouvez créer des aides HTML personnalisées que vous pouvez utiliser dans vos vues MVC. En profitant de HTML Helper...
 ms.author: riande
 ms.date: 10/07/2008
 ms.assetid: e454c67d-a86e-4119-a858-eb04bbec2dff
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-custom-html-helpers-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7a2e5a5b42aa5bf267a42fef2fcad7022001ce6f
-ms.sourcegitcommit: ce28244209db8615bc9bdd576a2e2c88174d318d
+ms.openlocfilehash: 82e4118fd404051b891489b62d531169e83f450d
+ms.sourcegitcommit: 022f79dbc1350e0c6ffaa1e7e7c6e850cdabf9af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80675327"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81542558"
 ---
 # <a name="creating-custom-html-helpers-c"></a>Création de helpers HTML personnalisés (C#)
 

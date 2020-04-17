@@ -1,340 +1,340 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-cs
-title: '#6 d’itération : utiliser le développement piloté parC#les tests () | Microsoft Docs'
-author: microsoft
-description: Dans cette sixième itération, nous ajoutons de nouvelles fonctionnalités à notre application en écrivant d’abord des tests unitaires et en écrivant du code sur les tests unitaires. Dans cette itération,...
+title: 'Itération #6 - Utiliser le développement axé sur les tests (C) Microsoft Docs'
+author: rick-anderson
+description: Dans cette sixième itération, nous ajoutons de nouvelles fonctionnalités à notre application en écrivant d’abord des tests unitaires et en écrivant du code contre les tests unitaires. Dans cette itération,...
 ms.author: riande
 ms.date: 02/20/2009
 ms.assetid: 013c3c26-7dc3-41d1-8064-f233c86008b5
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-cs
 msc.type: authoredcontent
-ms.openlocfilehash: aee0ff9d8d7f17e8a00dab12467bd3a3457fbe18
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: d0e8f30a075cc79c7410ffe1b8bf02da2bd44443
+ms.sourcegitcommit: 022f79dbc1350e0c6ffaa1e7e7c6e850cdabf9af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78601800"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81542324"
 ---
-# <a name="iteration-6--use-test-driven-development-c"></a>#6 d’itération : utiliser le développement piloté parC#les tests ()
+# <a name="iteration-6--use-test-driven-development-c"></a>Itération #6 : Utiliser le développement piloté par les tests (C#)
 
 par [Microsoft](https://github.com/microsoft)
 
-[Télécharger le code](iteration-6-use-test-driven-development-cs/_static/contactmanager_6_cs1.zip)
+[Code de téléchargement](iteration-6-use-test-driven-development-cs/_static/contactmanager_6_cs1.zip)
 
-> Dans cette sixième itération, nous ajoutons de nouvelles fonctionnalités à notre application en écrivant d’abord des tests unitaires et en écrivant du code sur les tests unitaires. Dans cette itération, nous ajoutons des groupes de contacts.
+> Dans cette sixième itération, nous ajoutons de nouvelles fonctionnalités à notre application en écrivant d’abord des tests unitaires et en écrivant du code contre les tests unitaires. Dans cette itération, nous ajoutons des groupes de contact.
 
-## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>Création d’une application MVC ASP.NET de gestionC#des contacts ()
+## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>Construire une application de gestion des contacts ASP.NET MVC (CMD)
 
-Dans cette série de didacticiels, nous créons une application de gestion de contacts entière du début à la fin. L’application Gestionnaire de contacts vous permet de stocker les informations de contact, les noms de téléphone et les adresses de messagerie, pour obtenir la liste des personnes.
+Dans cette série de tutoriels, nous construisons toute une application de gestion de contact du début à la fin. L’application Contact Manager vous permet de stocker les coordonnées - noms, numéros de téléphone et adresses e-mail - pour une liste de personnes.
 
-Nous générons l’application sur plusieurs itérations. À chaque itération, nous améliorons progressivement l’application. L’objectif de cette approche à plusieurs itérations est de vous permettre de comprendre la raison de chaque modification.
+Nous construisons l’application sur plusieurs itérations. À chaque itération, nous améliorons progressivement l’application. Le but de cette approche d’itération multiple est de vous permettre de comprendre la raison de chaque changement.
 
-- #1 d’itération : créez l’application. Dans la première itération, nous créons le gestionnaire de contacts de la manière la plus simple possible. Nous ajoutons la prise en charge des opérations de base de données de base : créer, lire, mettre à jour et supprimer (CRUD).
+- Itération #1 - Créer l’application. Dans la première itération, nous créons le Gestionnaire de Contact de la manière la plus simple possible. Nous ajoutons un support pour les opérations de base de base de base : Créer, lire, mettre à jour et supprimer (CRUD).
 
-- Itération #2 : rendez l’application agréable. Dans cette itération, nous améliorons l’apparence de l’application en modifiant la page maître par défaut de la vue MVC ASP.NET et la feuille de style en cascade.
+- Itération #2 - Rendre l’application belle. Dans cette itération, nous améliorons l’apparence de l’application en modifiant la page principale de vue par défaut ASP.NET MVC et la feuille de style en cascade.
 
-- Itération #3 : ajouter une validation de formulaire. Dans la troisième itération, nous ajoutons la validation de base du formulaire. Nous empêchons les utilisateurs de soumettre un formulaire sans remplir les champs de formulaire requis. Nous validons également les adresses de messagerie et les numéros de téléphone.
+- Itération #3 - Ajouter la validation du formulaire. Dans la troisième itération, nous ajoutons la validation de forme de base. Nous empêchons les gens de soumettre un formulaire sans remplir les champs de formulaire requis. Nous validons également les adresses e-mail et les numéros de téléphone.
 
-- Itération #4 : rendez l’application faiblement couplée. Dans cette quatrième itération, nous tirant parti de plusieurs modèles de conception de logiciels pour faciliter la gestion et la modification de l’application de gestionnaire de contacts. Par exemple, nous refactorisons notre application pour utiliser le modèle de référentiel et le modèle d’injection de dépendances.
+- Itération #4 - Rendre l’application lâchement couplée. Dans cette quatrième itération, nous profitons de plusieurs modèles de conception logicielle pour faciliter le maintien et la modification de l’application Contact Manager. Par exemple, nous refactorrons notre application pour utiliser le modèle de dépôt et le modèle d’injection de dépendance.
 
-- #5 d’itération-créer des tests unitaires. Dans la cinquième itération, nous rendons notre application plus facile à gérer et à modifier en ajoutant des tests unitaires. Nous imitons nos classes de modèle de données et créons des tests unitaires pour nos contrôleurs et la logique de validation.
+- Itération #5 - Créer des tests unitaires. Dans la cinquième itération, nous rendons notre application plus facile à maintenir et à modifier en ajoutant des tests unitaires. Nous nous moquons de nos classes de modèles de données et construisons des tests unitaires pour nos contrôleurs et la logique de validation.
 
-- Itération #6-Utilisez le développement piloté par les tests. Dans cette sixième itération, nous ajoutons de nouvelles fonctionnalités à notre application en écrivant d’abord des tests unitaires et en écrivant du code sur les tests unitaires. Dans cette itération, nous ajoutons des groupes de contacts.
+- Itération #6 - Utilisez le développement axé sur les tests. Dans cette sixième itération, nous ajoutons de nouvelles fonctionnalités à notre application en écrivant d’abord des tests unitaires et en écrivant du code contre les tests unitaires. Dans cette itération, nous ajoutons des groupes de contact.
 
-- #7 d’itération-ajoutez des fonctionnalités AJAX. Dans la septième itération, nous améliorons la réactivité et les performances de notre application en ajoutant la prise en charge d’Ajax.
+- Itération #7 - Ajouter la fonctionnalité Ajax. Dans la septième itération, nous améliorons la réactivité et la performance de notre application en ajoutant un soutien pour Ajax.
 
-## <a name="this-iteration"></a>Cette itération
+## <a name="this-iteration"></a>Cette Itération
 
-Dans l’itération précédente de l’application du gestionnaire de contacts, nous avons créé des tests unitaires pour fournir un filet de sécurité pour notre code. La motivation de la création des tests unitaires consistait à rendre notre code plus résilient pour la modification. Avec les tests unitaires en place, nous pouvons apporter toute modification à notre code et savoir immédiatement si nous avons cassé les fonctionnalités existantes.
+Lors de l’itération précédente de l’application Contact Manager, nous avons créé des tests unitaires pour fournir un filet de sécurité pour notre code. La motivation pour créer les tests unitaires était de rendre notre code plus résistant au changement. Avec des tests unitaires en place, nous pouvons heureusement apporter n’importe quelle modification à notre code et savoir immédiatement si nous avons cassé la fonctionnalité existante.
 
-Dans cette itération, nous utilisons des tests unitaires dans un but totalement différent. Dans cette itération, nous utilisons des tests unitaires dans le cadre de la philosophie de conception d’une application appelée *développement piloté par les tests*. Quand vous surveillez le développement piloté par les tests, vous écrivez d’abord des tests, puis vous écrivez du code sur les tests.
+Dans cette itération, nous utilisons des tests unitaires à des fins entièrement différentes. Dans cette itération, nous utilisons des tests unitaires dans le cadre d’une philosophie de conception d’applications appelée *développement piloté par les tests.* Lorsque vous pratiquez le développement axé sur les tests, vous écrivez d’abord des tests, puis écrivez du code contre les tests.
 
-Plus précisément, lors de la pratique du développement piloté par les tests, trois étapes sont nécessaires lors de la création du code (rouge/vert/refactorer) :
+Plus précisément, lorsque vous pratiquez le développement piloté par les tests, il y a trois étapes que vous remplissez lors de la création de code (Rouge/Vert/Refactor) :
 
-1. Écrire un test unitaire qui échoue (rouge)
-2. Écrire du code qui réussit le test unitaire (vert)
-3. Refactoriser votre code (refactorisation)
+1. Écrivez un test unitaire qui échoue (Rouge)
+2. Écrire du code qui passe le test unitaire (vert)
+3. Refactor votre code (Refactor)
 
-Tout d’abord, vous écrivez le test unitaire. Le test unitaire doit exprimer votre intention sur la façon dont vous vous attendez à ce que votre code se comporte. Lorsque vous créez pour la première fois le test unitaire, le test unitaire doit échouer. Le test doit échouer, car vous n’avez pas encore écrit de code d’application conforme au test.
+Tout d’abord, vous écrivez le test unitaire. Le test unitaire doit exprimer votre intention quant à la façon dont vous vous attendez à ce que votre code se comporte. Lorsque vous créez le test unitaire pour la première fois, le test unitaire doit échouer. Le test doit échouer parce que vous n’avez pas encore écrit de code d’application qui satisfait le test.
 
-Ensuite, vous écrivez juste suffisamment de code pour que le test unitaire réussisse. L’objectif est d’écrire le code dans le laziest, sloppiest et le plus rapide possible. Vous ne devez pas perdre du temps à réfléchir à l’architecture de votre application. Au lieu de cela, vous devez vous concentrer sur l’écriture de la quantité minimale de code nécessaire pour satisfaire l’intention exprimée par le test unitaire.
+Ensuite, vous écrivez juste assez de code pour que le test unitaire passe. Le but est d’écrire le code de la manière la plus paresseuse, la plus bâclée et la plus rapide possible. Vous ne devriez pas perdre de temps à penser à l’architecture de votre application. Au lieu de cela, vous devriez vous concentrer sur la rédaction de la quantité minimale de code nécessaire pour satisfaire l’intention exprimée par le test unitaire.
 
-Enfin, une fois que vous avez écrit suffisamment de code, vous pouvez revenir en arrière et prendre en compte l’architecture globale de votre application. Dans cette étape, vous réécrivez (refactorisez) votre code en tirant parti des modèles de conception de logiciels, tels que le modèle de référentiel, afin que votre code soit plus gérable. Vous pouvez intrépidité réécrire votre code dans cette étape, car votre code est couvert par les tests unitaires.
+Enfin, après avoir écrit suffisamment de code, vous pouvez prendre du recul et considérer l’architecture globale de votre application. Dans cette étape, vous réécrivez (refactor) votre code en profitant des modèles de conception logicielle - tels que le modèle de dépôt - de sorte que votre code est plus maintenable. Vous pouvez réécrire sans crainte votre code dans cette étape parce que votre code est couvert par des tests unitaires.
 
-Il y a de nombreux avantages qui résultent de la pratique du développement piloté par les tests. Tout d’abord, le développement piloté par les tests vous oblige à vous concentrer sur le code qui doit réellement être écrit. Étant donné que vous êtes constamment concentré sur l’écriture de suffisamment de code pour passer un test particulier, vous n’êtes pas en mesure de vous concentrer sur les mauvaises herbes et d’écrire des quantités importantes de code que vous n’utiliserez jamais.
+Il y a beaucoup d’avantages qui résultent de la pratique du développement axé sur les tests. Tout d’abord, le développement axé sur les tests vous oblige à vous concentrer sur le code qui doit réellement être écrit. Parce que vous êtes constamment concentré sur l’écriture juste assez de code pour passer un test particulier, vous êtes empêché d’errer dans les herbes et d’écrire des quantités massives de code que vous n’utiliserez jamais.
 
-Deuxièmement, une méthodologie de conception « test First » vous oblige à écrire du code du point de vue de l’utilisation de votre code. En d’autres termes, lors de la pratique du développement piloté par les tests, vous écrivez constamment vos tests du point de vue de l’utilisateur. Par conséquent, le développement piloté par les tests peut entraîner des API plus claires et plus compréhensibles.
+Deuxièmement, une méthodologie de conception « test d’abord » vous oblige à écrire du code du point de vue de la façon dont votre code sera utilisé. En d’autres termes, lorsque vous pratiquez le développement axé sur les tests, vous écrivez constamment vos tests du point de vue de l’utilisateur. Par conséquent, le développement axé sur les tests peut entraîner des API plus propres et plus compréhensibles.
 
-Enfin, le développement piloté par les tests vous oblige à écrire des tests unitaires dans le cadre du processus normal d’écriture d’une application. En tant qu’approche de l’échéance du projet, le test est généralement la première chose qui sort de la fenêtre. En revanche, lors de la pratique du développement piloté par les tests, il est plus probable que vous soyez vertueux sur l’écriture de tests unitaires, car le développement piloté par les tests permet aux tests unitaires de centraliser le processus de création d’une application.
+Enfin, le développement piloté par les tests vous oblige à écrire des tests unitaires dans le cadre du processus normal d’écriture d’une demande. À l’approche de la date limite du projet, le test est généralement la première chose qui sort par la fenêtre. Lors de la pratique du développement axé sur les tests, d’autre part, vous êtes plus susceptible d’être vertueux sur la rédaction de tests unitaires parce que le développement piloté par test rend les tests unitaires au cœur du processus de construction d’une application.
 
 > [!NOTE] 
 > 
-> Pour en savoir plus sur le développement piloté par les tests, je vous recommande de lire le livre plumes Michael qui **fonctionne efficacement avec du code hérité**.
+> Pour en savoir plus sur le développement axé sur les tests, je vous recommande de lire Michael Feathers livre **Working Effectively with Legacy Code**.
 
-Dans cette itération, nous ajoutons une nouvelle fonctionnalité à notre application de gestion des contacts. Nous ajoutons la prise en charge des groupes de contacts. Vous pouvez utiliser des groupes de contacts pour organiser vos contacts en catégories telles que les groupes professionnels et amis.
+Dans cette itération, nous ajoutons une nouvelle fonctionnalité à notre application Contact Manager. Nous ajoutons un soutien aux groupes de contact. Vous pouvez utiliser les groupes de contact pour organiser vos contacts en catégories telles que les groupes Business et Friend.
 
-Nous allons ajouter cette nouvelle fonctionnalité à notre application en suivant un processus de développement piloté par les tests. Nous allons d’abord écrire nos tests unitaires et nous allons écrire tout notre code dans le cadre de ces tests.
+Nous ajouterons cette nouvelle fonctionnalité à notre application en suivant un processus de développement piloté par les tests. Nous écrirons d’abord nos tests unitaires et nous écrirons tout notre code contre ces tests.
 
 ## <a name="what-gets-tested"></a>Ce qui est testé
 
-Comme nous l’avons vu dans l’itération précédente, vous n’écrivez généralement pas de tests unitaires pour la logique d’accès aux données ou la logique de la vue. Vous ne pouvez pas écrire de tests unitaires pour la logique d’accès aux données, car l’accès à une base de données est une opération relativement lente. Vous ne pouvez pas écrire de tests unitaires pour la logique d’affichage, car l’accès à une vue nécessite la mise en place d’un serveur Web qui est une opération relativement lente. Vous ne devez pas écrire de test unitaire, sauf si le test peut être exécuté à nouveau très rapidement.
+Comme nous l’avons mentionné dans l’itération précédente, vous n’écrivez généralement pas de tests unitaires pour la logique d’accès aux données ou de voir la logique. Vous n’écrivez pas de tests unitaires pour la logique d’accès aux données parce que l’accès à une base de données est une opération relativement lente. Vous n’écrivez pas de tests unitaires pour la logique de vue parce que l’accès à une vue nécessite de faire tourner vers le haut d’un serveur web qui est une opération relativement lente. Vous ne devriez pas écrire un test unitaire à moins que le test puisse être exécuté encore et encore très rapidement
 
-Étant donné que le développement piloté par les tests est piloté par des tests unitaires, nous nous concentrons initialement sur l’écriture du contrôleur et de la logique métier. Nous Évitez de toucher la base de données ou les vues. Nous n’allons pas modifier la base de données ou créer nos vues jusqu’à la fin de ce didacticiel. Nous commençons par ce qui peut être testé.
+Parce que le développement axé sur les tests est conduit par des tests unitaires, nous nous concentrons d’abord sur la rédaction de contrôleur et la logique d’affaires. Nous évitons de toucher la base de données ou les vues. Nous ne modifierons pas la base de données ou ne créerons pas nos vues avant la toute fin de ce tutoriel. Nous commençons par ce qui peut être testé.
 
-## <a name="creating-user-stories"></a>Créer des récits utilisateur
+## <a name="creating-user-stories"></a>Création d’histoires d’utilisateurs
 
-Lors du développement piloté par les tests, vous commencez toujours par écrire un test. Cela soulève immédiatement la question : Comment décider du test à écrire en premier ? Pour répondre à cette question, vous devez écrire un ensemble de [**récits utilisateur**](http://en.wikipedia.org/wiki/User_stories).
+Lorsque vous pratiquez le développement axé sur les tests, vous commencez toujours par écrire un test. Cela soulève immédiatement la question: Comment décidez-vous quel test écrire en premier? Pour répondre à cette question, vous devriez écrire un ensemble [**d’histoires d’utilisateurs**](http://en.wikipedia.org/wiki/User_stories).
 
-Un récit utilisateur est une description très brève (généralement une phrase) d’une spécification logicielle. Il doit s’agir d’une description non technique d’une exigence écrite du point de vue de l’utilisateur.
+Une histoire d’utilisateur est une description très brève (généralement une phrase) d’une exigence logicielle. Il devrait s’agir d’une description non technique d’une exigence écrite du point de vue de l’utilisateur.
 
-Ici, l’ensemble des récits utilisateur qui décrivent les fonctionnalités requises par la nouvelle fonctionnalité de groupe de contacts :
+Voici l’ensemble d’histoires d’utilisateurs qui décrivent les fonctionnalités requises par la nouvelle fonctionnalité du Groupe de contact :
 
-1. L’utilisateur peut afficher la liste des groupes de contacts.
-2. L’utilisateur peut créer un groupe de contacts.
-3. L’utilisateur peut supprimer un groupe de contacts existant.
-4. L’utilisateur peut sélectionner un groupe de contacts lors de la création d’un contact.
-5. L’utilisateur peut sélectionner un groupe de contacts lors de la modification d’un contact existant.
-6. Une liste de groupes de contacts s’affiche dans la vue index.
-7. Lorsqu’un utilisateur clique sur un groupe de contacts, une liste de contacts correspondants s’affiche.
+1. L’utilisateur peut consulter une liste de groupes de contacts.
+2. L’utilisateur peut créer un nouveau groupe de contact.
+3. L’utilisateur peut supprimer un groupe de contact existant.
+4. L’utilisateur peut sélectionner un groupe de contact lors de la création d’un nouveau contact.
+5. L’utilisateur peut sélectionner un groupe de contact lors de l’édition d’un contact existant.
+6. Une liste des groupes de contact est affichée dans la vue de l’index.
+7. Lorsqu’un utilisateur clique sur un groupe de contact, une liste de contacts correspondants s’affiche.
 
-Notez que cette liste de récits utilisateur est entièrement compréhensible par un client. Il n’y a aucune mention des détails de l’implémentation technique.
+Notez que cette liste d’histoires d’utilisateurs est tout à fait compréhensible par un client. Il n’y a aucune mention des détails de la mise en œuvre technique.
 
-Pendant le processus de création de votre application, l’ensemble des récits utilisateur peut devenir plus affiné. Vous pouvez décomposer un récit utilisateur en plusieurs récits (exigences). Par exemple, vous pouvez décider que la création d’un nouveau groupe de contacts doit impliquer la validation. L’envoi d’un groupe de contacts sans nom doit retourner une erreur de validation.
+Pendant la construction de votre application, l’ensemble des histoires d’utilisateurs peut devenir plus raffiné. Vous pouvez décomposer une histoire d’utilisateur en plusieurs histoires (exigences). Par exemple, vous pouvez décider que la création d’un nouveau groupe de contact devrait impliquer la validation. Soumettre un groupe de contact sans nom doit renvoyer une erreur de validation.
 
-Une fois que vous avez créé une liste de récits utilisateur, vous êtes prêt à écrire votre premier test unitaire. Nous allons commencer par créer un test unitaire pour afficher la liste des groupes de contacts.
+Après avoir créé une liste d’histoires d’utilisateurs, vous êtes prêt à écrire votre premier test unitaire. Nous commencerons par créer un test unitaire pour consulter la liste des groupes de contact.
 
-## <a name="listing-contact-groups"></a>Liste des groupes de contacts
+## <a name="listing-contact-groups"></a>Liste des groupes de contact
 
-Notre premier récit utilisateur est qu’un utilisateur doit être en mesure d’afficher la liste des groupes de contacts. Nous devons exprimer cet article avec un test.
+Notre première histoire d’utilisateur est qu’un utilisateur doit être en mesure de voir une liste de groupes de contacts. Nous devons exprimer cette histoire avec un test.
 
-Créez un nouveau test unitaire en cliquant avec le bouton droit sur le dossier Controllers dans le projet ContactManager. tests, en sélectionnant **Ajouter, nouveau test**et en sélectionnant le modèle de **test unitaire** (voir la figure 1). Nommez le nouveau test unitaire GroupControllerTest.cs, puis cliquez sur le bouton **OK** .
+Créez un nouveau test unitaire en cliquant à droite sur le dossier Controllers dans le projet ContactManager.Tests, en sélectionnant **Add, New Test**et en sélectionnant le modèle **de test unitaire** (voir la figure 1). Nommez le nouveau test unitaire GroupControllerTest.cs et cliquez sur le bouton **OK.**
 
-[![de l’ajout du test unitaire GroupControllerTest](iteration-6-use-test-driven-development-cs/_static/image1.jpg)](iteration-6-use-test-driven-development-cs/_static/image1.png)
+[![Ajout du test unitaire GroupControllerTest](iteration-6-use-test-driven-development-cs/_static/image1.jpg)](iteration-6-use-test-driven-development-cs/_static/image1.png)
 
-**Figure 01**: ajout du test unitaire GroupControllerTest ([cliquez pour afficher l’image en taille réelle](iteration-6-use-test-driven-development-cs/_static/image2.png))
+**Figure 01**: Ajout du test unitaire GroupControllerTest[(Cliquez pour voir l’image grandeur nature)](iteration-6-use-test-driven-development-cs/_static/image2.png)
 
-Notre premier test unitaire est contenu dans la liste 1. Ce test vérifie que la méthode index () du contrôleur de groupe retourne un ensemble de groupes. Le test vérifie qu’une collection de groupes est retournée dans les données d’affichage.
+Notre premier test unitaire est contenu dans la liste 1. Ce test vérifie que la méthode Index() du contrôleur de groupe renvoie un ensemble de groupes. Le test vérifie qu’une collection de groupes est retournée en vue des données.
 
-**Liste 1-Controllers\GroupControllerTest.cs**
+**Liste 1 - Controllers-GroupControllerTest.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample1.cs)]
 
-Quand vous tapez le code dans la liste 1 dans Visual Studio pour la première fois, vous obtenez un grand nombre de lignes ondulées rouges. Nous n’avons pas créé les classes GroupController ou Group.
+Lorsque vous tapez le code dans la liste 1 dans Visual Studio, vous obtiendrez beaucoup de lignes rouges squiggly. Nous n’avons pas créé les classes GroupController ou Group.
 
-À ce stade, nous pouvons même créer notre application afin de pouvoir exécuter notre premier test unitaire. C’est bon. Cela compte comme un test ayant échoué. Par conséquent, nous avons maintenant l’autorisation de commencer l’écriture du code de l’application. Nous devons écrire suffisamment de code pour exécuter notre test.
+À ce stade, nous ne pouvons même pas construire notre application afin que nous puissions ne pas exécuter notre premier test unitaire. C’est bon. Cela compte comme un test défaillant. Par conséquent, nous avons maintenant la permission de commencer à écrire le code d’application. Nous devons écrire suffisamment de code pour exécuter notre test.
 
-La classe de contrôleur de groupe dans Listing 2 contient le minimum de code requis pour passer le test unitaire. L’action index () renvoie une liste de groupes codée statiquement (la classe de groupe est définie dans la liste 3).
+La classe de contrôleur de groupe dans la liste 2 contient le strict minimum de code requis pour réussir le test unitaire. L’action Index() renvoie une liste statique de groupes codés (la classe du Groupe est définie dans la liste 3).
 
-**Liste 2-Controllers\GroupController.cs**
+**Liste 2 - Controllers-GroupController.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample2.cs)]
 
-**Liste 3-Models\Group.cs**
+**Liste 3 - Models-Group.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample3.cs)]
 
-Après avoir ajouté les classes GroupController et Group à notre projet, notre premier test unitaire se termine correctement (voir la figure 2). Nous avons effectué le travail minimal requis pour réussir le test. Il est temps de célébrer.
+Après avoir ajouté les classes GroupController et Group à notre projet, notre premier test unitaire se termine avec succès (voir la figure 2). Nous avons fait le travail minimum nécessaire pour passer le test. Il est temps de célébrer.
 
-[![réussie !](iteration-6-use-test-driven-development-cs/_static/image2.jpg)](iteration-6-use-test-driven-development-cs/_static/image3.png)
+[![Succès!](iteration-6-use-test-driven-development-cs/_static/image2.jpg)](iteration-6-use-test-driven-development-cs/_static/image3.png)
 
-**Figure 02**: réussite ! ([Cliquez pour afficher l’image en taille réelle](iteration-6-use-test-driven-development-cs/_static/image4.png))
+**Figure 02**: Succès! ([Cliquez pour voir l’image pleine grandeur](iteration-6-use-test-driven-development-cs/_static/image4.png))
 
-## <a name="creating-contact-groups"></a>Création de groupes de contacts
+## <a name="creating-contact-groups"></a>Création de groupes de contact
 
-Nous pouvons maintenant passer au deuxième récit utilisateur. Nous devons être en mesure de créer des groupes de contacts. Nous devons exprimer cet objectif à l’aide d’un test.
+Maintenant, nous pouvons passer à la deuxième histoire d’utilisateur. Nous devons être en mesure de créer de nouveaux groupes de contact. Nous devons exprimer cette intention par un test.
 
-Le test de la liste 4 vérifie que l’appel de la méthode Create () avec un nouveau groupe ajoute le groupe à la liste des groupes retournés par la méthode index (). En d’autres termes, si je crée un nouveau groupe, je dois pouvoir récupérer le nouveau groupe à partir de la liste des groupes renvoyés par la méthode index ().
+Le test de La Liste 4 vérifie que l’appel de la méthode Créer () avec un nouveau Groupe ajoute le Groupe à la liste des groupes retournés par la méthode Index(). En d’autres termes, si je crée un nouveau groupe, je devrais être en mesure de récupérer le nouveau groupe de la liste des groupes retournés par la méthode Index() .
 
-**Liste 4-Controllers\GroupControllerTest.cs**
+**Liste 4 - Controllers-GroupControllerTest.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample4.cs)]
 
-Le test de la liste 4 appelle la méthode Group Controller Create () avec un nouveau groupe de contacts. Ensuite, le test vérifie que l’appel de la méthode index du contrôleur de groupe () renvoie le nouveau groupe dans afficher les données.
+Le test dans La liste 4 appelle la méthode De création de contrôleur de groupe avec un nouveau groupe de contact. Ensuite, le test vérifie que l’appel de la méthode Group Controller Index() renvoie le nouveau Groupe en vue des données.
 
-Le contrôleur de groupe modifié dans la liste 5 contient le minimum de modifications nécessaires pour réussir le nouveau test.
+Le contrôleur de groupe modifié dans la liste 5 contient le strict minimum de modifications requises pour réussir le nouveau test.
 
-**Liste 5-Controllers\GroupController.cs**
+**Liste 5 - Controllers-GroupController.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample5.cs)]
 
-## <a name="the-group-controller-in-listing-5-has-a-new-create-action-this-action-adds-a-group-to-a-collection-of-groups-notice-that-the-index-action-has-been-modified-to-return-the-contents-of-the-collection-of-groups"></a>Le contrôleur de groupe dans la liste 5 contient une nouvelle action créer (). Cette action ajoute un groupe à une collection de groupes. Notez que l’action index () a été modifiée pour retourner le contenu de la collection de groupes.
+## <a name="the-group-controller-in-listing-5-has-a-new-create-action-this-action-adds-a-group-to-a-collection-of-groups-notice-that-the-index-action-has-been-modified-to-return-the-contents-of-the-collection-of-groups"></a>Le contrôleur de groupe dans La liste 5 a une nouvelle action Create(). Cette action ajoute un Groupe à une collection de groupes. Notez que l’action Index() a été modifiée pour retourner le contenu de la collection des groupes.
 
-Une fois encore, nous avons effectué la quantité minimale de travail nécessaire pour réussir le test unitaire. Après avoir apporté ces modifications au contrôleur de groupe, tous nos tests unitaires réussissent.
+Encore une fois, nous avons effectué le minimum de travail nécessaire pour réussir le test unitaire. Après avoir apporté ces modifications au contrôleur de groupe, tous nos tests unitaires passent.
 
-## <a name="adding-validation"></a>Ajout de la validation
+## <a name="adding-validation"></a>Ajouter une validation
 
-Cette exigence n’a pas été indiquée explicitement dans le récit utilisateur. Toutefois, il est raisonnable d’exiger qu’un groupe ait un nom. Dans le cas contraire, l’Organisation des contacts en groupes n’est pas très utile.
+Cette exigence n’a pas été énoncée explicitement dans l’histoire de l’utilisateur. Toutefois, il est raisonnable d’exiger qu’un Groupe ait un nom. Sinon, l’organisation de contacts en groupes ne serait pas très utile.
 
-La liste 6 contient un nouveau test qui exprime cet objectif. Ce test vérifie que la tentative de création d’un groupe sans fournir de nom génère un message d’erreur de validation dans l’état du modèle.
+Liste 6 contient un nouveau test qui exprime cette intention. Ce test vérifie que tenter de créer un groupe sans fournir de nom aboutit à un message d’erreur de validation dans l’état du modèle.
 
-**Liste 6-Controllers\GroupControllerTest.cs**
+**Liste 6 - Controllers-GroupControllerTest.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample6.cs)]
 
-Pour satisfaire ce test, nous devons ajouter une propriété Name à notre classe Group (voir la liste 7). En outre, nous devons ajouter un peu de logique de validation à notre action de création () du contrôleur de groupe (voir le Listing 8).
+Afin de satisfaire ce test, nous devons ajouter une propriété Nom à notre classe de groupe (voir Liste 7). En outre, nous devons ajouter un tout petit peu de logique de validation à notre contrôleur de groupe s Créer () action (voir Liste 8).
 
-**Liste 7-Models\Group.cs**
+**Liste 7 - Models-Group.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample7.cs)]
 
-**Liste 8-Controllers\GroupController.cs**
+**Liste 8 - Controllers-GroupController.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample8.cs)]
 
-Notez que l’action de création de contrôleur de groupe () contient maintenant la logique de validation et la logique de base de données. Actuellement, la base de données utilisée par le contrôleur de groupe ne se compose que d’une collection en mémoire.
+Notez que l’action De création () du contrôleur de groupe contient désormais à la fois la validation et la logique de base de données. Actuellement, la base de données utilisée par le contrôleur de groupe se compose de rien de plus qu’une collection en mémoire.
 
-## <a name="time-to-refactor"></a>Durée de refactorisation
+## <a name="time-to-refactor"></a>Temps de Refactor
 
-La troisième étape de la couleur rouge/vert/refactorisation est la partie refactorisation. À ce stade, nous devons revenir à notre code et réfléchir à la façon dont nous pouvons Refactoriser notre application pour améliorer sa conception. L’étape de refactorisation est l’étape à laquelle nous réfléchissons à la meilleure façon d’implémenter les principes et les modèles de conception de logiciels.
+La troisième étape dans Red/Green/Refactor est la partie Refactor. À ce stade, nous devons prendre du recul par chemin de notre code et réfléchir à la façon dont nous pouvons refactorer notre application pour améliorer sa conception. L’étape Refactor est l’étape à laquelle nous pensons dur sur la meilleure façon de mettre en œuvre des principes et des modèles de conception de logiciels.
 
-Nous sommes libres de modifier notre code de quelque façon que ce soit pour améliorer la conception du code. Nous disposons d’un filet de sécurité pour les tests unitaires qui nous empêchent de rompre les fonctionnalités existantes.
+Nous sommes libres de modifier notre code de la manière que nous choisissons d’améliorer la conception du code. Nous disposons d’un filet de sécurité des tests unitaires qui nous empêchent de briser les fonctionnalités existantes.
 
-Pour le moment, notre contrôleur de groupe est un bon du point de vue de la bonne conception de logiciels. Le contrôleur de groupe contient un code de validation et d’accès aux données toile. Pour éviter de violer le principe de responsabilité unique, nous devons séparer ces préoccupations en différentes classes.
+À l’heure actuelle, notre contrôleur de groupe est un gâchis du point de vue d’une bonne conception de logiciels. Le contrôleur du groupe contient un désordre enchevêtré de validation et de code d’accès aux données. Pour éviter de violer le principe de responsabilité unique, nous devons séparer ces préoccupations en différentes classes.
 
-Notre classe de contrôleur de groupe refactorisé est contenue dans la liste 9. Le contrôleur a été modifié pour utiliser la couche de service ContactManager. Il s’agit de la même couche de service que celle utilisée avec le contrôleur de contact.
+Notre classe de contrôleur de groupe refactorisé est contenue dans la liste 9. Le contrôleur a été modifié pour utiliser la couche de service ContactManager. Il s’agit de la même couche de service que nous utilisons avec le contrôleur de contact.
 
-La liste 10 contient les nouvelles méthodes ajoutées à la couche de service ContactManager pour prendre en charge la validation, la liste et la création de groupes. L’interface IContactManagerService a été mise à jour pour inclure les nouvelles méthodes.
+La liste 10 contient les nouvelles méthodes ajoutées à la couche de service ContactManager pour soutenir la validation, la liste et la création de groupes. L’interface IContactManagerService a été mise à jour pour inclure les nouvelles méthodes.
 
-La liste 11 contient une nouvelle classe FakeContactManagerRepository qui implémente l’interface IContactManagerRepository. Contrairement à la classe EntityContactManagerRepository qui implémente également l’interface IContactManagerRepository, notre nouvelle classe FakeContactManagerRepository ne communique pas avec la base de données. La classe FakeContactManagerRepository utilise une collection en mémoire comme un proxy pour la base de données. Nous allons utiliser cette classe dans nos tests unitaires en tant que couche de référentiel factice.
+La liste 11 contient une nouvelle classe FakeContactManagerRepository qui met en œuvre l’interface IContactManagerRepository. Contrairement à la classe EntityContactManagerRepository qui met également en œuvre l’interface IContactManagerRepository, notre nouvelle classe FakeContactManagerRepository ne communique pas avec la base de données. La classe FakeContactManagerRepository utilise une collection de mémoire comme proxy pour la base de données. Nous utiliserons cette classe dans nos tests unitaires comme une fausse couche de dépôt.
 
-**Liste 9-Controllers\GroupController.cs**
+**Liste 9 - Controllers-GroupController.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample9.cs)]
 
-**Liste 10-Controllers\ContactManagerService.cs**
+**Liste 10 - Controllers-ContactManagerService.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample10.cs)]
 
-**Liste 11-Controllers\FakeContactManagerRepository.cs**
+**Liste 11 - Controllers-FakeContactManagerRepository.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample11.cs)]
 
-La modification de l’interface IContactManagerRepository nécessite l’utilisation de pour implémenter les méthodes CreateGroup () et ListGroups () dans la classe EntityContactManagerRepository. Le laziest et le moyen le plus rapide d’y parvenir consiste à ajouter des méthodes stub qui ressemblent à ceci :   
+La modification de l’interface IContactManagerRepository nécessite une utilisation pour implémenter les méthodes CreateGroup() et ListGroups() dans la classe EntityContactManagerRepository. La façon la plus paresseuse et la plus rapide de le faire est d’ajouter des méthodes de talon qui ressemblent à ceci:   
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample12.cs)]
 
-Enfin, ces modifications apportées à la conception de notre application nous obligent à apporter des modifications à nos tests unitaires. Nous devons maintenant utiliser le FakeContactManagerRepository lors de l’exécution des tests unitaires. La classe GroupControllerTest mise à jour est contenue dans la liste 12.
+Enfin, ces changements à la conception de notre application nous obligent à apporter quelques modifications à nos tests unitaires. Nous devons maintenant utiliser le FakeContactManagerRepository lors de l’exécution des tests unitaires. La classe GroupControllerTest mise à jour est contenue dans la liste 12.
 
-**Liste 12-Controllers\GroupControllerTest.cs**
+**Liste 12 - Controllers-GroupControllerTest.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample13.cs)]
 
-Une fois toutes ces modifications apportées, une fois encore, tous nos tests unitaires réussissent. Nous avons terminé la totalité du cycle du rouge/vert/refactor. Nous avons implémenté les deux premiers récits utilisateur. Nous avons maintenant pris en charge des tests unitaires pour les spécifications exprimées dans les récits utilisateur. L’implémentation du reste des récits utilisateur implique la répétition du même cycle de rouge/vert/refactor.
+Après avoir fait tous ces changements, une fois de plus, tous nos tests unitaires passent. Nous avons terminé tout le cycle de Red/Green/Refactor. Nous avons mis en œuvre les deux premières histoires d’utilisateurs. Nous avons maintenant des tests unitaires à l’appui pour les exigences exprimées dans les histoires d’utilisateurs. La mise en œuvre du reste des histoires d’utilisateurs implique de répéter le même cycle de Red/Green/Refactor.
 
 ## <a name="modifying-our-database"></a>Modification de notre base de données
 
-Malheureusement, bien que nous ayons satisfait à toutes les exigences exprimées par nos tests unitaires, notre travail n’est pas effectué. Nous devons toujours modifier notre base de données.
+Malheureusement, même si nous avons satisfait à toutes les exigences exprimées par nos tests unitaires, notre travail n’est pas terminé. Nous devons encore modifier notre base de données.
 
-Nous devons créer une nouvelle table de base de données de groupe. Procédez comme suit :
+Nous devons créer une nouvelle table de base de données du Groupe. Procédez comme suit :
 
-1. Dans la fenêtre Explorateur de serveurs, cliquez avec le bouton droit sur le dossier tables et sélectionnez l’option de menu **Ajouter une nouvelle table**.
-2. Entrez les deux colonnes décrites ci-dessous dans la Concepteur de tables.
-3. Marquez la colonne ID comme une clé primaire et une colonne d’identité.
-4. Enregistrez la nouvelle table avec les groupes de noms en cliquant sur l’icône de la disquette.
+1. Dans la fenêtre Server Explorer, cliquez à droite sur le dossier Tables et sélectionnez l’option menu **Ajouter une nouvelle table**.
+2. Entrez les deux colonnes décrites ci-dessous dans le concepteur de table.
+3. Marquez la colonne Id comme clé principale et colonne d’identité.
+4. Enregistrer la nouvelle table avec le nom Groupes en cliquant sur l’icône de la disquette.
 
 <a id="0.11_table01"></a>
 
-| **Nom de la colonne** | **Type de données** | **Null autorisé** |
+| **Nom de colonne** | **Type de données** | **Null autorisé** |
 | --- | --- | --- |
 | Id | int | False |
 | Nom | nvarchar(50) | False |
 
-Ensuite, nous devons supprimer toutes les données de la table contacts (dans le cas contraire, nous ne pourrons pas créer une relation entre les tables contacts et groupes). Procédez comme suit :
+Ensuite, nous devons supprimer toutes les données de la table Contacts (sinon, nous ne serons pas en mesure de créer une relation entre les tableaux Contacts et Groupes). Procédez comme suit :
 
-1. Cliquez avec le bouton droit sur la table contacts et sélectionnez l’option de menu **afficher les données**de la table.
-2. Supprimez toutes les lignes.
+1. Cliquez à droite sur la table Contacts et sélectionnez l’option menu **Afficher les données de table**.
+2. Supprimer toutes les lignes.
 
-Ensuite, nous devons définir une relation entre la table de base de données de groupes et la table de base de données de contacts existante. Procédez comme suit :
+Ensuite, nous devons définir une relation entre le tableau de base de données des groupes et le tableau de base de données Contacts existant. Procédez comme suit :
 
-1. Double-cliquez sur la table contacts dans la fenêtre Explorateur de serveurs pour ouvrir le Concepteur de tables.
-2. Ajoutez une nouvelle colonne d’entiers à la table contacts nommée GroupId.
-3. Cliquez sur le bouton relation pour ouvrir la boîte de dialogue relations de clé étrangère (voir figure 3).
+1. Double-cliquez sur la table Contacts dans la fenêtre Server Explorer pour ouvrir le concepteur de table.
+2. Ajoutez une nouvelle colonne d’intégrer à la table Contacts nommée GroupId.
+3. Cliquez sur le bouton Relation pour ouvrir le dialogue sur les relations avec les relations avec les clés étrangères (voir la figure 3).
 4. Cliquez sur le bouton Ajouter.
-5. Cliquez sur le bouton de sélection qui s’affiche en regard du bouton spécification de la table et des colonnes.
-6. Dans la boîte de dialogue tables et colonnes, sélectionnez groupes comme table de clé primaire et ID comme colonne de clé primaire. Sélectionnez contacts comme table de clé étrangère et GroupId comme colonne de clé étrangère (voir figure 4). Cliquez sur le bouton OK.
-7. Sous **spécification d’insertion et de mise à jour**, sélectionnez la règle de valeur **cascade** pour **suppression**.
-8. Cliquez sur le bouton Fermer pour fermer la boîte de dialogue relations de clé étrangère.
-9. Cliquez sur le bouton enregistrer pour enregistrer les modifications apportées à la table contacts.
+5. Cliquez sur le bouton ellipsis qui apparaît à côté du bouton De spécification de la table et des colonnes.
+6. Dans le dialogue Tableaux et Colonnes, sélectionnez les groupes comme tableau principal et Id comme colonne principale. Sélectionnez Contacts comme tableau clé étranger et GroupId comme colonne clé étrangère (voir la figure 4). Cliquez sur le bouton OK.
+7. Dans le cadre **de la spécification INSERT et UPDATE**, sélectionnez la valeur **Cascade** pour supprimer **la règle**.
+8. Cliquez sur le bouton Fermer pour fermer le dialogue Foreign Key Relationships.
+9. Cliquez sur le bouton Enregistrer pour enregistrer les modifications apportées à la table Contacts.
 
-[![de la création d’une relation de table de base de données](iteration-6-use-test-driven-development-cs/_static/image3.jpg)](iteration-6-use-test-driven-development-cs/_static/image5.png)
+[![Création d’une relation de table de base de données](iteration-6-use-test-driven-development-cs/_static/image3.jpg)](iteration-6-use-test-driven-development-cs/_static/image5.png)
 
-**Figure 03**: création d’une relation de table de base de données ([cliquez pour afficher l’image en taille réelle](iteration-6-use-test-driven-development-cs/_static/image6.png))
+**Figure 03**: Création d’une relation de table de base de données[(Cliquez pour voir l’image grandeur nature](iteration-6-use-test-driven-development-cs/_static/image6.png))
 
-[![spécification des relations entre les tables](iteration-6-use-test-driven-development-cs/_static/image4.jpg)](iteration-6-use-test-driven-development-cs/_static/image7.png)
+[![Spécifier les relations de table](iteration-6-use-test-driven-development-cs/_static/image4.jpg)](iteration-6-use-test-driven-development-cs/_static/image7.png)
 
-**Figure 04**: spécification des relations entre[les tables (cliquez pour afficher l’image en taille réelle](iteration-6-use-test-driven-development-cs/_static/image8.png))
+**Figure 04**: Spécifier les relations de table[(Cliquez pour voir l’image grandeur nature](iteration-6-use-test-driven-development-cs/_static/image8.png))
 
 ### <a name="updating-our-data-model"></a>Mise à jour de notre modèle de données
 
-Ensuite, nous devons mettre à jour notre modèle de données pour représenter la nouvelle table de base de données. Procédez comme suit :
+Ensuite, nous devons mettre à jour notre modèle de données pour représenter le nouveau tableau de base de données. Procédez comme suit :
 
-1. Double-cliquez sur le fichier ContactManagerModel. edmx dans le dossier Models pour ouvrir le Entity Designer.
-2. Cliquez avec le bouton droit sur l’aire du concepteur et sélectionnez l’option de menu **mettre à jour le modèle à partir de la base de données**.
-3. Dans l’Assistant Mise à jour, sélectionnez le tableau groupes, puis cliquez sur le bouton Terminer (voir figure 5).
-4. Cliquez avec le bouton droit sur l’entité groupes, puis sélectionnez l’option de menu **Renommer**. Modifiez le nom de l’entité *groupes* en *groupe* (singulier).
-5. Cliquez avec le bouton droit sur la propriété de navigation groupes qui apparaît en bas de l’entité contact. Remplacez le nom de la propriété *de navigation* Groups par *Group* (singulier).
+1. Double-cliquez sur le fichier ContactManagerModel.edmx dans le dossier Models pour ouvrir le concepteur d’entités.
+2. Cliquez à droite sur la surface du Concepteur et sélectionnez le **modèle de mise à jour de l’option de**menu à partir de database .
+3. Dans l’assistant de mise à jour, sélectionnez la table groupes et cliquez sur le bouton Finition (voir figure 5).
+4. Cliquez à droite sur l’entité Groupes et sélectionnez l’option de menu **Renommer**. Changer le nom de l’entité *Groupes* en *Groupe* (singulier).
+5. Cliquez à droite sur la propriété de navigation Des groupes qui apparaît au bas de l’entité Contact. Changer le nom de la propriété de navigation *des Groupes* en *Groupe* (singulier).
 
-[![de la mise à jour d’un modèle de Entity Framework à partir de la base de données](iteration-6-use-test-driven-development-cs/_static/image5.jpg)](iteration-6-use-test-driven-development-cs/_static/image9.png)
+[![Mise à jour d’un modèle cadre d’entité à partir de la base de données](iteration-6-use-test-driven-development-cs/_static/image5.jpg)](iteration-6-use-test-driven-development-cs/_static/image9.png)
 
-**Figure 05**: mise à jour d’un modèle de Entity Framework à partir de la base de données ([cliquez pour afficher l’image en taille réelle](iteration-6-use-test-driven-development-cs/_static/image10.png))
+**Figure 05**: Mise à jour d’un modèle cadre d’entité à partir de la base de données[(Cliquez pour voir l’image grandeur nature](iteration-6-use-test-driven-development-cs/_static/image10.png))
 
-Une fois ces étapes effectuées, votre modèle de données représente à la fois les tables contacts et groupes. Le Entity Designer doit afficher les deux entités (voir figure 6).
+Une fois que vous aurez terminé ces étapes, votre modèle de données représentera à la fois les tableaux Contacts et Groupes. Le concepteur d’entités doit montrer les deux entités (voir la figure 6).
 
-[![Entity Designer affichage du groupe et du contact](iteration-6-use-test-driven-development-cs/_static/image6.jpg)](iteration-6-use-test-driven-development-cs/_static/image11.png)
+[![Concepteur d’entité affichant le groupe et le contact](iteration-6-use-test-driven-development-cs/_static/image6.jpg)](iteration-6-use-test-driven-development-cs/_static/image11.png)
 
-**Figure 06**: Entity designer affichage du groupe et du contact ([cliquez pour afficher l’image en taille réelle](iteration-6-use-test-driven-development-cs/_static/image12.png))
+**Figure 06**: Entity Designer affichant le groupe et le contact ([Cliquez pour voir l’image grandeur nature](iteration-6-use-test-driven-development-cs/_static/image12.png))
 
-### <a name="creating-our-repository-classes"></a>Création de nos classes de référentiel
+### <a name="creating-our-repository-classes"></a>Création de nos classes de dépôt
 
-Nous devons ensuite implémenter notre classe de référentiel. Au cours de cette itération, nous avons ajouté plusieurs nouvelles méthodes à l’interface IContactManagerRepository tout en écrivant du code pour satisfaire nos tests unitaires. La version finale de l’interface IContactManagerRepository est contenue dans la liste 14.
+Ensuite, nous devons mettre en œuvre notre classe de dépôt. Au cours de cette itération, nous avons ajouté plusieurs nouvelles méthodes à l’interface IContactManagerRepository tout en écrivant du code pour satisfaire nos tests unitaires. La version finale de l’interface IContactManagerRepository est contenue dans la liste 14.
 
-**Liste 14-Models\IContactManagerRepository.cs**
+**Liste 14 - Models-IContactManagerRepository.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample14.cs)]
 
-Nous n’avons pas implémenté les méthodes associées à l’utilisation des groupes de contacts. Actuellement, la classe EntityContactManagerRepository a des méthodes stub pour chacune des méthodes de groupe de contacts listées dans l’interface IContactManagerRepository. Par exemple, la méthode ListGroups () se présente comme suit :
+Nous n’avons mis en œuvre aucune des méthodes liées au travail avec les groupes de contact. Actuellement, la classe EntityContactManagerRepository a des méthodes de talons pour chacune des méthodes de groupe de contact répertoriées dans l’interface IContactManagerRepository. Par exemple, la méthode ListGroups() ressemble actuellement à ceci :
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample15.cs)]
 
-Les méthodes stub nous permettaient de compiler notre application et de passer les tests unitaires. Toutefois, il est maintenant temps d’implémenter ces méthodes. La version finale de la classe EntityContactManagerRepository est contenue dans la liste 13.
+Les méthodes de talon nous ont permis de compiler notre application et de passer les tests unitaires. Cependant, il est maintenant temps de mettre en œuvre ces méthodes. La version finale de la classe EntityContactManagerRepository est contenue dans la liste 13.
 
-**Liste 13-Models\EntityContactManagerRepository.cs**
+**Liste 13 - Models-EntityContactManagerRepository.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample16.cs)]
 
 ### <a name="creating-the-views"></a>Création des vues
 
-Application ASP.NET MVC lorsque vous utilisez le moteur d’affichage ASP.NET par défaut. Par conséquent, vous ne créez pas d’affichages en réponse à un test unitaire particulier. Toutefois, étant donné qu’une application serait inutile sans affichages, nous pouvons effectuer cette itération sans créer ni modifier les vues contenues dans l’application du gestionnaire de contacts.
+ASP.NET’application MVC lorsque vous utilisez le moteur de vue par défaut ASP.NET. Ainsi, vous ne créez pas de vues en réponse à un test unitaire particulier. Cependant, parce qu’une application serait inutile sans vues, nous ne pouvons pas compléter cette itération sans créer et modifier les vues contenues dans l’application Contact Manager.
 
-Nous devons créer les nouvelles vues suivantes pour la gestion des groupes de contacts (voir la figure 7) :
+Nous devons créer les nouveaux points de vue suivants pour la gestion des groupes de contact (voir la figure 7) :
 
-- Views\Group\Index.aspx-affiche la liste des groupes de contacts
-- Views\Group\Delete.aspx : affiche le formulaire de confirmation pour la suppression d’un groupe de contacts
+- Views-Group.Index.aspx - Affiche la liste des groupes de contact
+- Vues-Groupe-Supprimer.aspx - Affiche le formulaire de confirmation pour la suppression d’un groupe de contact
 
-[![la vue index du groupe](iteration-6-use-test-driven-development-cs/_static/image7.jpg)](iteration-6-use-test-driven-development-cs/_static/image13.png)
+[![La vue de l’indice du Groupe](iteration-6-use-test-driven-development-cs/_static/image7.jpg)](iteration-6-use-test-driven-development-cs/_static/image13.png)
 
-**Figure 07**: vue d’index de groupe ([cliquez pour afficher l’image en taille réelle](iteration-6-use-test-driven-development-cs/_static/image14.png))
+**Figure 07**: La vue de l’indice de groupe ([Cliquez pour voir l’image grandeur nature](iteration-6-use-test-driven-development-cs/_static/image14.png))
 
-Nous devons modifier les vues existantes suivantes pour qu’elles incluent les groupes de contacts :
+Nous devons modifier les points de vue existants suivants afin qu’ils comprennent les groupes de contact :
 
-- Views\Home\Create.aspx
-- Views\Home\Edit.aspx
-- Views\Home\Index.aspx
+- Vues-Home-Create.aspx
+- Vues-Accueil-Edit.aspx
+- Vues-Home-Index.aspx
 
-Vous pouvez voir les affichages modifiés en examinant l’application Visual Studio qui accompagne ce didacticiel. Par exemple, la figure 8 illustre la vue d’index de contact.
+Vous pouvez voir les vues modifiées en regardant l’application Visual Studio qui accompagne ce tutoriel. Par exemple, la figure 8 illustre la vue de l’indice de contact.
 
-[![la vue de l’index des contacts](iteration-6-use-test-driven-development-cs/_static/image8.jpg)](iteration-6-use-test-driven-development-cs/_static/image15.png)
+[![La vue de l’indice de contact](iteration-6-use-test-driven-development-cs/_static/image8.jpg)](iteration-6-use-test-driven-development-cs/_static/image15.png)
 
-**Figure 08**: vue de l’index des contacts ([cliquez pour afficher l’image en taille réelle](iteration-6-use-test-driven-development-cs/_static/image16.png))
+**Figure 08**: La vue de l’indice de contact ([Cliquez pour voir l’image grandeur nature](iteration-6-use-test-driven-development-cs/_static/image16.png))
 
 ## <a name="summary"></a>Récapitulatif
 
-Dans cette itération, nous avons ajouté de nouvelles fonctionnalités à notre application de gestion des contacts en suivant une méthodologie de conception d’application de développement piloté par des tests. Nous avons commencé par créer un ensemble de récits utilisateur. Nous avons créé un ensemble de tests unitaires qui correspond aux spécifications exprimées par les récits utilisateur. Enfin, nous avons écrit juste suffisamment de code pour répondre aux exigences exprimées par les tests unitaires.
+Dans cette itération, nous avons ajouté de nouvelles fonctionnalités à notre application Contact Manager en suivant une méthodologie de conception d’applications de développement axée sur les tests. Nous avons commencé par créer un ensemble d’histoires d’utilisateurs. Nous avons créé un ensemble de tests unitaires qui correspondent aux exigences exprimées par les histoires d’utilisateurs. Enfin, nous avons écrit juste assez de code pour satisfaire aux exigences exprimées par les tests unitaires.
 
-Après avoir écrit suffisamment de code pour répondre aux exigences exprimées par les tests unitaires, nous avons mis à jour notre base de données et les vues. Nous avons ajouté une nouvelle table Groups à notre base de données et mis à jour notre modèle de données Entity Framework. Nous avons également créé et modifié un ensemble de vues.
+Après avoir terminé l’écriture de suffisamment de code pour satisfaire aux exigences exprimées par les tests unitaires, nous avons mis à jour notre base de données et nos vues. Nous avons ajouté un nouveau tableau des groupes à notre base de données et mis à jour notre modèle de données cadre d’entités. Nous avons également créé et modifié un ensemble de vues.
 
-Dans l’itération suivante (dernière itération), nous réécrivons notre application pour tirer parti d’Ajax. En tirant parti d’Ajax, nous allons améliorer la réactivité et les performances de l’application du gestionnaire de contacts.
+Dans la prochaine itération - l’itération finale - nous réécrivons notre application pour profiter de l’Ajax. En profitant de l’Ajax, nous améliorerons la réactivité et les performances de l’application Contact Manager.
 
 > [!div class="step-by-step"]
-> [Précédent](iteration-5-create-unit-tests-cs.md)
-> [Suivant](iteration-7-add-ajax-functionality-cs.md)
+> [Suivant précédent](iteration-5-create-unit-tests-cs.md)
+> [Next](iteration-7-add-ajax-functionality-cs.md)
