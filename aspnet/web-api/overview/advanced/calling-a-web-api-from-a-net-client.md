@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/advanced/calling-a-web-api-from-a-net-client
-title: Appeler une API Web à partir d’un clientC#.net ()-ASP.net 4. x
+title: Appeler une API Web à partir d’un client .NET (C#)-ASP.NET 4. x
 author: MikeWasson
 description: Ce didacticiel montre comment appeler une API Web à partir d’une application .NET 4. x.
 ms.author: riande
@@ -8,18 +8,18 @@ ms.date: 11/24/2017
 ms.custom: seoapril2019
 msc.legacyurl: /web-api/overview/advanced/calling-a-web-api-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: ab3ba71839123e848dffaa59871f9dac8c1a88d0
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: 484d927eeb0ba49f5f00d476f4658ebc081d0a4a
+ms.sourcegitcommit: a4c3c7e04e5f53cf8cd334f036d324976b78d154
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78622618"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84172937"
 ---
-# <a name="call-a-web-api-from-a-net-client-c"></a>Appeler une API Web à partir d’un clientC#.net ()
+# <a name="call-a-web-api-from-a-net-client-c"></a>Appeler une API Web à partir d’un client .NET (C#)
 
 par [Mike Wasson](https://github.com/MikeWasson) et [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[Télécharger le projet terminé](https://github.com/dotnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample). [Télécharger les instructions](/aspnet/core/tutorials/#how-to-download-a-sample). 
+[Télécharger le projet terminé](https://github.com/dotnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample). [Instructions de téléchargement](/aspnet/core/tutorials/#how-to-download-a-sample). 
 
 Ce didacticiel montre comment appeler une API Web à partir d’une application .NET, à l’aide de [System .net. http. httpclient.](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)
 
@@ -37,6 +37,11 @@ Pour savoir comment implémenter cette API avec API Web ASP.NET, consultez [cré
 
 Pour plus de simplicité, l’application cliente dans ce didacticiel est une application console Windows. **Httpclient** est également pris en charge pour les applications Windows Phone et Windows Store. Pour plus d’informations, consultez [écriture de code client d’API Web pour plusieurs plateformes à l’aide de bibliothèques portables](https://blogs.msdn.com/b/webdev/archive/2013/07/19/writing-web-api-client-code-for-multiple-platforms-using-portable-libraries.aspx)
 
+**Remarque :** Si vous transmettez des URL de base et des URI relatifs comme des valeurs codées en dur, tenez à l’esprit des règles d’utilisation de l' `HttpClient` API. La `HttpClient.BaseAddress` propriété doit être définie sur une adresse avec une barre oblique finale ( `/` ). Par exemple, lorsque vous passez des URI de ressource codés en dur à la `HttpClient.GetAsync` méthode, n’incluez pas de barre oblique de début. Pour obtenir un `Product` par ID :
+
+1. Définie`client.BaseAddress = new Uri("https://localhost:5001/");`
+1. Demandez un `Product` . Par exemple, `client.GetAsync<Product>("api/products/4");`.
+
 <a id="CreateConsoleApp"></a>
 ## <a name="create-the-console-application"></a>Création d'application console
 
@@ -46,7 +51,7 @@ Dans Visual Studio, créez une nouvelle application console Windows nommée **Ht
 
 Le code précédent est l’application cliente complète.
 
-`RunAsync` s’exécute et se bloque jusqu’à ce qu’il se termine. La plupart des méthodes **httpclient** sont asynchrones, car elles exécutent des e/s réseau. Toutes les tâches asynchrones sont effectuées dans `RunAsync`. Normalement, une application ne bloque pas le thread principal, mais cette application n’autorise aucune interaction.
+`RunAsync`s’exécute et se bloque jusqu’à ce qu’il se termine. La plupart des méthodes **httpclient** sont asynchrones, car elles exécutent des e/s réseau. Toutes les tâches asynchrones sont effectuées dans `RunAsync` . Normalement, une application ne bloque pas le thread principal, mais cette application n’autorise aucune interaction.
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet_run)]
 
@@ -55,13 +60,13 @@ Le code précédent est l’application cliente complète.
 
 Utilisez le gestionnaire de package NuGet pour installer le package de bibliothèques clientes de l’API Web.
 
-Dans le menu **Outils**, sélectionnez **Gestionnaire de package NuGet** > **Console du gestionnaire de package**. Dans la console du gestionnaire de package (PMC), tapez la commande suivante :
+Dans le menu **Outils**, sélectionnez **Gestionnaire de package NuGet** > **Console du Gestionnaire de package**. Dans la console du gestionnaire de package (PMC), tapez la commande suivante :
 
 `Install-Package Microsoft.AspNet.WebApi.Client`
 
 La commande précédente ajoute les packages NuGet suivants au projet :
 
-* Microsoft.AspNet.WebApi.Client
+* Microsoft. AspNet. WebApi. client
 * Newtonsoft.Json
 
 Netwonsoft. JSON (également appelé Json.NET) est une infrastructure JSON très performante pour .NET.
@@ -73,7 +78,7 @@ Examiner la classe `Product` :
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet_prod)]
 
-Cette classe correspond au modèle de données utilisé par l’API Web. Une application peut utiliser **httpclient** pour lire une instance de `Product` à partir d’une réponse http. L’application n’a pas besoin d’écrire de code de désérialisation.
+Cette classe correspond au modèle de données utilisé par l’API Web. Une application peut utiliser **httpclient** pour lire une `Product` instance à partir d’une réponse http. L’application n’a pas besoin d’écrire de code de désérialisation.
 
 <a id="InitClient"></a>
 ## <a name="create-and-initialize-httpclient"></a>Créer et initialiser HttpClient
@@ -105,9 +110,9 @@ Le code suivant envoie une requête d’extraction pour un produit :
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet_GetProductAsync)]
 
-La méthode **GetAsync** envoie la requête http. Lorsque la méthode se termine, elle retourne un **HttpResponseMessage** qui contient la réponse http. Si le code d’État dans la réponse est un code de réussite, le corps de la réponse contient la représentation JSON d’un produit. Appelez **ReadAsAsync** pour désérialiser la charge utile JSON en une instance `Product`. La méthode **ReadAsAsync** est asynchrone, car le corps de la réponse peut être arbitrairement grand.
+La méthode **GetAsync** envoie la requête http. Lorsque la méthode se termine, elle retourne un **HttpResponseMessage** qui contient la réponse http. Si le code d’État dans la réponse est un code de réussite, le corps de la réponse contient la représentation JSON d’un produit. Appelez **ReadAsAsync** pour désérialiser la charge utile JSON en une `Product` instance. La méthode **ReadAsAsync** est asynchrone, car le corps de la réponse peut être arbitrairement grand.
 
-**Httpclient** ne lève pas d’exception lorsque la réponse http contient un code d’erreur. Au lieu de cela, la propriété **IsSuccessStatusCode** a la **valeur false** si l’État est un code d’erreur. Si vous préférez traiter les codes d’erreur HTTP comme des exceptions, appelez [HttpResponseMessage. EnsureSuccessStatusCode](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.ensuresuccessstatuscode(v=vs.110).aspx) sur l’objet Response. `EnsureSuccessStatusCode` lève une exception si le code d’État se trouve en dehors de la plage 200&ndash;299. Notez que **httpclient** peut lever des exceptions pour d’autres raisons &mdash; par exemple, si la demande expire.
+**Httpclient** ne lève pas d’exception lorsque la réponse http contient un code d’erreur. Au lieu de cela, la propriété **IsSuccessStatusCode** a la **valeur false** si l’État est un code d’erreur. Si vous préférez traiter les codes d’erreur HTTP comme des exceptions, appelez [HttpResponseMessage. EnsureSuccessStatusCode](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.ensuresuccessstatuscode(v=vs.110).aspx) sur l’objet Response. `EnsureSuccessStatusCode`lève une exception si le code d’État se trouve en dehors de la plage 200 &ndash; 299. Notez que **httpclient** peut lever des exceptions pour d’autres raisons &mdash; , par exemple, si la demande expire.
 
 <a id="MediaTypeFormatters"></a>
 ### <a name="media-type-formatters-to-deserialize"></a>Formateurs de type média à désérialiser
@@ -165,7 +170,7 @@ Comme par exemple, une demande DELETE n’a pas de corps de demande. Vous n’av
 
 Pour tester l’application cliente :
 
-1. [Téléchargez](https://github.com/dotnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server) et exécutez l’application serveur. [Télécharger les instructions](/aspnet/core/#how-to-download-a-sample). Vérifiez que l’application serveur fonctionne. Par exemple, `http://localhost:64195/api/products` doit retourner une liste de produits.
+1. [Téléchargez](https://github.com/dotnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server) et exécutez l’application serveur. [Instructions de téléchargement](/aspnet/core/#how-to-download-a-sample). Vérifiez que l’application serveur fonctionne. Par exemple, `http://localhost:64195/api/products` doit retourner une liste de produits.
 2. Définissez l’URI de base pour les requêtes HTTP. Remplacez le numéro de port par le port utilisé dans l’application serveur.
     [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet5&highlight=2)]
 
