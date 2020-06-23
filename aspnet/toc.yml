@@ -1,4 +1,4 @@
-- name: Documentation d’ASP.NET
+- name: "Documentation ASP.NET\_Core"
   href: /aspnet/core/
 - name: Vue d’ensemble d’ASP.NET
   href: overview.md
@@ -74,7 +74,7 @@
           items:
             - name: 'Créer une application Web Forms ASP.NET sécurisée avec inscription de l’utilisateur, confirmation par e-mail et réinitialisation du mot de passe (C#)'
               href: web-forms/overview/security/create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset.md
-            - name: 'Créer une application Web Forms ASP.NET avec authentification à deux facteurs par SMS (C#)'
+            - name: Créer une application Web Forms ASP.NET avec authentification à deux facteurs par SMS (C#)
               href: web-forms/overview/security/create-an-aspnet-web-forms-app-with-sms-two-factor-authentication.md
         - name: Performances
           href: web-forms/overview/performance-and-caching/index.md
@@ -314,25 +314,25 @@
             - name: "ASP.NET\_3.5 - Pages maîtres Web Forms"
               href: web-forms/overview/older-versions-getting-started/master-pages/index.md
               items:
-                - name: 'Création d’une disposition à l’échelle d’un site avec des pages maîtres (C#)'
+                - name: Création d’une disposition à l’échelle d’un site avec des pages maîtres (C#)
                   href: web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-cs.md
-                - name: 'ContentPlaceHolders multiples et contenu par défaut (C#)'
+                - name: ContentPlaceHolders multiples et contenu par défaut (C#)
                   href: web-forms/overview/older-versions-getting-started/master-pages/multiple-contentplaceholders-and-default-content-cs.md
                 - name: 'Spécification du titre, des balises META et d’autres en-têtes HTML dans la page maître (C#)'
                   href: web-forms/overview/older-versions-getting-started/master-pages/specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md
-                - name: 'URL dans les pages maîtres (C#)'
+                - name: URL dans les pages maîtres (C#)
                   href: web-forms/overview/older-versions-getting-started/master-pages/urls-in-master-pages-cs.md
-                - name: 'Contrôler le nommage des ID dans les pages de contenu (C#)'
+                - name: Contrôler le nommage des ID dans les pages de contenu (C#)
                   href: web-forms/overview/older-versions-getting-started/master-pages/control-id-naming-in-content-pages-cs.md
-                - name: 'Interaction avec la page de contenu à partir de la page maître (C#)'
+                - name: Interaction avec la page de contenu à partir de la page maître (C#)
                   href: web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-cs.md
-                - name: 'Interaction avec la page de contenu à partir de la page maître (C#)'
+                - name: Interaction avec la page de contenu à partir de la page maître (C#)
                   href: web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-content-page-from-the-master-page-cs.md
-                - name: 'Pages maîtres et ASP.NET AJAX (C#)'
+                - name: Pages maîtres et ASP.NET AJAX (C#)
                   href: web-forms/overview/older-versions-getting-started/master-pages/master-pages-and-asp-net-ajax-cs.md
-                - name: 'Spécification de la page maître par programmation (C#)'
+                - name: Spécification de la page maître par programmation (C#)
                   href: web-forms/overview/older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-cs.md
-                - name: 'Pages maîtres imbriquées (C#)'
+                - name: Pages maîtres imbriquées (C#)
                   href: web-forms/overview/older-versions-getting-started/master-pages/nested-master-pages-cs.md
                 - name: Création d’une disposition à l’échelle d’un site avec des pages maîtres (VB)
                   href: web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-vb.md
@@ -357,37 +357,37 @@
             - name: "Déploiement de projets de site web dans Visual Studio\_2008 et versions antérieures"
               href: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/index.md
               items:
-                - name: 'Options d’hébergement ASP.NET (C#)'
+                - name: Options d’hébergement ASP.NET (C#)
                   href: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/asp-net-hosting-options-cs.md
-                - name: 'Détermination des fichiers qui doivent être déployés (C#)'
+                - name: Détermination des fichiers qui doivent être déployés (C#)
                   href: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-cs.md
-                - name: 'Déploiement de votre site avec un client FTP (C#)'
+                - name: Déploiement de votre site avec un client FTP (C#)
                   href: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-cs.md
-                - name: 'Déploiement de votre site avec Visual Studio (C#)'
+                - name: Déploiement de votre site avec Visual Studio (C#)
                   href: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-visual-studio-cs.md
-                - name: 'Différences de configuration courantes entre le développement et la production (C#)'
+                - name: Différences de configuration courantes entre le développement et la production (C#)
                   href: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-cs.md
-                - name: 'Différences principales entre IIS et le serveur de développement ASP.NET (C#)'
+                - name: Différences principales entre IIS et le serveur de développement ASP.NET (C#)
                   href: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs.md
-                - name: 'Déploiement d’une base de données (C#)'
+                - name: Déploiement d’une base de données (C#)
                   href: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-a-database-cs.md
-                - name: 'Configuration de l’application web de production pour l’utilisation de la base de données de production (C#)'
+                - name: Configuration de l’application web de production pour l’utilisation de la base de données de production (C#)
                   href: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-cs.md
-                - name: 'Configuration d’un site web qui utilise les services d’application (C#)'
+                - name: Configuration d’un site web qui utilise les services d’application (C#)
                   href: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-cs.md
-                - name: 'Stratégies pour le développement et le déploiement des bases de données (C#)'
+                - name: Stratégies pour le développement et le déploiement des bases de données (C#)
                   href: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-cs.md
-                - name: 'Affichage d’une page d’erreur personnalisée (C#)'
+                - name: Affichage d’une page d’erreur personnalisée (C#)
                   href: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-cs.md
-                - name: 'Traitement des exceptions non gérées (C#)'
+                - name: Traitement des exceptions non gérées (C#)
                   href: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-cs.md
-                - name: 'Journalisation des détails des erreurs avec la supervision de l’intégrité ASP.NET (C#)'
+                - name: Journalisation des détails des erreurs avec la supervision de l’intégrité ASP.NET (C#)
                   href: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-cs.md
-                - name: 'Journalisation des détails des erreurs avec ELMAH (C#)'
+                - name: Journalisation des détails des erreurs avec ELMAH (C#)
                   href: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-cs.md
-                - name: 'Précompilation de votre site web (C#)'
+                - name: Précompilation de votre site web (C#)
                   href: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/precompiling-your-website-cs.md
-                - name: 'Utilisateurs et rôles sur un site web de production (C#)'
+                - name: Utilisateurs et rôles sur un site web de production (C#)
                   href: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-cs.md
                 - name: Options d’hébergement ASP.NET (VB)
                   href: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/asp-net-hosting-options-vb.md
@@ -427,11 +427,11 @@
             - name: Prise en main
               href: web-forms/overview/ajax-control-toolkit/getting-started/index.md
               items:
-                - name: 'Bien démarrer avec AJAX Control Toolkit (C#)'
+                - name: Bien démarrer avec AJAX Control Toolkit (C#)
                   href: web-forms/overview/ajax-control-toolkit/getting-started/get-started-with-the-ajax-control-toolkit-cs.md
-                - name: 'Utilisation de contrôles AJAX Control Toolkit et extendeurs de contrôle (C#)'
+                - name: Utilisation de contrôles AJAX Control Toolkit et extendeurs de contrôle (C#)
                   href: web-forms/overview/ajax-control-toolkit/getting-started/using-ajax-control-toolkit-controls-and-control-extenders-cs.md
-                - name: 'Création d’un extendeur de contrôle AJAX Control Toolkit personnalisé (C#)'
+                - name: Création d’un extendeur de contrôle AJAX Control Toolkit personnalisé (C#)
                   href: web-forms/overview/ajax-control-toolkit/getting-started/creating-a-custom-ajax-control-toolkit-control-extender-cs.md
                 - name: Bien démarrer avec AJAX Control Toolkit (VB)
                   href: web-forms/overview/ajax-control-toolkit/getting-started/get-started-with-the-ajax-control-toolkit-vb.md
@@ -442,9 +442,9 @@
             - name: Accordion
               href: web-forms/overview/ajax-control-toolkit/accordion/index.md
               items:
-                - name: 'Liaison de données à un Accordion (C#)'
+                - name: Liaison de données à un Accordion (C#)
                   href: web-forms/overview/ajax-control-toolkit/accordion/databinding-to-an-accordion-cs.md
-                - name: 'Ajout dynamique du volet Accordion (C#)'
+                - name: Ajout dynamique du volet Accordion (C#)
                   href: web-forms/overview/ajax-control-toolkit/accordion/dynamically-adding-an-accordion-pane-cs.md
                 - name: Liaison de données à un Accordion (VB)
                   href: web-forms/overview/ajax-control-toolkit/accordion/databinding-to-an-accordion-vb.md
@@ -453,31 +453,31 @@
             - name: Animation
               href: web-forms/overview/ajax-control-toolkit/animation/index.md
               items:
-                - name: 'Ajout d’une animation à un contrôle (C#)'
+                - name: Ajout d’une animation à un contrôle (C#)
                   href: web-forms/overview/ajax-control-toolkit/animation/adding-animation-to-a-control-cs.md
-                - name: 'Exécution simultanée de plusieurs animations (C#)'
+                - name: Exécution simultanée de plusieurs animations (C#)
                   href: web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-at-the-same-time-cs.md
-                - name: 'Exécution de plusieurs animations l’une après l’autre (C#)'
+                - name: Exécution de plusieurs animations l’une après l’autre (C#)
                   href: web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-after-each-other-cs.md
-                - name: 'Animation dépendant d’une condition (C#)'
+                - name: Animation dépendant d’une condition (C#)
                   href: web-forms/overview/ajax-control-toolkit/animation/animation-depending-on-a-condition-cs.md
-                - name: 'Sélection d’une animation dans une liste (C#)'
+                - name: Sélection d’une animation dans une liste (C#)
                   href: web-forms/overview/ajax-control-toolkit/animation/picking-one-animation-out-of-a-list-cs.md
-                - name: 'Animation en réponse à une interaction utilisateur (C#)'
+                - name: Animation en réponse à une interaction utilisateur (C#)
                   href: web-forms/overview/ajax-control-toolkit/animation/animating-in-response-to-user-interaction-cs.md
-                - name: 'Désactivation d’actions pendant une animation (C#)'
+                - name: Désactivation d’actions pendant une animation (C#)
                   href: web-forms/overview/ajax-control-toolkit/animation/disabling-actions-during-animation-cs.md
-                - name: 'Déclenchement d’une animation dans un autre contrôle (C#)'
+                - name: Déclenchement d’une animation dans un autre contrôle (C#)
                   href: web-forms/overview/ajax-control-toolkit/animation/triggering-an-animation-in-another-control-cs.md
-                - name: 'Modification d’animations à partir du côté serveur (C#)'
+                - name: Modification d’animations à partir du côté serveur (C#)
                   href: web-forms/overview/ajax-control-toolkit/animation/modifying-animations-from-the-server-side-cs.md
-                - name: 'Exécution d’animations avec du code côté client (C#)'
+                - name: Exécution d’animations avec du code côté client (C#)
                   href: web-forms/overview/ajax-control-toolkit/animation/executing-animations-using-client-side-code-cs.md
-                - name: 'Changement d’une animation avec du code côté client (C#)'
+                - name: Changement d’une animation avec du code côté client (C#)
                   href: web-forms/overview/ajax-control-toolkit/animation/changing-an-animation-using-client-side-code-cs.md
-                - name: 'Animation d’un contrôle UpdatePanel (C#)'
+                - name: Animation d’un contrôle UpdatePanel (C#)
                   href: web-forms/overview/ajax-control-toolkit/animation/animating-an-updatepanel-control-cs.md
-                - name: 'Contrôle dynamique des animations UpdatePanel (C#)'
+                - name: Contrôle dynamique des animations UpdatePanel (C#)
                   href: web-forms/overview/ajax-control-toolkit/animation/dynamically-controlling-updatepanel-animations-cs.md
                 - name: Ajout d’une animation à un contrôle (VB)
                   href: web-forms/overview/ajax-control-toolkit/animation/adding-animation-to-a-control-vb.md
@@ -508,13 +508,13 @@
             - name: CascadingDropdown
               href: web-forms/overview/ajax-control-toolkit/cascadingdropdown/index.md
               items:
-                - name: 'Remplissage d’une liste avec CascadingDropDown (C#)'
+                - name: Remplissage d’une liste avec CascadingDropDown (C#)
                   href: web-forms/overview/ajax-control-toolkit/cascadingdropdown/filling-a-list-using-cascadingdropdown-cs.md
-                - name: 'Utilisation de CascadingDropDown avec une base de données (C#)'
+                - name: Utilisation de CascadingDropDown avec une base de données (C#)
                   href: web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-cascadingdropdown-with-a-database-cs.md
-                - name: 'Prédéfinition des entrées de liste avec CascadingDropDown (C#)'
+                - name: Prédéfinition des entrées de liste avec CascadingDropDown (C#)
                   href: web-forms/overview/ajax-control-toolkit/cascadingdropdown/presetting-list-entries-with-cascadingdropdown-cs.md
-                - name: 'Utilisation de la publication (postback) automatique avec CascadingDropDown (C#)'
+                - name: Utilisation de la publication (postback) automatique avec CascadingDropDown (C#)
                   href: web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-auto-postback-with-cascadingdropdown-cs.md
                 - name: Remplissage d’une liste avec CascadingDropDown (VB)
                   href: web-forms/overview/ajax-control-toolkit/cascadingdropdown/filling-a-list-using-cascadingdropdown-vb.md
@@ -527,14 +527,14 @@
             - name: CollapsiblePanel
               href: web-forms/overview/ajax-control-toolkit/collapsiblepanel/index.md
               items:
-                - name: 'Réduction et développement d’un panneau à partir de JavaScript (C#)'
+                - name: Réduction et développement d’un panneau à partir de JavaScript (C#)
                   href: web-forms/overview/ajax-control-toolkit/collapsiblepanel/collapsing-and-expanding-a-panel-from-javascript-cs.md
                 - name: Réduction et développement d’un panneau à partir de JavaScript (VB)
                   href: web-forms/overview/ajax-control-toolkit/collapsiblepanel/collapsing-and-expanding-a-panel-from-javascript-vb.md
             - name: ColorPicker
               href: web-forms/overview/ajax-control-toolkit/colorpicker/index.md
               items:
-                - name: 'Extendeur de contrôle ColorPicker (C#)'
+                - name: Extendeur de contrôle ColorPicker (C#)
                   href: web-forms/overview/ajax-control-toolkit/colorpicker/using-the-colorpicker-control-extender-cs.md
                 - name: Extendeur de contrôle ColorPicker (VB)
                   href: web-forms/overview/ajax-control-toolkit/colorpicker/using-the-colorpicker-control-extender-vb.md
@@ -548,16 +548,16 @@
             - name: ConfirmButton
               href: web-forms/overview/ajax-control-toolkit/confirmbutton/index.md
               items:
-                - name: 'Utilisation d’un ConfirmButton dans un répéteur (C#)'
+                - name: Utilisation d’un ConfirmButton dans un répéteur (C#)
                   href: web-forms/overview/ajax-control-toolkit/confirmbutton/using-a-confirmbutton-in-a-repeater-cs.md
                 - name: Utilisation d’un ConfirmButton dans un répéteur (VB)
                   href: web-forms/overview/ajax-control-toolkit/confirmbutton/using-a-confirmbutton-in-a-repeater-vb.md
             - name: DropShadow
               href: web-forms/overview/ajax-control-toolkit/dropshadow/index.md
               items:
-                - name: 'Ajustement de l’index-Z d’un DropShadow (C#)'
+                - name: Ajustement de l’index-Z d’un DropShadow (C#)
                   href: web-forms/overview/ajax-control-toolkit/dropshadow/adjusting-the-z-index-of-a-dropshadow-cs.md
-                - name: 'Manipulation des propriétés de DropShadow à partir de code client (C#)'
+                - name: Manipulation des propriétés de DropShadow à partir de code client (C#)
                   href: web-forms/overview/ajax-control-toolkit/dropshadow/manipulating-dropshadow-properties-from-client-code-cs.md
                 - name: Ajustement de l’index-Z d’un DropShadow (VB)
                   href: web-forms/overview/ajax-control-toolkit/dropshadow/adjusting-the-z-index-of-a-dropshadow-vb.md
@@ -566,11 +566,11 @@
             - name: DynamicPopulate
               href: web-forms/overview/ajax-control-toolkit/dynamicpopulate/index.md
               items:
-                - name: 'Remplissage dynamique d’un contrôle (C#)'
+                - name: Remplissage dynamique d’un contrôle (C#)
                   href: web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-cs.md
-                - name: 'Remplissage dynamique d’un contrôle avec du code JavaScript (C#)'
+                - name: Remplissage dynamique d’un contrôle avec du code JavaScript (C#)
                   href: web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-using-javascript-code-cs.md
-                - name: 'Utilisation de DynamicPopulate avec un contrôle utilisateur et JavaScript (C#)'
+                - name: Utilisation de DynamicPopulate avec un contrôle utilisateur et JavaScript (C#)
                   href: web-forms/overview/ajax-control-toolkit/dynamicpopulate/using-dynamicpopulate-with-a-user-control-and-javascript-cs.md
                 - name: Remplissage dynamique d’un contrôle (VB)
                   href: web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-vb.md
@@ -581,34 +581,34 @@
             - name: FilteredTextBox
               href: web-forms/overview/ajax-control-toolkit/filteredtextbox/index.md
               items:
-                - name: 'Autoriser seulement certains caractères dans une zone de texte (C#)'
+                - name: Autoriser seulement certains caractères dans une zone de texte (C#)
                   href: web-forms/overview/ajax-control-toolkit/filteredtextbox/allowing-only-certain-characters-in-a-text-box-cs.md
                 - name: Autoriser seulement certains caractères dans une zone de texte (VB)
                   href: web-forms/overview/ajax-control-toolkit/filteredtextbox/allowing-only-certain-characters-in-a-text-box-vb.md
             - name: HoverMenu
               href: web-forms/overview/ajax-control-toolkit/hovermenu/index.md
               items:
-                - name: 'Utilisation de HoverMenu avec un contrôle Repeater (C#)'
+                - name: Utilisation de HoverMenu avec un contrôle Repeater (C#)
                   href: web-forms/overview/ajax-control-toolkit/hovermenu/using-hovermenu-with-a-repeater-control-cs.md
                 - name: Utilisation de HoverMenu avec un contrôle Repeater (VB)
                   href: web-forms/overview/ajax-control-toolkit/hovermenu/using-hovermenu-with-a-repeater-control-vb.md
             - name: HTMLEditor
               href: web-forms/overview/ajax-control-toolkit/htmleditor/index.md
               items:
-                - name: 'Contrôle d’éditeur HTML (C#)'
+                - name: Contrôle d’éditeur HTML (C#)
                   href: web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-editor-control-cs.md
                 - name: Contrôle d’éditeur HTML (VB)
                   href: web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-editor-control-vb.md
             - name: ModalPopup
               href: web-forms/overview/ajax-control-toolkit/modalpopup/index.md
               items:
-                - name: 'Lancement d’une fenêtre contextuelle modale à partir de code serveur (C#)'
+                - name: Lancement d’une fenêtre contextuelle modale à partir de code serveur (C#)
                   href: web-forms/overview/ajax-control-toolkit/modalpopup/launching-a-modal-popup-window-from-server-code-cs.md
-                - name: 'Utilisation de ModalPopup avec un contrôle Repeater (C#)'
+                - name: Utilisation de ModalPopup avec un contrôle Repeater (C#)
                   href: web-forms/overview/ajax-control-toolkit/modalpopup/using-modalpopup-with-a-repeater-control-cs.md
-                - name: 'Gestion des publications (postback) à partir d’un ModalPopup (C#)'
+                - name: Gestion des publications (postback) à partir d’un ModalPopup (C#)
                   href: web-forms/overview/ajax-control-toolkit/modalpopup/handling-postbacks-from-a-modalpopup-cs.md
-                - name: 'Positionnement d’un ModalPopup (C#)'
+                - name: Positionnement d’un ModalPopup (C#)
                   href: web-forms/overview/ajax-control-toolkit/modalpopup/positioning-a-modalpopup-cs.md
                 - name: Lancement d’une fenêtre contextuelle modale à partir de code serveur (VB)
                   href: web-forms/overview/ajax-control-toolkit/modalpopup/launching-a-modal-popup-window-from-server-code-vb.md
@@ -621,39 +621,39 @@
             - name: MutuallyExclusiveCheckbox
               href: web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/index.md
               items:
-                - name: 'Création de cases à cocher mutuellement exclusives (C#)'
+                - name: Création de cases à cocher mutuellement exclusives (C#)
                   href: web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/creating-mutually-exclusive-checkboxes-cs.md
                 - name: Création de cases à cocher mutuellement exclusives (VB)
                   href: web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/creating-mutually-exclusive-checkboxes-vb.md
             - name: NoBot
               href: web-forms/overview/ajax-control-toolkit/nobot/index.md
               items:
-                - name: 'Lutte contre les robots (C#)'
+                - name: Lutte contre les robots (C#)
                   href: web-forms/overview/ajax-control-toolkit/nobot/fighting-bots-cs.md
                 - name: Lutte contre les robots (VB)
                   href: web-forms/overview/ajax-control-toolkit/nobot/fighting-bots-vb.md
             - name: NumericUpDown
               href: web-forms/overview/ajax-control-toolkit/numericupdown/index.md
               items:
-                - name: 'Création d’un contrôle Haut/bas numérique avec un backend de service web (C#)'
+                - name: Création d’un contrôle Haut/bas numérique avec un backend de service web (C#)
                   href: web-forms/overview/ajax-control-toolkit/numericupdown/creating-a-numeric-up-down-control-with-a-web-service-backend-cs.md
                 - name: Création d’un contrôle Haut/bas numérique avec un backend de service web (VB)
                   href: web-forms/overview/ajax-control-toolkit/numericupdown/creating-a-numeric-up-down-control-with-a-web-service-backend-vb.md
             - name: PasswordStrength
               href: web-forms/overview/ajax-control-toolkit/passwordstrength/index.md
               items:
-                - name: 'Test de la force d’un mot de passe (C#)'
+                - name: Test de la force d’un mot de passe (C#)
                   href: web-forms/overview/ajax-control-toolkit/passwordstrength/testing-the-strength-of-a-password-cs.md
                 - name: Test de la force d’un mot de passe (VB)
                   href: web-forms/overview/ajax-control-toolkit/passwordstrength/testing-the-strength-of-a-password-vb.md
             - name: Fenêtre contextuelle
               href: web-forms/overview/ajax-control-toolkit/popup/index.md
               items:
-                - name: 'Utilisation de plusieurs contrôles de fenêtre contextuelle (C#)'
+                - name: Utilisation de plusieurs contrôles de fenêtre contextuelle (C#)
                   href: web-forms/overview/ajax-control-toolkit/popup/using-multiple-popup-controls-cs.md
-                - name: 'Gestion des publications (postback) à partir d’un contrôle de fenêtre contextuelle avec un UpdatePanel (C#)'
+                - name: Gestion des publications (postback) à partir d’un contrôle de fenêtre contextuelle avec un UpdatePanel (C#)
                   href: web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-with-an-updatepanel-cs.md
-                - name: 'Gestion des publications (postback) à partir d’un contrôle de fenêtre contextuelle sans un UpdatePanel (C#)'
+                - name: Gestion des publications (postback) à partir d’un contrôle de fenêtre contextuelle sans un UpdatePanel (C#)
                   href: web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-without-an-updatepanel-cs.md
                 - name: Utilisation de plusieurs contrôles de fenêtre contextuelle (VB)
                   href: web-forms/overview/ajax-control-toolkit/popup/using-multiple-popup-controls-vb.md
@@ -664,16 +664,16 @@
             - name: Classification
               href: web-forms/overview/ajax-control-toolkit/rating/index.md
               items:
-                - name: 'Création d’un contrôle Rating (C#)'
+                - name: Création d’un contrôle Rating (C#)
                   href: web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-cs.md
                 - name: Création d’un contrôle Rating (VB)
                   href: web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-vb.md
             - name: ReorderList
               href: web-forms/overview/ajax-control-toolkit/reorderlist/index.md
               items:
-                - name: 'Utilisation de publications (postback) avec ReorderList (C#)'
+                - name: Utilisation de publications (postback) avec ReorderList (C#)
                   href: web-forms/overview/ajax-control-toolkit/reorderlist/using-postbacks-with-reorderlist-cs.md
-                - name: 'Glisser-déplacer via ReorderList (C#)'
+                - name: Glisser-déplacer via ReorderList (C#)
                   href: web-forms/overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-cs.md
                 - name: Utilisation de publications (postback) avec ReorderList (VB)
                   href: web-forms/overview/ajax-control-toolkit/reorderlist/using-postbacks-with-reorderlist-vb.md
@@ -682,9 +682,9 @@
             - name: Curseur
               href: web-forms/overview/ajax-control-toolkit/slider/index.md
               items:
-                - name: 'Contrôle Slider avec publication (postback) automatique (C#)'
+                - name: Contrôle Slider avec publication (postback) automatique (C#)
                   href: web-forms/overview/ajax-control-toolkit/slider/using-the-slider-control-with-auto-postback-cs.md
-                - name: 'Liaison de données du contrôle Slider (C#)'
+                - name: Liaison de données du contrôle Slider (C#)
                   href: web-forms/overview/ajax-control-toolkit/slider/databinding-the-slider-control-cs.md
                 - name: Contrôle Slider avec publication (postback) automatique (VB)
                   href: web-forms/overview/ajax-control-toolkit/slider/using-the-slider-control-with-auto-postback-vb.md
@@ -693,9 +693,9 @@
             - name: TextBoxWatermark
               href: web-forms/overview/ajax-control-toolkit/textboxwatermark/index.md
               items:
-                - name: 'Utilisation de TextBoxWatermark dans un FormView (C#)'
+                - name: Utilisation de TextBoxWatermark dans un FormView (C#)
                   href: web-forms/overview/ajax-control-toolkit/textboxwatermark/using-textboxwatermark-in-a-formview-cs.md
-                - name: 'Utilisation de TextBoxWatermark avec des contrôles Validation (C#)'
+                - name: Utilisation de TextBoxWatermark avec des contrôles Validation (C#)
                   href: web-forms/overview/ajax-control-toolkit/textboxwatermark/using-textboxwatermark-with-validation-controls-cs.md
                 - name: Utilisation de TextBoxWatermark dans un FormView (VB)
                   href: web-forms/overview/ajax-control-toolkit/textboxwatermark/using-textboxwatermark-in-a-formview-vb.md
@@ -707,11 +707,11 @@
             - name: Introduction
               href: web-forms/overview/data-access/introduction/index.md
               items:
-                - name: 'Création d’une couche d’accès aux données (C#)'
+                - name: Création d’une couche d’accès aux données (C#)
                   href: web-forms/overview/data-access/introduction/creating-a-data-access-layer-cs.md
-                - name: 'Création d’une couche de logique métier (C#)'
+                - name: Création d’une couche de logique métier (C#)
                   href: web-forms/overview/data-access/introduction/creating-a-business-logic-layer-cs.md
-                - name: 'Pages maîtres et navigation dans un site (C#)'
+                - name: Pages maîtres et navigation dans un site (C#)
                   href: web-forms/overview/data-access/introduction/master-pages-and-site-navigation-cs.md
                 - name: Création d’une couche d’accès aux données (VB)
                   href: web-forms/overview/data-access/introduction/creating-a-data-access-layer-vb.md
@@ -722,11 +722,11 @@
             - name: Création de rapports de base
               href: web-forms/overview/data-access/basic-reporting/index.md
               items:
-                - name: 'Affichage de données avec ObjectDataSource (C#)'
+                - name: Affichage de données avec ObjectDataSource (C#)
                   href: web-forms/overview/data-access/basic-reporting/displaying-data-with-the-objectdatasource-cs.md
-                - name: 'Paramètres déclaratifs (C#)'
+                - name: Paramètres déclaratifs (C#)
                   href: web-forms/overview/data-access/basic-reporting/declarative-parameters-cs.md
-                - name: 'Définition par programmation des valeurs des paramètres de ObjectDataSource (C#)'
+                - name: Définition par programmation des valeurs des paramètres de ObjectDataSource (C#)
                   href: web-forms/overview/data-access/basic-reporting/programmatically-setting-the-objectdatasource-s-parameter-values-cs.md
                 - name: Affichage de données avec ObjectDataSource (VB)
                   href: web-forms/overview/data-access/basic-reporting/displaying-data-with-the-objectdatasource-vb.md
@@ -737,13 +737,13 @@
             - name: Maître/détail
               href: web-forms/overview/data-access/masterdetail/index.md
               items:
-                - name: 'Filtrage maître/détail avec une DropDownList (C#)'
+                - name: Filtrage maître/détail avec une DropDownList (C#)
                   href: web-forms/overview/data-access/masterdetail/master-detail-filtering-with-a-dropdownlist-cs.md
-                - name: 'Filtrage maître/détail avec deux DropDownList (C#)'
+                - name: Filtrage maître/détail avec deux DropDownList (C#)
                   href: web-forms/overview/data-access/masterdetail/master-detail-filtering-with-two-dropdownlists-cs.md
-                - name: 'Filtrage maître/détail sur deux pages (C#)'
+                - name: Filtrage maître/détail sur deux pages (C#)
                   href: web-forms/overview/data-access/masterdetail/master-detail-filtering-across-two-pages-cs.md
-                - name: 'Représentation maître/détail utilisant un GridView maître pouvant être sélectionné avec une DetailView des détails (C#)'
+                - name: Représentation maître/détail utilisant un GridView maître pouvant être sélectionné avec une DetailView des détails (C#)
                   href: web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md
                 - name: Filtrage maître/détail avec une DropDownList (VB)
                   href: web-forms/overview/data-access/masterdetail/master-detail-filtering-with-a-dropdownlist-vb.md
@@ -756,15 +756,15 @@
             - name: Mise en forme personnalisée
               href: web-forms/overview/data-access/custom-formatting/index.md
               items:
-                - name: 'Mise en forme personnalisée basée sur des données (C#)'
+                - name: Mise en forme personnalisée basée sur des données (C#)
                   href: web-forms/overview/data-access/custom-formatting/custom-formatting-based-upon-data-cs.md
-                - name: 'Utilisation de TemplateFields dans le contrôle GridView (C#)'
+                - name: Utilisation de TemplateFields dans le contrôle GridView (C#)
                   href: web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-gridview-control-cs.md
-                - name: 'Utilisation de TemplateFields dans le contrôle DetailsView (C#)'
+                - name: Utilisation de TemplateFields dans le contrôle DetailsView (C#)
                   href: web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-detailsview-control-cs.md
-                - name: 'Modèles de FormView (C#)'
+                - name: Modèles de FormView (C#)
                   href: web-forms/overview/data-access/custom-formatting/using-the-formview-s-templates-cs.md
-                - name: 'Affichage des informations récapitulatives dans le pied de page du GridView (C#)'
+                - name: Affichage des informations récapitulatives dans le pied de page du GridView (C#)
                   href: web-forms/overview/data-access/custom-formatting/displaying-summary-information-in-the-gridview-s-footer-cs.md
                 - name: Mise en forme personnalisée basée sur des données (VB)
                   href: web-forms/overview/data-access/custom-formatting/custom-formatting-based-upon-data-vb.md
@@ -783,17 +783,17 @@
                   href: web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs.md
                 - name: 'Examen des événements associés à l’insertion, à la mise à jour et à la suppression (C#)'
                   href: web-forms/overview/data-access/editing-inserting-and-deleting-data/examining-the-events-associated-with-inserting-updating-and-deleting-cs.md
-                - name: 'Gestion des exceptions de niveau BLL et DAL dans une page ASP.NET (C#)'
+                - name: Gestion des exceptions de niveau BLL et DAL dans une page ASP.NET (C#)
                   href: web-forms/overview/data-access/editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs.md
-                - name: 'Ajout de contrôles Validation aux interfaces de modification et d’insertion (C#)'
+                - name: Ajout de contrôles Validation aux interfaces de modification et d’insertion (C#)
                   href: web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-cs.md
-                - name: 'Personnalisation de l’interface de modification des données (C#)'
+                - name: Personnalisation de l’interface de modification des données (C#)
                   href: web-forms/overview/data-access/editing-inserting-and-deleting-data/customizing-the-data-modification-interface-cs.md
-                - name: 'Implémentation de l’accès concurrentiel optimiste (C#)'
+                - name: Implémentation de l’accès concurrentiel optimiste (C#)
                   href: web-forms/overview/data-access/editing-inserting-and-deleting-data/implementing-optimistic-concurrency-cs.md
-                - name: 'Ajout d’une confirmation côté client lors de la suppression (C#)'
+                - name: Ajout d’une confirmation côté client lors de la suppression (C#)
                   href: web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-cs.md
-                - name: 'Limitation des fonctionnalités de modification des données en fonction de l’utilisateur (C#)'
+                - name: Limitation des fonctionnalités de modification des données en fonction de l’utilisateur (C#)
                   href: web-forms/overview/data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-cs.md
                 - name: 'Vue d’ensemble de l’insertion, de la mise à jour et de la suppression de données (VB)'
                   href: web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb.md
@@ -814,13 +814,13 @@
             - name: Pagination et tri
               href: web-forms/overview/data-access/paging-and-sorting/index.md
               items:
-                - name: 'Pagination et tri des données des rapports (C#)'
+                - name: Pagination et tri des données des rapports (C#)
                   href: web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-cs.md
-                - name: 'Pagination efficace dans de grandes quantités de données (C#)'
+                - name: Pagination efficace dans de grandes quantités de données (C#)
                   href: web-forms/overview/data-access/paging-and-sorting/efficiently-paging-through-large-amounts-of-data-cs.md
-                - name: 'Tri personnalisé de données paginées (C#)'
+                - name: Tri personnalisé de données paginées (C#)
                   href: web-forms/overview/data-access/paging-and-sorting/sorting-custom-paged-data-cs.md
-                - name: 'Création d’une interface utilisateur de tri personnalisée (C#)'
+                - name: Création d’une interface utilisateur de tri personnalisée (C#)
                   href: web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-cs.md
                 - name: Pagination et tri des données des rapports (VB)
                   href: web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-vb.md
@@ -833,20 +833,20 @@
             - name: Actions de bouton personnalisé
               href: web-forms/overview/data-access/custom-button-actions/index.md
               items:
-                - name: 'Ajout et réponse à des boutons sur un GridView (C#)'
+                - name: Ajout et réponse à des boutons sur un GridView (C#)
                   href: web-forms/overview/data-access/custom-button-actions/adding-and-responding-to-buttons-to-a-gridview-cs.md
                 - name: Ajout et réponse à des boutons sur un GridView (VB)
                   href: web-forms/overview/data-access/custom-button-actions/adding-and-responding-to-buttons-to-a-gridview-vb.md
             - name: Affichage de données avec les contrôles DataList et Repeater
               href: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/index.md
               items:
-                - name: 'Affichage de données avec les contrôles DataList et Repeater (C#)'
+                - name: Affichage de données avec les contrôles DataList et Repeater (C#)
                   href: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-cs.md
-                - name: 'Mise en forme des contrôles DataList et Repeater en fonction des données (C#)'
+                - name: Mise en forme des contrôles DataList et Repeater en fonction des données (C#)
                   href: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/formatting-the-datalist-and-repeater-based-upon-data-cs.md
-                - name: 'Affichage de plusieurs enregistrements par ligne avec le contrôle DataList (C#)'
+                - name: Affichage de plusieurs enregistrements par ligne avec le contrôle DataList (C#)
                   href: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-cs.md
-                - name: 'Contrôles web de données imbriquées (C#)'
+                - name: Contrôles web de données imbriquées (C#)
                   href: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/nested-data-web-controls-cs.md
                 - name: Affichage de données avec les contrôles DataList et Repeater (VB)
                   href: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-vb.md
@@ -859,11 +859,11 @@
             - name: Scénarios de filtrage avec les contrôles DataList et Repeater
               href: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/index.md
               items:
-                - name: 'Filtrage maître/détail avec une DropDownList (C#)'
+                - name: Filtrage maître/détail avec une DropDownList (C#)
                   href: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-with-a-dropdownlist-datalist-cs.md
-                - name: 'Filtrage maître/détail sur deux pages (C#)'
+                - name: Filtrage maître/détail sur deux pages (C#)
                   href: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-acess-two-pages-datalist-cs.md
-                - name: 'Représentation maître/détail avec une liste à puces des enregistrements maîtres avec une DataList des détails (C#)'
+                - name: Représentation maître/détail avec une liste à puces des enregistrements maîtres avec une DataList des détails (C#)
                   href: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs.md
                 - name: Filtrage maître/détail avec une DropDownList (VB)
                   href: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-with-a-dropdownlist-datalist-vb.md
@@ -874,15 +874,15 @@
             - name: Modification et suppression des données via le contrôle DataList
               href: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/index.md
               items:
-                - name: 'Vue d’ensemble de la modification et de la suppression de données dans le contrôle DataList (C#)'
+                - name: Vue d’ensemble de la modification et de la suppression de données dans le contrôle DataList (C#)
                   href: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/an-overview-of-editing-and-deleting-data-in-the-datalist-cs.md
-                - name: 'Réalisation de mises à jour par lots (C#)'
+                - name: Réalisation de mises à jour par lots (C#)
                   href: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs.md
-                - name: 'Gestion des exceptions de niveau BLL et DAL (C#)'
+                - name: Gestion des exceptions de niveau BLL et DAL (C#)
                   href: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/handling-bll-and-dal-level-exceptions-cs.md
-                - name: 'Ajout de contrôles Validation aux interfaces de modification du contrôle DataList (C#)'
+                - name: Ajout de contrôles Validation aux interfaces de modification du contrôle DataList (C#)
                   href: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/adding-validation-controls-to-the-datalist-s-editing-interface-cs.md
-                - name: 'Personnalisation de l’interface de modification du contrôle DataList (C#)'
+                - name: Personnalisation de l’interface de modification du contrôle DataList (C#)
                   href: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/customizing-the-datalist-s-editing-interface-cs.md
                 - name: Vue d’ensemble de la modification et de la suppression de données dans le contrôle DataList (VB)
                   href: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/an-overview-of-editing-and-deleting-data-in-the-datalist-vb.md
@@ -897,9 +897,9 @@
             - name: Affichage et tri avec les contrôles DataList et Repeater
               href: web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/index.md
               items:
-                - name: 'Pagination des données d’un rapport dans un contrôle DataList ou Repeater (C#)'
+                - name: Pagination des données d’un rapport dans un contrôle DataList ou Repeater (C#)
                   href: web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/paging-report-data-in-a-datalist-or-repeater-control-cs.md
-                - name: 'Tri des données dans un contrôle DataList ou Repeater (C#)'
+                - name: Tri des données dans un contrôle DataList ou Repeater (C#)
                   href: web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-cs.md
                 - name: Pagination des données d’un rapport dans un contrôle DataList ou Repeater (VB)
                   href: web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/paging-report-data-in-a-datalist-or-repeater-control-vb.md
@@ -908,20 +908,20 @@
             - name: Actions de bouton personnalisé avec les contrôles DataList et Repeater
               href: web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater/index.md
               items:
-                - name: 'Boutons personnalisés dans les contrôles DataList et Repeater (C#)'
+                - name: Boutons personnalisés dans les contrôles DataList et Repeater (C#)
                   href: web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater/custom-buttons-in-the-datalist-and-repeater-cs.md
                 - name: Boutons personnalisés dans les contrôles DataList et Repeater (VB)
                   href: web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater/custom-buttons-in-the-datalist-and-repeater-vb.md
             - name: Accès à la base de données directement à partir d’une page ASP.NET
               href: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/index.md
               items:
-                - name: 'Interrogation des données avec le contrôle SqlDataSource (C#)'
+                - name: Interrogation des données avec le contrôle SqlDataSource (C#)
                   href: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/querying-data-with-the-sqldatasource-control-cs.md
-                - name: 'Utilisation de requêtes paramétrables avec SqlDataSource (C#)'
+                - name: Utilisation de requêtes paramétrables avec SqlDataSource (C#)
                   href: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/using-parameterized-queries-with-the-sqldatasource-cs.md
                 - name: 'Insertion, mise à jour et suppression de données avec SqlDataSource (C#)'
                   href: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/inserting-updating-and-deleting-data-with-the-sqldatasource-cs.md
-                - name: 'Implémentation de l’accès concurrentiel optimiste avec SqlDataSource (C#)'
+                - name: Implémentation de l’accès concurrentiel optimiste avec SqlDataSource (C#)
                   href: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/implementing-optimistic-concurrency-with-the-sqldatasource-cs.md
                 - name: Interrogation des données avec le contrôle SqlDataSource (VB)
                   href: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/querying-data-with-the-sqldatasource-control-vb.md
@@ -934,11 +934,11 @@
             - name: Amélioration du contrôle GridView
               href: web-forms/overview/data-access/enhancing-the-gridview/index.md
               items:
-                - name: 'Ajout d’une colonne GridView de cases d’option (C#)'
+                - name: Ajout d’une colonne GridView de cases d’option (C#)
                   href: web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-radio-buttons-cs.md
-                - name: 'Ajout d’une colonne GridView de cases à cocher (C#)'
+                - name: Ajout d’une colonne GridView de cases à cocher (C#)
                   href: web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-cs.md
-                - name: 'Insertion d’un nouvel enregistrement à partir du pied de page d’un contrôle GridView (C#)'
+                - name: Insertion d’un nouvel enregistrement à partir du pied de page d’un contrôle GridView (C#)
                   href: web-forms/overview/data-access/enhancing-the-gridview/inserting-a-new-record-from-the-gridview-s-footer-cs.md
                 - name: Ajout d’une colonne GridView de cases d’option (VB)
                   href: web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-radio-buttons-vb.md
@@ -949,13 +949,13 @@
             - name: Utilisation de fichiers binaires
               href: web-forms/overview/data-access/working-with-binary-files/index.md
               items:
-                - name: 'Chargement de fichiers (C#)'
+                - name: Chargement de fichiers (C#)
                   href: web-forms/overview/data-access/working-with-binary-files/uploading-files-cs.md
-                - name: 'Affichage de données binaires dans les contrôles web de données (C#)'
+                - name: Affichage de données binaires dans les contrôles web de données (C#)
                   href: web-forms/overview/data-access/working-with-binary-files/displaying-binary-data-in-the-data-web-controls-cs.md
-                - name: 'Inclusion d’une option de chargement de fichier lors de l’ajout d’un nouvel enregistrement (C#)'
+                - name: Inclusion d’une option de chargement de fichier lors de l’ajout d’un nouvel enregistrement (C#)
                   href: web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-cs.md
-                - name: 'Mise à jour et suppression de données binaires existantes (C#)'
+                - name: Mise à jour et suppression de données binaires existantes (C#)
                   href: web-forms/overview/data-access/working-with-binary-files/updating-and-deleting-existing-binary-data-cs.md
                 - name: Chargement de fichiers (VB)
                   href: web-forms/overview/data-access/working-with-binary-files/uploading-files-vb.md
@@ -968,13 +968,13 @@
             - name: Mise en cache des données
               href: web-forms/overview/data-access/caching-data/index.md
               items:
-                - name: 'Mise en cache de données avec ObjectDataSource (C#)'
+                - name: Mise en cache de données avec ObjectDataSource (C#)
                   href: web-forms/overview/data-access/caching-data/caching-data-with-the-objectdatasource-cs.md
-                - name: 'Mise en cache de données dans l’architecture (C#)'
+                - name: Mise en cache de données dans l’architecture (C#)
                   href: web-forms/overview/data-access/caching-data/caching-data-in-the-architecture-cs.md
-                - name: 'Mise en cache de données au démarrage de l’application (C#)'
+                - name: Mise en cache de données au démarrage de l’application (C#)
                   href: web-forms/overview/data-access/caching-data/caching-data-at-application-startup-cs.md
-                - name: 'Utilisation de dépendances de cache SQL (C#)'
+                - name: Utilisation de dépendances de cache SQL (C#)
                   href: web-forms/overview/data-access/caching-data/using-sql-cache-dependencies-cs.md
                 - name: Mise en cache de données avec ObjectDataSource (VB)
                   href: web-forms/overview/data-access/caching-data/caching-data-with-the-objectdatasource-vb.md
@@ -987,20 +987,20 @@
             - name: Plans de site pilotés par une base de données
               href: web-forms/overview/data-access/database-driven-site-maps/index.md
               items:
-                - name: 'Création d’un fournisseur de plan de site personnalisé piloté par une base de données (C#)'
+                - name: Création d’un fournisseur de plan de site personnalisé piloté par une base de données (C#)
                   href: web-forms/overview/data-access/database-driven-site-maps/building-a-custom-database-driven-site-map-provider-cs.md
                 - name: Création d’un fournisseur de plan de site personnalisé piloté par une base de données (VB)
                   href: web-forms/overview/data-access/database-driven-site-maps/building-a-custom-database-driven-site-map-provider-vb.md
             - name: Utilisation de données par lots
               href: web-forms/overview/data-access/working-with-batched-data/index.md
               items:
-                - name: 'Inclusion de modifications d’une base de données dans une transaction (C#)'
+                - name: Inclusion de modifications d’une base de données dans une transaction (C#)
                   href: web-forms/overview/data-access/working-with-batched-data/wrapping-database-modifications-within-a-transaction-cs.md
-                - name: 'Mise à jour par lots (C#)'
+                - name: Mise à jour par lots (C#)
                   href: web-forms/overview/data-access/working-with-batched-data/batch-updating-cs.md
-                - name: 'Suppression par lots (C#)'
+                - name: Suppression par lots (C#)
                   href: web-forms/overview/data-access/working-with-batched-data/batch-deleting-cs.md
-                - name: 'Insertion par lots (C#)'
+                - name: Insertion par lots (C#)
                   href: web-forms/overview/data-access/working-with-batched-data/batch-inserting-cs.md
                 - name: Inclusion de modifications d’une base de données dans une transaction (VB)
                   href: web-forms/overview/data-access/working-with-batched-data/wrapping-database-modifications-within-a-transaction-vb.md
@@ -1013,23 +1013,23 @@
             - name: Scénarios avancés d’accès aux données
               href: web-forms/overview/data-access/advanced-data-access-scenarios/index.md
               items:
-                - name: 'Création de procédures stockées pour les TableAdapters de dataset typé (C#)'
+                - name: Création de procédures stockées pour les TableAdapters de dataset typé (C#)
                   href: web-forms/overview/data-access/advanced-data-access-scenarios/creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md
-                - name: 'Utilisation de procédures stockées existantes pour les TableAdapters de dataset typé (C#)'
+                - name: Utilisation de procédures stockées existantes pour les TableAdapters de dataset typé (C#)
                   href: web-forms/overview/data-access/advanced-data-access-scenarios/using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md
-                - name: 'Mise à jour du TableAdapter pour l’utilisation de jointures (C#)'
+                - name: Mise à jour du TableAdapter pour l’utilisation de jointures (C#)
                   href: web-forms/overview/data-access/advanced-data-access-scenarios/updating-the-tableadapter-to-use-joins-cs.md
-                - name: 'Ajout de colonnes de DataTable supplémentaires (C#)'
+                - name: Ajout de colonnes de DataTable supplémentaires (C#)
                   href: web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-cs.md
-                - name: 'Utilisation de colonnes calculées (C#)'
+                - name: Utilisation de colonnes calculées (C#)
                   href: web-forms/overview/data-access/advanced-data-access-scenarios/working-with-computed-columns-cs.md
-                - name: 'Configuration des paramètres de niveau connexion et commande de la couche d’accès aux données (C#)'
+                - name: Configuration des paramètres de niveau connexion et commande de la couche d’accès aux données (C#)
                   href: web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-cs.md
-                - name: 'Protection des chaînes de connexion et d’autres informations de configuration (C#)'
+                - name: Protection des chaînes de connexion et d’autres informations de configuration (C#)
                   href: web-forms/overview/data-access/advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-cs.md
-                - name: 'Débogage des procédures stockées (C#)'
+                - name: Débogage des procédures stockées (C#)
                   href: web-forms/overview/data-access/advanced-data-access-scenarios/debugging-stored-procedures-cs.md
-                - name: 'Création de procédures stockées et de fonctions définies par l’utilisateur avec du code managé (C#)'
+                - name: Création de procédures stockées et de fonctions définies par l’utilisateur avec du code managé (C#)
                   href: web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-cs.md
                 - name: Création de procédures stockées pour les TableAdapters de dataset typé (VB)
                   href: web-forms/overview/data-access/advanced-data-access-scenarios/creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md
@@ -1055,11 +1055,11 @@
             - name: "ASP.NET\_3.5 - Introduction à la sécurité"
               href: web-forms/overview/older-versions-security/introduction/index.md
               items:
-                - name: 'Concepts de base et prise en charge de la sécurité par ASP.NET (C#)'
+                - name: Concepts de base et prise en charge de la sécurité par ASP.NET (C#)
                   href: web-forms/overview/older-versions-security/introduction/security-basics-and-asp-net-support-cs.md
-                - name: 'Vue d’ensemble de l’authentification par formulaire (C#)'
+                - name: Vue d’ensemble de l’authentification par formulaire (C#)
                   href: web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-cs.md
-                - name: 'Configuration et questions avancées de l’authentification par formulaire (C#)'
+                - name: Configuration et questions avancées de l’authentification par formulaire (C#)
                   href: web-forms/overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-cs.md
                 - name: Concepts de base et prise en charge de la sécurité par ASP.NET (VB)
                   href: web-forms/overview/older-versions-security/introduction/security-basics-and-asp-net-support-vb.md
@@ -1070,15 +1070,15 @@
             - name: "ASP.NET\_3.5 - Appartenance"
               href: web-forms/overview/older-versions-security/membership/index.md
               items:
-                - name: 'Création du schéma d’appartenance dans SQL Server (C#)'
+                - name: Création du schéma d’appartenance dans SQL Server (C#)
                   href: web-forms/overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-cs.md
-                - name: 'Création de comptes d’utilisateurs (C#)'
+                - name: Création de comptes d’utilisateurs (C#)
                   href: web-forms/overview/older-versions-security/membership/creating-user-accounts-cs.md
-                - name: 'Validation des informations d’identification de l’utilisateur par rapport au magasin d’utilisateurs d’appartenance (C#)'
+                - name: Validation des informations d’identification de l’utilisateur par rapport au magasin d’utilisateurs d’appartenance (C#)
                   href: web-forms/overview/older-versions-security/membership/validating-user-credentials-against-the-membership-user-store-cs.md
-                - name: 'Autorisation basée sur l’utilisateur (C#)'
+                - name: Autorisation basée sur l’utilisateur (C#)
                   href: web-forms/overview/older-versions-security/membership/user-based-authorization-cs.md
-                - name: 'Stockage d’informations supplémentaires sur l’utilisateur (C#)'
+                - name: Stockage d’informations supplémentaires sur l’utilisateur (C#)
                   href: web-forms/overview/older-versions-security/membership/storing-additional-user-information-cs.md
                 - name: Création du schéma d’appartenance dans SQL Server (VB)
                   href: web-forms/overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-vb.md
@@ -1093,11 +1093,11 @@
             - name: "ASP.NET\_3.5 - Rôles"
               href: web-forms/overview/older-versions-security/roles/index.md
               items:
-                - name: 'Création et gestion de rôles (C#)'
+                - name: Création et gestion de rôles (C#)
                   href: web-forms/overview/older-versions-security/roles/creating-and-managing-roles-cs.md
-                - name: 'Attribution de rôles aux utilisateurs (C#)'
+                - name: Attribution de rôles aux utilisateurs (C#)
                   href: web-forms/overview/older-versions-security/roles/assigning-roles-to-users-cs.md
-                - name: 'Autorisation basée sur le rôle (C#)'
+                - name: Autorisation basée sur le rôle (C#)
                   href: web-forms/overview/older-versions-security/roles/role-based-authorization-cs.md
                 - name: Création et gestion de rôles (VB)
                   href: web-forms/overview/older-versions-security/roles/creating-and-managing-roles-vb.md
@@ -1108,11 +1108,11 @@
             - name: "ASP.NET\_3.5 - Administration de la sécurité"
               href: web-forms/overview/older-versions-security/admin/index.md
               items:
-                - name: 'Création d’une interface pour sélectionner un compte d’utilisateur parmi de nombreux comptes (C#)'
+                - name: Création d’une interface pour sélectionner un compte d’utilisateur parmi de nombreux comptes (C#)
                   href: web-forms/overview/older-versions-security/admin/building-an-interface-to-select-one-user-account-from-many-cs.md
-                - name: 'Récupération et changement des mots de passe (C#)'
+                - name: Récupération et changement des mots de passe (C#)
                   href: web-forms/overview/older-versions-security/admin/recovering-and-changing-passwords-cs.md
-                - name: 'Déblocage et approbation des comptes d’utilisateur (C#)'
+                - name: Déblocage et approbation des comptes d’utilisateur (C#)
                   href: web-forms/overview/older-versions-security/admin/unlocking-and-approving-user-accounts-cs.md
                 - name: Création d’une interface pour sélectionner un compte d’utilisateur parmi de nombreux comptes (VB)
                   href: web-forms/overview/older-versions-security/admin/building-an-interface-to-select-one-user-account-from-many-vb.md
@@ -1867,7 +1867,7 @@
               href: web-forms/videos/aspnet-dynamic-data/how-to-enable-table-specific-routing-in-dynamic-data-applications.md
             - name: Utiliser la validation des attributs dans les applications ASP.NET Dynamic Data
               href: web-forms/videos/aspnet-dynamic-data/how-to-use-attribute-validation-in-aspnet-dynamic-data-applications.md
-            - name: 'Implémenter la validation de champ personnalisée avec une logique impérative dans VB ou C#'
+            - name: Implémenter la validation de champ personnalisée avec une logique impérative dans VB ou C#
               href: web-forms/videos/aspnet-dynamic-data/how-to-implement-custom-field-validation-with-imperative-logic-in-vb-or-c.md
             - name: Supprimer des colonnes dans vos grilles de données DynamicData
               href: web-forms/videos/aspnet-dynamic-data/how-to-remove-columns-from-your-dynamicdata-data-grids.md
@@ -2158,7 +2158,7 @@
               href: mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication.md
             - name: Prévention de XSRF/CSRF dans ASP.NET MVC et les pages web
               href: mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md
-            - name: 'Blocage des attaques par redirection ouverte (C#)'
+            - name: Blocage des attaques par redirection ouverte (C#)
               href: mvc/overview/security/preventing-open-redirection-attacks.md
         - name: Déploiement
           href: mvc/overview/deployment/index.md
@@ -2266,21 +2266,21 @@
                   items:
                     - name: "Introduction à ASP.NET MVC\_3 (C#)"
                       href: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md
-                    - name: 'Ajout d’un contrôleur (C#)'
+                    - name: Ajout d’un contrôleur (C#)
                       href: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-controller.md
-                    - name: 'Ajout d’une vue (C#)'
+                    - name: Ajout d’une vue (C#)
                       href: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-view.md
-                    - name: 'Ajout d’un modèle (C#)'
+                    - name: Ajout d’un modèle (C#)
                       href: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-model.md
-                    - name: 'Accès aux données de votre modèle à partir d’un contrôleur (C#)'
+                    - name: Accès aux données de votre modèle à partir d’un contrôleur (C#)
                       href: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/accessing-your-models-data-from-a-controller.md
-                    - name: 'Examen des méthodes de modification et de la vue de modification (C#)'
+                    - name: Examen des méthodes de modification et de la vue de modification (C#)
                       href: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/examining-the-edit-methods-and-edit-view.md
-                    - name: 'Ajout d’un nouveau champ à la table et au modèle Movie (C#)'
+                    - name: Ajout d’un nouveau champ à la table et au modèle Movie (C#)
                       href: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-new-field.md
-                    - name: 'Ajout de la validation au modèle (C#)'
+                    - name: Ajout de la validation au modèle (C#)
                       href: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-validation-to-the-model.md
-                    - name: 'Examen des méthodes Details et Delete (C#)'
+                    - name: Examen des méthodes Details et Delete (C#)
                       href: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/improving-the-details-and-delete-methods.md
                 - name: Bien démarrer avec ASP.NET MVC 3 (VB.NET)
                   href: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/index.md
@@ -2382,19 +2382,19 @@
             - name: Modèles (données)
               href: mvc/overview/older-versions-1/models-data/index.md
               items:
-                - name: 'Création de classes de modèle avec Entity Framework (C#)'
+                - name: Création de classes de modèle avec Entity Framework (C#)
                   href: mvc/overview/older-versions-1/models-data/creating-model-classes-with-the-entity-framework-cs.md
-                - name: 'Création de classes de modèle avec LINQ to SQL (C#)'
+                - name: Création de classes de modèle avec LINQ to SQL (C#)
                   href: mvc/overview/older-versions-1/models-data/creating-model-classes-with-linq-to-sql-cs.md
-                - name: 'Affichage d’une table de données de la base de données (C#)'
+                - name: Affichage d’une table de données de la base de données (C#)
                   href: mvc/overview/older-versions-1/models-data/displaying-a-table-of-database-data-cs.md
-                - name: 'Réalisation d’une validation simple (C#)'
+                - name: Réalisation d’une validation simple (C#)
                   href: mvc/overview/older-versions-1/models-data/performing-simple-validation-cs.md
-                - name: 'Validation avec l’interface IDataErrorInfo (C#)'
+                - name: Validation avec l’interface IDataErrorInfo (C#)
                   href: mvc/overview/older-versions-1/models-data/validating-with-the-idataerrorinfo-interface-cs.md
-                - name: 'Validation avec une couche de service (C#)'
+                - name: Validation avec une couche de service (C#)
                   href: mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-cs.md
-                - name: 'Validation avec les validateurs d’annotation de données (C#)'
+                - name: Validation avec les validateurs d’annotation de données (C#)
                   href: mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-cs.md
                 - name: Création de classes de modèle avec Entity Framework (VB)
                   href: mvc/overview/older-versions-1/models-data/creating-model-classes-with-the-entity-framework-vb.md
@@ -2413,15 +2413,15 @@
             - name: Vues ASP.NET MVC
               href: mvc/overview/older-versions-1/views/index.md
               items:
-                - name: 'Vue d’ensemble des vues ASP.NET MVC (C#)'
+                - name: Vue d’ensemble des vues ASP.NET MVC (C#)
                   href: mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-cs.md
-                - name: 'Création de helpers HTML personnalisés (C#)'
+                - name: Création de helpers HTML personnalisés (C#)
                   href: mvc/overview/older-versions-1/views/creating-custom-html-helpers-cs.md
-                - name: 'Classe TagBuilder pour générer des helpers HTML (C#)'
+                - name: Classe TagBuilder pour générer des helpers HTML (C#)
                   href: mvc/overview/older-versions-1/views/using-the-tagbuilder-class-to-build-html-helpers-cs.md
-                - name: 'Création de dispositions de page avec des pages maîtres de vue (C#)'
+                - name: Création de dispositions de page avec des pages maîtres de vue (C#)
                   href: mvc/overview/older-versions-1/views/creating-page-layouts-with-view-master-pages-cs.md
-                - name: 'Passage de données à des pages maîtres de vue (C#)'
+                - name: Passage de données à des pages maîtres de vue (C#)
                   href: mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-cs.md
                 - name: Vue d’ensemble des vues ASP.NET MVC (VB)
                   href: mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-vb.md
@@ -2436,17 +2436,17 @@
             - name: Contrôleurs et routage
               href: mvc/overview/older-versions-1/controllers-and-routing/index.md
               items:
-                - name: 'Vue d’ensemble du routage ASP.NET MVC (C#)'
+                - name: Vue d’ensemble du routage ASP.NET MVC (C#)
                   href: mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-cs.md
-                - name: 'Présentation des filtres d’actions (C#)'
+                - name: Présentation des filtres d’actions (C#)
                   href: mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-cs.md
-                - name: 'Amélioration des performances avec la mise en cache de la sortie (C#)'
+                - name: Amélioration des performances avec la mise en cache de la sortie (C#)
                   href: mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-cs.md
-                - name: 'Ajout de contenu dynamique à une page mise en cache (C#)'
+                - name: Ajout de contenu dynamique à une page mise en cache (C#)
                   href: mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-cs.md
-                - name: 'Création d’un contrôleur (C#)'
+                - name: Création d’un contrôleur (C#)
                   href: mvc/overview/older-versions-1/controllers-and-routing/creating-a-controller-cs.md
-                - name: 'Création d’une action (C#)'
+                - name: Création d’une action (C#)
                   href: mvc/overview/older-versions-1/controllers-and-routing/creating-an-action-cs.md
                 - name: Vue d’ensemble du routage ASP.NET MVC (VB)
                   href: mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-vb.md
@@ -2460,13 +2460,13 @@
                   href: mvc/overview/older-versions-1/controllers-and-routing/creating-a-controller-vb.md
                 - name: Création d’une action (VB)
                   href: mvc/overview/older-versions-1/controllers-and-routing/creating-an-action-vb.md
-                - name: 'Vue d’ensemble du contrôleur ASP.NET MVC (C#)'
+                - name: Vue d’ensemble du contrôleur ASP.NET MVC (C#)
                   href: mvc/overview/older-versions-1/controllers-and-routing/aspnet-mvc-controllers-overview-cs.md
-                - name: 'Création de routes personnalisées (C#)'
+                - name: Création de routes personnalisées (C#)
                   href: mvc/overview/older-versions-1/controllers-and-routing/creating-custom-routes-cs.md
-                - name: 'Création d’une contrainte de route (C#)'
+                - name: Création d’une contrainte de route (C#)
                   href: mvc/overview/older-versions-1/controllers-and-routing/creating-a-route-constraint-cs.md
-                - name: 'Création d’une contrainte de route personnalisée (C#)'
+                - name: Création d’une contrainte de route personnalisée (C#)
                   href: mvc/overview/older-versions-1/controllers-and-routing/creating-a-custom-route-constraint-cs.md
                 - name: Vue d’ensemble du contrôleur ASP.NET MVC (VB)
                   href: mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-controller-overview-vb.md
@@ -2479,18 +2479,18 @@
             - name: Déploiement
               href: mvc/overview/older-versions-1/deployment/index.md
               items:
-                - name: 'Utilisation d’ASP.NET MVC avec différentes versions d’IIS (C#)'
+                - name: Utilisation d’ASP.NET MVC avec différentes versions d’IIS (C#)
                   href: mvc/overview/older-versions-1/deployment/using-asp-net-mvc-with-different-versions-of-iis-cs.md
                 - name: Utilisation d’ASP.NET MVC avec différentes versions d’IIS (VB)
                   href: mvc/overview/older-versions-1/deployment/using-asp-net-mvc-with-different-versions-of-iis-vb.md
             - name: Sécurité
               href: mvc/overview/older-versions-1/security/index.md
               items:
-                - name: 'Authentification des utilisateurs avec l’authentification par formulaire (C#)'
+                - name: Authentification des utilisateurs avec l’authentification par formulaire (C#)
                   href: mvc/overview/older-versions-1/security/authenticating-users-with-forms-authentication-cs.md
-                - name: 'Authentification des utilisateurs avec l’authentification Windows (C#)'
+                - name: Authentification des utilisateurs avec l’authentification Windows (C#)
                   href: mvc/overview/older-versions-1/security/authenticating-users-with-windows-authentication-cs.md
-                - name: 'Prévention des attaques par injection de code JavaScript (C#)'
+                - name: Prévention des attaques par injection de code JavaScript (C#)
                   href: mvc/overview/older-versions-1/security/preventing-javascript-injection-attacks-cs.md
                 - name: Authentification des utilisateurs avec l’authentification par formulaire (VB)
                   href: mvc/overview/older-versions-1/security/authenticating-users-with-forms-authentication-vb.md
@@ -2501,7 +2501,7 @@
             - name: Test unitaire
               href: mvc/overview/older-versions-1/unit-testing/index.md
               items:
-                - name: 'Création de tests unitaires pour les applications ASP.NET MVC (C#)'
+                - name: Création de tests unitaires pour les applications ASP.NET MVC (C#)
                   href: mvc/overview/older-versions-1/unit-testing/creating-unit-tests-for-asp-net-mvc-applications-cs.md
                 - name: Création de tests unitaires pour les applications ASP.NET MVC (VB)
                   href: mvc/overview/older-versions-1/unit-testing/creating-unit-tests-for-asp-net-mvc-applications-vb.md
@@ -2817,7 +2817,7 @@
               items:
                 - name: Créer un point de terminaison OData v4
                   href: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-endpoint.md
-                - name: 'Créer une application cliente OData v4 (C#)'
+                - name: Créer une application cliente OData v4 (C#)
                   href: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-client-app.md
                 - name: Relations d’entité dans OData v4
                   href: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/entity-relations-in-odata-v4.md
@@ -2840,7 +2840,7 @@
                   href: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/working-with-entity-relations.md
                 - name: "Actions OData dans Web API\_2"
                   href: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/odata-actions.md
-                - name: 'Appel à un service OData à partir d’un client .NET (C#)'
+                - name: Appel à un service OData à partir d’un client .NET (C#)
                   href: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/calling-an-odata-service-from-a-net-client.md
             - name: "Prise en charge des options de requête OData dans Web API\_2"
               href: web-api/overview/odata-support-in-aspnet-web-api/supporting-odata-query-options.md
@@ -2892,7 +2892,7 @@
               href: web-api/overview/security/authentication-and-authorization-in-aspnet-web-api.md
             - name: "Sécuriser une API web avec des comptes individuels dans Web API\_2.2"
               href: web-api/overview/security/individual-accounts-in-web-api.md
-            - name: 'Services d’authentification externe avec l’API web (C#)'
+            - name: Services d’authentification externe avec l’API web (C#)
               href: web-api/overview/security/external-authentication-services.md
             - name: Prévention des attaques par falsification de requête intersites dans l’API web
               href: web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks.md
@@ -2922,7 +2922,7 @@
               href: web-api/overview/advanced/configuring-aspnet-web-api.md
             - name: "Injection de dépendances dans Web API\_2"
               href: web-api/overview/advanced/dependency-injection.md
-            - name: 'Appeler une API web à partir d’un client .NET (C#)'
+            - name: Appeler une API web à partir d’un client .NET (C#)
               href: web-api/overview/advanced/calling-a-web-api-from-a-net-client.md
             - name: Gestionnaires de messages HTTP dans l’API web
               href: web-api/overview/advanced/http-message-handlers.md
@@ -3220,11 +3220,11 @@
         - name: Guide de l’API
           href: signalr/overview/guide-to-the-api/index.md
           items:
-            - name: 'Guide de l’API Hubs - Serveur (C#)'
+            - name: Guide de l’API Hubs - Serveur (C#)
               href: signalr/overview/guide-to-the-api/hubs-api-guide-server.md
             - name: Guide de l’API Hubs - Client JavaScript
               href: signalr/overview/guide-to-the-api/hubs-api-guide-javascript-client.md
-            - name: 'Guide de l’API Hubs - Client .NET (C#)'
+            - name: Guide de l’API Hubs - Client .NET (C#)
               href: signalr/overview/guide-to-the-api/hubs-api-guide-net-client.md
             - name: Présentation et gestion des événements de durée de vie des connexions dans SignalR
               href: signalr/overview/guide-to-the-api/handling-connection-lifetime-events.md
@@ -3487,7 +3487,7 @@
           items:
             - name: Bonnes pratiques pour le déploiement des mots de passe et d’autres données sensibles sur ASP.NET et Azure App Service
               href: identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md
-            - name: 'Confirmation de compte et récupération de mot de passe avec ASP.NET Identity (C#)'
+            - name: Confirmation de compte et récupération de mot de passe avec ASP.NET Identity (C#)
               href: identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity.md
             - name: Authentification à deux facteurs par SMS et e-mail avec ASP.NET Identity
               href: identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md
@@ -3505,7 +3505,7 @@
           items:
             - name: Migration d’un site web existant de l’appartenance SQL vers ASP.NET Identity
               href: identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md
-            - name: 'Migration des données du fournisseur universel pour l’appartenance et les profils utilisateur vers ASP.NET Identity (C#)'
+            - name: Migration des données du fournisseur universel pour l’appartenance et les profils utilisateur vers ASP.NET Identity (C#)
               href: identity/overview/migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity.md
 - name: Ajax
   href: ajax/index.md
@@ -3775,9 +3775,9 @@
           href: SameSite/system-web-samesite.md
         - name: Articles KB sur SameSite
           uid: samesite/kbs-samesite
-        - name: 'MVC C#'
+        - name: MVC C#
           uid: samesite/csMVC
-        - name: 'WebForms C#'
+        - name: WebForms C#
           uid: samesite/CSharpWebForms
         - name: WebForms VB
           uid: samesite/vbWF
