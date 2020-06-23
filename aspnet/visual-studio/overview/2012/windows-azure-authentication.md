@@ -8,12 +8,12 @@ ms.date: 02/20/2013
 ms.assetid: a3cef801-a54b-4ebd-93c3-55764e2e14b1
 msc.legacyurl: /visual-studio/overview/2012/windows-azure-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: ce98effe18dd739504fb0d5453bae8a46c3ba102
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: ab75218cbe3817c14a064e9816388aebc7e431f7
+ms.sourcegitcommit: 0cf7d06071a8ff986e6c028ac9daf0c0e7490412
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78557861"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85240559"
 ---
 # <a name="windows-azure-authentication"></a>Authentification Windows Azure
 
@@ -25,9 +25,9 @@ par [Rick Anderson](https://twitter.com/RickAndMSFT)
 >
 > Pour plus d’informations sur la configuration de la synchronisation entre votre Active Directory sur site et votre client Windows Azure Active Directory, consultez la page [utilisation de AD FS 2,0 pour implémenter et gérer l’authentification unique](https://technet.microsoft.com/library/jj205462.aspx).
 >
-> Windows Azure Active Directory est actuellement disponible en version [préliminaire gratuite](https://azure.microsoft.com/free/?WT.mc_id=A443DD604).
+> Windows Azure Active Directory est actuellement disponible en version [préliminaire gratuite](https://azure.microsoft.com/free/dotnet/).
 
-## <a name="requirements"></a>Configuration requise :
+## <a name="requirements"></a>Conditions requises :
 
 - Visual Studio 2012 ou [Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/products/express)
 - Extensions [Web Tools pour Visual Studio 2012](https://go.microsoft.com/fwlink/?LinkID=282228&amp;clcid=0x409) ou [Extensions web tools pour Visual Studio Express 2012](https://go.microsoft.com/fwlink/?LinkID=282231&amp;clcid=0x409)
@@ -65,7 +65,7 @@ Si vous ne disposez pas de privilèges d’administrateur général pour votre l
 ![](windows-azure-authentication/_static/image6.png)
 
 La boîte de dialogue affiche le **domaine**, l' **ID du principal** de l’application et l' **URL de réponse** , qui sont nécessaires à l’approvisionnement de l’application avec un Azure Active Directory principe. Vous devez fournir ces informations à une personne disposant des privilèges suffisants pour approvisionner l’application. Pour plus d’informations sur l’utilisation de l’applet de commande pour créer manuellement le principal du service[, consultez Comment implémenter l’authentification unique avec Windows Azure Active Directory-Application ASP.net](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect) .
-Une fois l’application configurée, vous pouvez cliquer sur **continuer pour mettre à jour le fichier Web. config avec les paramètres sélectionnés**. Si vous souhaitez poursuivre le développement de l’application en attendant que l’approvisionnement se produise, vous pouvez cliquer sur **Fermer pour vous souvenir des paramètres du fichier projet**. La prochaine fois que vous appelez activer l’authentification Windows Azure et décochez la case de configuration, vous verrez les mêmes paramètres. vous pouvez cliquer sur **Continuer**, puis sur **appliquer ces paramètres dans le fichier Web. config**.
+Une fois que l’application a été approvisionnée, vous pouvez cliquer sur **continuer pour mettre à jour web.config avec les paramètres sélectionnés**. Si vous souhaitez poursuivre le développement de l’application en attendant que l’approvisionnement se produise, vous pouvez cliquer sur **Fermer pour vous souvenir des paramètres du fichier projet**. La prochaine fois que vous appelez activer l’authentification Windows Azure et décochez la case de configuration, vous verrez les mêmes paramètres et vous pouvez cliquer sur **Continuer**, puis sur **appliquer ces paramètres dans web.config**.
 
 1. Attendez que votre application soit configurée pour l’authentification Windows Azure et approvisionnée avec Windows Azure Active Directory.
 2. Une fois l’authentification Windows Azure activée pour votre application, cliquez sur **Fermer :**
@@ -85,9 +85,9 @@ Une fois l’application configurée, vous pouvez cliquer sur **continuer pour m
 
 L’activation de l’authentification Windows Azure apporte les modifications suivantes à votre application :
 
-- Une classe de falsification de requête intersite ([CSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF))) ( *application\_Start\AntiXsrfConfig.cs* ) est ajoutée à votre projet.
+- Une classe de falsification de requête intersite ([CSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF))) ( *application \_ Start\AntiXsrfConfig.cs* ) est ajoutée à votre projet.
 - Les packages NuGet `System.IdentityModel.Tokens.ValidatingIssuerNameRegistry` sont ajoutés à votre projet.
-- Les paramètres de Windows Identity Foundation dans votre application seront configurés pour accepter les jetons de sécurité de votre locataire Windows Azure Active Directory. Cliquez sur l’image ci-dessous pour afficher une vue développée des modifications apportées au fichier *Web. config* .
+- Les paramètres de Windows Identity Foundation dans votre application seront configurés pour accepter les jetons de sécurité de votre locataire Windows Azure Active Directory. Cliquez sur l’image ci-dessous pour afficher une vue développée des modifications apportées au fichier *Web.config* .
 
      ![](windows-azure-authentication/_static/image9.png)
 - Un principal de service pour votre application dans votre locataire Windows Azure Active Directory sera approvisionné.

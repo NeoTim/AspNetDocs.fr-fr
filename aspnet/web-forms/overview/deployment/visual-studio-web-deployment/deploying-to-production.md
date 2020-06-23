@@ -8,12 +8,12 @@ ms.date: 02/15/2013
 ms.assetid: 416438a1-3b2f-4d27-bf53-6b76223c33bf
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: ddc3d15f0436c4c3a24491cf0377111768da67df
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: ec025e757d00cbfbfbcda9408739d2593908bc07
+ms.sourcegitcommit: 0cf7d06071a8ff986e6c028ac9daf0c0e7490412
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78632782"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85240623"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>Déploiement Web ASP.NET à l’aide de Visual Studio : déploiement en production
 
@@ -23,7 +23,7 @@ par [Tom Dykstra](https://github.com/tdykstra)
 
 > Cette série de didacticiels vous montre comment déployer (publier) une application Web ASP.NET sur Azure App Service Web Apps ou sur un fournisseur d’hébergement tiers, à l’aide de Visual Studio 2012 ou de Visual Studio 2010. Pour plus d’informations sur la série, consultez [le premier didacticiel de la série](introduction.md).
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d’ensemble
 
 Dans ce didacticiel, vous allez configurer un compte Microsoft Azure, créer des environnements intermédiaires et de production, puis déployer votre application Web ASP.NET dans les environnements intermédiaire et de production à l’aide de la fonctionnalité de publication en un clic de Visual Studio.
 
@@ -33,7 +33,7 @@ Rappel : Si vous recevez un message d’erreur ou si une action ne fonctionne p
 
 ## <a name="get-a-microsoft-azure-account"></a>Obtenir un compte Microsoft Azure
 
-Si vous n’avez pas encore de compte Azure, vous pouvez créer un compte d’évaluation gratuit en quelques minutes. Pour plus d’informations, consultez [Essai gratuit Azure](https://azure.microsoft.com/free/?WT.mc_id=A443DD604).
+Si vous n’avez pas encore de compte Azure, vous pouvez créer un compte d’évaluation gratuit en quelques minutes. Pour plus d’informations, consultez [Essai gratuit Azure](https://azure.microsoft.com/free/dotnet/).
 
 ## <a name="create-a-staging-environment"></a>Créer un environnement intermédiaire
 
@@ -117,7 +117,7 @@ Maintenant que vous avez créé une application Web et une base de données pour
 1. Dans Visual Studio, cliquez avec le bouton droit sur le projet ContosoUniversity dans **Explorateur de solutions** , puis sélectionnez **publier** dans le menu contextuel.
 
     L'Assistant **Publier le site Web** s'ouvre.
-2. Cliquez sur l’onglet **Profil**.
+2. Cliquez sur l’onglet **Profil** .
 3. Cliquez sur **Importer**.
 4. Accédez au fichier *. publishsettings* que vous avez téléchargé précédemment, puis cliquez sur **ouvrir**.
 
@@ -127,10 +127,10 @@ Maintenant que vous avez créé une application Web et une base de données pour
     Une fois la connexion validée, une coche verte s’affiche en regard du bouton **valider la connexion** .
 
     Pour certains fournisseurs d’hébergement, lorsque vous cliquez sur **valider la connexion**, une boîte de dialogue **erreur de certificat** peut s’afficher. Si vous le faites, vérifiez que le nom du serveur correspond à ce que vous attendez. Si le nom du serveur est correct, sélectionnez **enregistrer ce certificat pour les futures sessions de Visual Studio** , puis cliquez sur **accepter**. (Cette erreur signifie que le fournisseur d’hébergement a choisi d’éviter les dépenses liées à l’achat d’un certificat SSL pour l’URL vers laquelle vous effectuez le déploiement. Si vous préférez établir une connexion sécurisée à l’aide d’un certificat valide, contactez votre fournisseur d’hébergement.)
-6. Cliquez sur **Next**.
+6. Cliquez sur **Suivant**.
 
     ![icône connexion réussie et bouton suivant dans l’onglet connexion](deploying-to-production/_static/image8.png)
-7. Dans l’onglet **paramètres** , développez **options de publication de fichiers**, puis sélectionnez **exclure des fichiers du dossier de données de l’application\_** .
+7. Dans l’onglet **paramètres** , développez **options de publication de fichiers**, puis sélectionnez **exclure des fichiers du \_ dossier de données d’application**.
 
     Pour plus d’informations sur les autres options disponibles sous **options de publication de fichier**, consultez le didacticiel [déploiement sur IIS](deploying-to-iis.md) . La capture d’écran qui montre le résultat de cette étape et les étapes de configuration de base de données suivantes se trouve à la fin des étapes de configuration de la base de données.
 8. Sous **DefaultConnection** dans la section **bases de données** , configurez le déploiement de base de données pour la base de données d’appartenance.
@@ -141,9 +141,9 @@ Maintenant que vous avez créé une application Web et une base de données pour
       3. Dans la boîte de dialogue **configurer les mises à jour de la base de données** , cliquez sur **Ajouter un script SQL**.
       4. Dans la zone **Ajouter un script SQL** , accédez au script *ASPNET-Data-prod. SQL* que vous avez enregistré précédemment dans le dossier de la solution, puis cliquez sur **ouvrir**.
       5. Fermez la boîte **de dialogue Configurer les mises à jour de la base de données** .
-10. Sous **SchoolContext** dans la section **bases de données** , sélectionnez **exécuter migrations code First (s’exécute au démarrage de l’application)** .
+10. Sous **SchoolContext** dans la section **bases de données** , sélectionnez **exécuter migrations code First (s’exécute au démarrage de l’application)**.
 
-    Visual Studio affiche **exécuter migrations code First** au lieu de **mettre à jour la base de données** pour les classes `DbContext`. Si vous souhaitez utiliser le fournisseur dbDacFx au lieu des migrations pour déployer une base de données à laquelle vous accédez à l’aide d’une classe `DbContext`, consultez [Comment faire déployer une base de données Code First sans migrations ?](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) dans le Forum aux questions sur le déploiement Web pour Visual Studio et ASP.net sur MSDN.
+    Visual Studio affiche **exécuter migrations code First** au lieu de **mettre à jour la base de données** pour les `DbContext` classes. Si vous souhaitez utiliser le fournisseur dbDacFx au lieu des migrations pour déployer une base de données à laquelle vous accédez à l’aide d’une `DbContext` classe, consultez [Comment faire déployer une base de données Code First sans migrations ?](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) dans le Forum aux questions sur le déploiement Web pour Visual Studio et ASP.net sur MSDN.
 
     L’onglet **paramètres** ressemble maintenant à l’exemple suivant :
 
@@ -160,22 +160,22 @@ Maintenant que vous avez créé une application Web et une base de données pour
 ### <a name="configure-a-publish-profile-transform-for-the-environment-indicator"></a>Configurer une transformation de profil de publication pour l’indicateur d’environnement
 
 > [!NOTE]
-> Cette section montre comment configurer une transformation Web. config pour l’indicateur d’environnement. Étant donné que l’indicateur se trouve dans l’élément `<appSettings>`, vous disposez d’une autre solution pour spécifier la transformation lorsque vous effectuez le déploiement sur Azure App Service. Pour plus d’informations, consultez [spécification des paramètres Web. config dans Azure](web-config-transformations.md#watransforms).
+> Cette section montre comment configurer une transformation de Web.config pour l’indicateur d’environnement. Étant donné que l’indicateur se trouve dans l' `<appSettings>` élément, vous disposez d’une autre solution pour spécifier la transformation lorsque vous effectuez le déploiement sur Azure App service. Pour plus d’informations, consultez [spécification des paramètres de Web.config dans Azure](web-config-transformations.md#watransforms).
 
 1. Dans **Explorateur de solutions**, développez **Propriétés**, puis **PublishProfiles**.
 2. Cliquez avec le bouton droit sur *Staging. pubxml*, puis cliquez sur **Ajouter une transformation de configuration**.
 
     ![Ajouter une transformation de configuration pour la mise en lots](deploying-to-production/_static/image11.png)
 
-    Visual Studio crée le fichier de transformation *Web. Staging. config* et l’ouvre.
-3. Dans le fichier de transformation *Web. Staging. config* , insérez le code suivant immédiatement après la balise d’ouverture `configuration`.
+    Visual Studio crée le fichier de transformation *Web.Staging.config* et l’ouvre.
+3. Dans le fichier de transformation *Web.Staging.config* , insérez le code suivant immédiatement après la `configuration` balise d’ouverture.
 
     [!code-xml[Main](deploying-to-production/samples/sample1.xml)]
 
     Lorsque vous utilisez le profil de publication intermédiaire, cette transformation définit l’indicateur d’environnement sur « prod ». Dans l’application Web déployée, vous ne verrez aucun suffixe tel que « (dev) » ou « (test) » après l’en-tête « Contoso University » H1.
-4. Cliquez avec le bouton droit sur le fichier *Web. Staging. config* , puis cliquez sur Aperçu de la **transformation** pour vous assurer que la transformation que vous avez codée produit les modifications attendues.
+4. Cliquez avec le bouton droit sur le fichier *Web.Staging.config* , puis cliquez sur Aperçu de la **transformation** pour vous assurer que la transformation que vous avez codée produit les modifications attendues.
 
-    La fenêtre d' **aperçu de Web. config** affiche le résultat de l’application des transformations *Web. Release. config* et des transformations *Web. Staging. config* .
+    La fenêtre d' **Aperçu duWeb.config** affiche le résultat de l’application des transformations *Web.Release.config* et des transformations *Web.Staging.config* .
 
 ### <a name="prevent-public-use-of-the-test-app"></a>Empêcher l’utilisation publique de l’application de test
 
@@ -183,18 +183,18 @@ Une considération importante pour l’application intermédiaire est qu’elle 
 
 - Définir des règles de pare-feu qui autorisent l’accès à l’application intermédiaire uniquement à partir d’adresses IP que vous utilisez pour tester la mise en lots.
 - Utilisez une URL obscurcie qui serait impossible à deviner.
-- Créez un fichier *robots. txt* pour vous assurer que les moteurs de recherche n’analyseront pas l’application de test et les liens de rapport vers ce fichier dans les résultats de la recherche.
+- Créez un fichier de *robots.txt* pour vous assurer que les moteurs de recherche n’analyseront pas l’application de test et les liens de rapport vers ce dernier dans les résultats de la recherche.
 
 La première de ces méthodes est la plus efficace, mais n’est pas traitée dans ce didacticiel, car elle nécessiterait le déploiement vers un service Cloud Azure au lieu de Azure App Service. Pour plus d’informations sur les services Cloud et les restrictions d’adresse IP dans Azure, consultez [options d’hébergement de calcul fournies par Azure](https://docs.microsoft.com/azure/cloud-services/cloud-services-choose-me) et [empêcher des adresses IP spécifiques d’accéder à un rôle Web](https://msdn.microsoft.com/library/windowsazure/jj154098.aspx). Si vous déployez sur un fournisseur d’hébergement tiers, contactez le fournisseur pour savoir comment implémenter des restrictions d’adresse IP.
 
-Pour ce didacticiel, vous allez créer un fichier *robots. txt* .
+Pour ce didacticiel, vous allez créer un fichier *robots.txt* .
 
 1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet ContosoUniversity, puis cliquez sur **Ajouter un nouvel élément**.
-2. Créez un **fichier texte** nommé *robots. txt*et placez-y le texte suivant :
+2. Créez un **fichier texte** nommé *robots.txt*et placez-y le texte suivant :
 
     [!code-console[Main](deploying-to-production/samples/sample2.cmd)]
 
-    La ligne `User-agent` indique aux moteurs de recherche que les règles du fichier s’appliquent à tous les robots d’indexation (robots) du moteur de recherche et que la ligne `Disallow` spécifie qu’aucune page du site ne doit être analysée.
+    La `User-agent` ligne indique aux moteurs de recherche que les règles du fichier s’appliquent à tous les robots d’indexation (robots) du moteur de recherche, et la `Disallow` ligne spécifie qu’aucune page du site ne doit être analysée.
 
     Vous souhaitez que les moteurs de recherche cataloguent votre application de production. vous devez donc exclure ce fichier du déploiement de production. Pour ce faire, vous configurez un paramètre dans le profil de publication de production lorsque vous le créez.
 
@@ -208,7 +208,7 @@ Pour ce didacticiel, vous allez créer un fichier *robots. txt* .
 
 ## <a name="test-in-the-staging-environment"></a>Test dans l’environnement intermédiaire
 
-Notez que l’indicateur d’environnement est absent (il n’y a aucun « (test) » ou « (dev) » après l’en-tête H1, qui indique que la transformation *Web. config* de l’indicateur d’environnement a réussi.
+Notez que l’indicateur d’environnement est absent (il n’y a pas de « (test) » ou « (dev) » après l’en-tête H1, qui indique que la transformation de *Web.config* pour l’indicateur d’environnement a réussi.
 
 ![Mise en lots des pages d’hébergement](deploying-to-production/_static/image12.png)
 
@@ -224,9 +224,9 @@ Demandez une URL non valide pour provoquer une erreur que ELMAH effectue le suiv
 
 L’application que vous avez créée est maintenant exécutée dans le Cloud dans une application Web comme ce que vous allez utiliser pour la production. Dans la mesure où tout fonctionne correctement, l’étape suivante consiste à déployer en production.
 
-## <a name="deploy-to-production"></a>Déployer en production
+## <a name="deploy-to-production"></a>Déployer en production
 
-Le processus de création d’une application Web de production et de déploiement en production est le même que pour la mise en lots, sauf que vous devez exclure le format *robots. txt* du déploiement. Pour ce faire, vous allez modifier le fichier de profil de publication.
+Le processus de création d’une application Web de production et de déploiement en production est le même que pour la mise en lots, sauf que vous devez exclure les *robots.txt* du déploiement. Pour ce faire, vous allez modifier le fichier de profil de publication.
 
 ### <a name="create-the-production-environment-and-the-production-publish-profile"></a>Créer l’environnement de production et le profil de publication de production
 
@@ -240,9 +240,9 @@ Le processus de création d’une application Web de production et de déploieme
 4. Renommez le profil de publication en *production*.
 5. Configurez une transformation de profil de publication pour l’indicateur d’environnement, en suivant la procédure que vous avez utilisée pour la mise en lots.
 
-### <a name="edit-the-pubxml-file-to-exclude-robotstxt"></a>Modifiez le fichier. pubxml pour exclure robots. txt
+### <a name="edit-the-pubxml-file-to-exclude-robotstxt"></a>Modifiez le fichier. pubxml pour exclure robots.txt
 
-Les fichiers de profil de publication sont nommés &lt;ProfileName&gt; *. pubxml* et se trouvent dans le dossier *PublishProfiles* . Le dossier *PublishProfiles* se trouve sous le dossier *Propriétés* d' C# un projet d’application Web, sous le dossier *mon projet* dans un projet d’application web VB, ou sous le dossier *application\_données* dans un projet d’application Web. Chaque fichier *. pubxml* contient des paramètres qui s’appliquent à un profil de publication. Les valeurs que vous entrez dans l’Assistant publier le site Web sont stockées dans ces fichiers et vous pouvez les modifier pour créer ou modifier des paramètres qui ne sont pas mis à disposition dans l’interface utilisateur de Visual Studio.
+Les fichiers de profil de publication sont nommés &lt; ProfileName &gt; *. pubxml* et se trouvent dans le dossier *PublishProfiles* . Le dossier *PublishProfiles* se trouve dans le dossier *Propriétés* d’un projet d’application Web C#, sous le dossier *mon projet* dans un projet d’application Web VB, ou sous le dossier *application \_ Data* dans un projet d’application Web. Chaque fichier *. pubxml* contient des paramètres qui s’appliquent à un profil de publication. Les valeurs que vous entrez dans l’Assistant publier le site Web sont stockées dans ces fichiers et vous pouvez les modifier pour créer ou modifier des paramètres qui ne sont pas mis à disposition dans l’interface utilisateur de Visual Studio.
 
 Par défaut, les fichiers *. pubxml* sont inclus dans le projet lorsque vous créez un profil de publication, mais vous pouvez les exclure du projet et Visual Studio les utilisera toujours. Visual Studio recherche les fichiers *. pubxml* dans le dossier *PublishProfiles* , qu’ils soient inclus ou non dans le projet.
 
@@ -255,7 +255,7 @@ Un fichier *. pubxml* contient les paramètres qui se rapportent à un profil de
 
     ![Ouvrez le fichier. pubxml](deploying-to-production/_static/image13.png)
 3. Cliquez avec le bouton droit sur *production. pubxml* , puis cliquez sur **ouvrir**.
-4. Ajoutez les lignes suivantes juste avant l’élément `PropertyGroup` de fermeture :
+4. Ajoutez les lignes suivantes juste avant l’élément de fermeture `PropertyGroup` :
 
     [!code-xml[Main](deploying-to-production/samples/sample3.xml)]
 
@@ -265,20 +265,20 @@ Un fichier *. pubxml* contient les paramètres qui se rapportent à un profil de
 
     Pour plus d’informations sur l’exclusion de fichiers et de dossiers, consultez peux- [je exclure des fichiers ou des dossiers spécifiques du déploiement ?](https://msdn.microsoft.com/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment) dans le **Forum aux questions sur le déploiement Web pour Visual Studio et ASP.net** sur MSDN.
 
-### <a name="deploy-to-production"></a>Déployer en production
+### <a name="deploy-to-production"></a>Déployer en production
 
-1. Ouvrez l' **Assistant publier le site Web** . Assurez-vous que le profil de publication de **production** est sélectionné, puis cliquez sur **Démarrer l’aperçu** sous l’onglet **Aperçu** pour vérifier que le fichier *robots. txt* n’est pas copié dans l’application de production.
+1. Ouvrez l' **Assistant publier le site Web** . Assurez-vous que le profil de publication de **production** est sélectionné, puis cliquez sur **Démarrer l’aperçu** sous l’onglet **Aperçu** pour vérifier que le fichier *robots.txt* ne sera pas copié dans l’application de production.
 
     ![Aperçu des fichiers à publier en production](deploying-to-production/_static/image14.png)
 
-    Passez en revue la liste des fichiers qui seront copiés. Vous verrez que tous les fichiers *. cs* , y compris les fichiers *. aspx.cs*, *. aspx.Designer.cs*, *Master.cs*et *Master.Designer.cs* sont omis. Tout ce code a été compilé dans les fichiers *ContosoUniversity. dll* et *ContosoUniversity. pdb* que vous trouverez dans le dossier *bin* . Étant donné que seul le *fichier. dll* est nécessaire pour exécuter l’application, et que vous avez spécifié précédemment que seuls les fichiers nécessaires à l’exécution de l’application doivent être déployés, aucun fichier *. cs* n’a été copié dans l’environnement de destination. Le dossier *obj* et les fichiers *ContosoUniversity. csproj* et *. csproj. User* sont omis pour la même raison.
+    Passez en revue la liste des fichiers qui seront copiés. Vous verrez que tous les fichiers *. cs* , y compris les fichiers *. aspx.cs*, *. aspx.Designer.cs*, *Master.cs*et *Master.Designer.cs* sont omis. Tout ce code a été compilé dans les fichiers *ContosoUniversity.dll* et *ContosoUniversity. pdb* que vous trouverez dans le dossier *bin* . Étant donné que seul le *fichier. dll* est nécessaire pour exécuter l’application, et que vous avez spécifié précédemment que seuls les fichiers nécessaires à l’exécution de l’application doivent être déployés, aucun fichier *. cs* n’a été copié dans l’environnement de destination. Le dossier *obj* et les fichiers *ContosoUniversity. csproj* et *. csproj. User* sont omis pour la même raison.
 
     Cliquez sur **publier** pour déployer dans l’environnement de production.
 2. Testez en production en suivant la même procédure que celle utilisée pour la mise en lots.
 
-    Tout est identique à la mise en lots, à l’exception de l’URL et de l’absence du fichier *robots. txt* .
+    Tout est identique à la mise en lots, à l’exception de l’URL et de l’absence du fichier de *robots.txt* .
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Vous avez maintenant déployé et testé votre application Web avec succès et elle est disponible publiquement sur Internet.
 
@@ -294,5 +294,5 @@ Dans le didacticiel suivant, vous allez mettre à jour le code de l’applicatio
 > Dans ce didacticiel, l’édition SQL Server sur laquelle vous effectuez le déploiement est Azure SQL Database. Alors que le processus de déploiement est similaire à d’autres éditions de SQL Server, une application de production réelle peut nécessiter du code spécial pour Azure SQL Database dans certains scénarios. Pour plus d’informations, consultez [utilisation de Azure SQL Database](../../../../whitepapers/aspnet-data-access-content-map.md#ssdb) et [choix entre SQL Server et Azure SQL Database](../../../../whitepapers/aspnet-data-access-content-map.md#ssdbchoosing).
 > 
 > [!div class="step-by-step"]
-> [Précédent](setting-folder-permissions.md)
-> [Suivant](deploying-a-code-update.md)
+> [Précédent](setting-folder-permissions.md) 
+>  [Suivant](deploying-a-code-update.md)

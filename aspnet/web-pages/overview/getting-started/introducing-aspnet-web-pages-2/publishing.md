@@ -8,16 +8,16 @@ ms.date: 05/28/2015
 ms.assetid: 7e85c70e-1a88-4408-8b3d-29611c7713ed
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/publishing
 msc.type: authoredcontent
-ms.openlocfilehash: 49a841dbda183bf1d59153b83f694c9f517e0b94
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: a09339a833ea0b4a2d3c3a9323cce777577ea048
+ms.sourcegitcommit: 0cf7d06071a8ff986e6c028ac9daf0c0e7490412
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78633615"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85240588"
 ---
 # <a name="introducing-aspnet-web-pages---publishing-a-site-by-using-webmatrix"></a>Présentation de la pages Web ASP.NET de la publication d’un site à l’aide de WebMatrix
 
-par [Tom FitzMacken](https://github.com/tfitzmac)
+ par [Tom FitzMacken](https://github.com/tfitzmac)
 
 > Ce didacticiel est la dernière version de l’ensemble de didacticiels qui introduit pages Web ASP.NET et Microsoft WebMatrix. Il explique comment publier votre site sur Internet afin que d’autres personnes puissent l’utiliser. Il part du principe que vous avez terminé la série en [créant une apparence cohérente pour les Sites pages Web ASP.net](https://go.microsoft.com/fwlink/?LinkId=251585).
 > 
@@ -48,7 +48,7 @@ Ce didacticiel contient quatre sections :
 <a id="defaultpage"></a>
 ## <a name="setting-up-the-default-page"></a>Configuration de la page par défaut
 
-Quand un utilisateur accède à l’adresse de base de votre site Web, la page par défaut de votre site s’affiche pour l’utilisateur. Par exemple, lorsque *default. htm* est défini comme page par défaut pour le site sur `www.contoso.com`, la navigation vers `www.contoso.com` revient à accéder à `www.contoso.com/Default.htm`.
+Quand un utilisateur accède à l’adresse de base de votre site Web, la page par défaut de votre site s’affiche pour l’utilisateur. Par exemple, lorsque *Default.htm* est défini comme page par défaut pour le site à `www.contoso.com` , la navigation vers `www.contoso.com` est identique à la navigation vers `www.contoso.com/Default.htm` .
 
 Actuellement, votre site utilise **default. cshtml** comme page par défaut. Cette page convient à votre page par défaut, mais dans ce didacticiel, vous n’avez ajouté aucun contenu à cette page pour qu’elle affiche une page vierge. Ouvrez default. cshtml et remplacez le contenu par le code suivant.
 
@@ -59,7 +59,7 @@ Votre site est maintenant prêt pour la publication. Tout d’abord, vous verrez
 <a id="azure"></a>
 ## <a name="publishing-your-site-to-microsoft-azure"></a>Publication de votre site sur Microsoft Azure
 
-Ce didacticiel vous montrera tout d’abord comment déployer votre site sur Microsoft Azure. En vous connectant avec un compte Microsoft, vous pouvez créer jusqu’à 10 sites gratuits sur Azure. Ces sites gratuits offrent un moyen pratique de tester vos sites. Vous pouvez toujours supprimer cet exemple de site ultérieurement pour éviter d’utiliser tous vos sites gratuits. Vous pouvez créer un compte d’essai gratuit en quelques minutes. Pour plus d’informations, consultez [Essai gratuit Azure](https://azure.microsoft.com/free/?WT.mc_id=A443DD604).
+Ce didacticiel vous montrera tout d’abord comment déployer votre site sur Microsoft Azure. En vous connectant avec un compte Microsoft, vous pouvez créer jusqu’à 10 sites gratuits sur Azure. Ces sites gratuits offrent un moyen pratique de tester vos sites. Vous pouvez toujours supprimer cet exemple de site ultérieurement pour éviter d’utiliser tous vos sites gratuits. Vous pouvez créer un compte d’essai gratuit en quelques minutes. Pour plus d’informations, consultez [Essai gratuit Azure](https://azure.microsoft.com/free/dotnet/).
 
 Dans le ruban WebMatrix, cliquez sur le bouton **publier** .
 
@@ -71,7 +71,7 @@ La boîte de dialogue **publier votre site** s’affiche. Si vous n’êtes pas 
 
 Si vous n’êtes pas connecté à un compte Microsoft, vous avez à nouveau la possibilité de vous connecter. Vous devez vous connecter à un compte Microsoft pour publier votre site sur Azure.
 
-![Se connecter](publishing/_static/image3.png)
+![Sign In (Se connecter)](publishing/_static/image3.png)
 
 Une fois connecté à votre compte Microsoft, la boîte de dialogue contient des liens permettant de créer un nouveau site sur Azure ou de se connecter à l’un de vos sites existants sur Azure.
 
@@ -181,9 +181,9 @@ Pour afficher votre site actif, cliquez sur le lien dans la barre d’État. Ajo
 <a id="update"></a>
 ## <a name="updating-the-live-site-republishing"></a>Mise à jour du site actif : republication
 
-Une fois que vous avez publié votre site (vers Azure ou une société d’hébergement Web), il existe deux copies de l’informatique &mdash; la version sur votre ordinateur et la version sur le fournisseur de services. Vous souhaiterez probablement poursuivre le développement du site (si rien d’autre, dans le cadre de l’ensemble suivant du didacticiel). Dans ce cas, vous devez republier votre site pour copier les modifications de votre ordinateur vers le fournisseur de services. Le processus de publication dans WebMatrix peut déterminer les fichiers qui ont été modifiés sur votre site et publier uniquement ces fichiers.
+Une fois que vous avez publié votre site (vers Azure ou une société d’hébergement Web), il y en a deux copies &mdash; sur votre ordinateur et la version sur le fournisseur de services. Vous souhaiterez probablement poursuivre le développement du site (si rien d’autre, dans le cadre de l’ensemble suivant du didacticiel). Dans ce cas, vous devez republier votre site pour copier les modifications de votre ordinateur vers le fournisseur de services. Le processus de publication dans WebMatrix peut déterminer les fichiers qui ont été modifiés sur votre site et publier uniquement ces fichiers.
 
-Pour voir comment fonctionne la republication, ouvrez le site *movies. cshtml* , apportez une petite modification, puis enregistrez le fichier. Par exemple, remplacez le titre par `Movies - Updated`.
+Pour voir comment fonctionne la republication, ouvrez le site *movies. cshtml* , apportez une petite modification, puis enregistrez le fichier. Par exemple, remplacez le titre par `Movies - Updated` .
 
 Cliquez sur le bouton **publier** dans le ruban. WebMatrix détermine ce qui a changé et vous montre un aperçu des fichiers qu’il va publier.
 
