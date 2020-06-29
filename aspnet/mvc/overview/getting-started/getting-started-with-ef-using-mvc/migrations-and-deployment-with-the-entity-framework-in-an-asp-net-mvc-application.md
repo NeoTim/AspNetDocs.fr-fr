@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: d4dfc435-bda6-4621-9762-9ba270f8de4e
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 21a3efa865e5b5498dfb0f2adec199800fc70c58
-ms.sourcegitcommit: a4c3c7e04e5f53cf8cd334f036d324976b78d154
+ms.openlocfilehash: 2f3a6d57a7963eb7aafde62e344ae6b970af87e2
+ms.sourcegitcommit: 8d34fb54e790cfba2d64097afc8276da5b22283e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84172967"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85484228"
 ---
 # <a name="tutorial-use-ef-migrations-in-an-aspnet-mvc-app-and-deploy-to-azure"></a>Didacticiel : utiliser des migrations EF dans une application ASP.NET MVC et la déployer sur Azure
 
@@ -41,10 +41,10 @@ Quand vous développez une nouvelle application, votre modèle de données chang
 
 Cette méthode pour conserver la base de données en synchronisation avec le modèle de données fonctionne bien jusqu’au déploiement de l’application en production. Lorsque l’application s’exécute en production, elle stocke généralement les données que vous souhaitez conserver et vous ne souhaitez pas perdre tout chaque fois que vous apportez une modification, telle que l’ajout d’une nouvelle colonne. La fonctionnalité [migrations code First](https://msdn.microsoft.com/data/jj591621) résout ce problème en permettant à code First de mettre à jour le schéma de base de données au lieu de supprimer et de recréer la base de données. Dans ce didacticiel, vous allez déployer l’application et vous préparer à l’activation des migrations.
 
-1. Désactivez l’initialiseur que vous avez configuré précédemment en commentant ou en supprimant l' `contexts` élément que vous avez ajouté au fichier Web. config de l’application.
+1. Désactivez l’initialiseur que vous avez configuré précédemment en commentant ou en supprimant l' `contexts` élément que vous avez ajouté au fichier Web.config de l’application.
 
     [!code-xml[Main](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.xml?highlight=2,6)]
-2. Également dans le fichier *Web. config* de l’application, remplacez le nom de la base de données dans la chaîne de connexion par par contosouniversity2.
+2. Dans le fichier *Web.config* de l’application, modifiez également le nom de la base de données dans la chaîne de connexion en par contosouniversity2.
 
     [!code-xml[Main](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.xml?highlight=2)]
 
@@ -123,13 +123,13 @@ Si vous avez créé la migration initiale alors que la base de données existait
     La `update-database` commande exécute la `Up` méthode pour créer la base de données, puis exécute la `Seed` méthode pour remplir la base de données. Le même processus s’exécutera automatiquement en production après le déploiement de l’application, comme vous le verrez dans la section suivante.
 2. Utilisez **Explorateur de serveurs** pour inspecter la base de données comme vous l’avez fait dans le premier didacticiel et exécutez l’application pour vérifier que tout fonctionne toujours de la même façon qu’auparavant.
 
-## <a name="deploy-to-azure"></a>Déployer sur Azure
+## <a name="deploy-to-azure"></a>Déployer dans Azure
 
 Jusqu’à présent, l’application s’exécutait localement dans IIS Express sur votre ordinateur de développement. Pour qu’il soit disponible pour d’autres personnes à utiliser sur Internet, vous devez le déployer sur un fournisseur d’hébergement Web. Dans cette section du didacticiel, vous allez le déployer dans Azure. Cette section est facultative. vous pouvez ignorer ce didacticiel et poursuivre le didacticiel suivant, ou vous pouvez adapter les instructions de cette section pour un autre fournisseur d’hébergement de votre choix.
 
 ### <a name="use-code-first-migrations-to-deploy-the-database"></a>Utiliser Code First migrations pour déployer la base de données
 
-Pour déployer la base de données, vous utiliserez Migrations Code First. Lorsque vous créez le profil de publication que vous utilisez pour configurer les paramètres de déploiement à partir de Visual Studio, vous activez une case à cocher intitulée **mettre à jour la base de données**. Ce paramètre fait que le processus de déploiement configure automatiquement le fichier *Web. config* de l’application sur le serveur de destination afin que code First utilise la `MigrateDatabaseToLatestVersion` classe d’initialiseur.
+Pour déployer la base de données, vous utiliserez Migrations Code First. Lorsque vous créez le profil de publication que vous utilisez pour configurer les paramètres de déploiement à partir de Visual Studio, vous activez une case à cocher intitulée **mettre à jour la base de données**. Ce paramètre oblige le processus de déploiement à configurer automatiquement le fichier d' *Web.config* d’application sur le serveur de destination afin que code First utilise la `MigrateDatabaseToLatestVersion` classe d’initialiseur.
 
 Visual Studio ne fait rien avec la base de données pendant le processus de déploiement pendant qu’il copie votre projet sur le serveur de destination. Lorsque vous exécutez l’application déployée et qu’elle accède à la base de données pour la première fois après le déploiement, Code First vérifie si la base de données correspond au modèle de données. En cas d’incompatibilité, Code First crée automatiquement la base de données (si elle n’existe pas déjà) ou met à jour le schéma de base de données vers la dernière version (si une base de données existe mais ne correspond pas au modèle). Si l’application implémente une méthode de migrations `Seed` , la méthode s’exécute après la création de la base de données ou le schéma est mis à jour.
 
@@ -138,7 +138,7 @@ Votre méthode de migration `Seed` insère les données de test. Si vous déploy
 ### <a name="get-an-azure-account"></a>Procurez-vous un compte Azure
 
 Vous aurez besoin d’un compte Azure. Si vous n’en avez pas déjà un, mais que vous disposez d’un abonnement Visual Studio, vous pouvez [activer les avantages de votre abonnement](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/
-). Sinon, vous pouvez créer un compte d’évaluation gratuit en quelques minutes. Pour plus d’informations, consultez [Essai gratuit Azure](https://azure.microsoft.com/free/).
+). Sinon, vous pouvez créer un compte d’évaluation gratuit en quelques minutes. Pour plus d’informations, consultez [Essai gratuit Azure](https://azure.microsoft.com/free/dotnet/).
 
 ### <a name="create-a-web-site-and-a-sql-database-in-azure"></a>Créer un site Web et une base de données SQL dans Azure
 
@@ -196,15 +196,15 @@ Vous allez déployer la base de données sur la base de données SQL Azure. SQL 
 
     Votre application s’exécute maintenant dans le Cloud.
 
-À ce stade, la base de données *SchoolContext* a été créée dans la base de données SQL Azure, car vous avez sélectionné **exécuter migrations code First (s’exécute au démarrage de l’application)**. Le fichier *Web. config* du site Web déployé a été modifié afin que l’initialiseur [MigrateDatabaseToLatestVersion](https://msdn.microsoft.com/library/hh829476(v=vs.103).aspx) s’exécute la première fois que votre code lit ou écrit des données dans la base de données (qui s’est produite lorsque vous avez sélectionné l’onglet **students** ) :
+À ce stade, la base de données *SchoolContext* a été créée dans la base de données SQL Azure, car vous avez sélectionné **exécuter migrations code First (s’exécute au démarrage de l’application)**. Le fichier *Web.config* du site Web déployé a été modifié afin que l’initialiseur [MigrateDatabaseToLatestVersion](https://msdn.microsoft.com/library/hh829476(v=vs.103).aspx) s’exécute la première fois que votre code lit ou écrit des données dans la base de données (ce qui s’est produit quand vous avez sélectionné l’onglet **students** ) :
 
-![Extrait de fichier Web. config](https://asp.net/media/4367421/mig.png)
+![Extrait de fichier Web.config](https://asp.net/media/4367421/mig.png)
 
 Le processus de déploiement a également créé une nouvelle chaîne de connexion *(SchoolContext \_ DatabasePublish*) pour migrations code First à utiliser pour la mise à jour du schéma de base de données et l’amorçage de la base de données.
 
-![Chaîne de connexion dans le fichier Web. config](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image26.png)
+![Chaîne de connexion dans le fichier Web.config](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image26.png)
 
-Vous pouvez trouver la version déployée du fichier Web. config sur votre propre ordinateur dans *ContosoUniversity\obj\Release\Package\PackageTmp\Web.config*. Vous pouvez accéder au fichier *Web. config* déployé lui-même à l’aide de FTP. Pour obtenir des instructions, consultez [déploiement Web ASP.net à l’aide de Visual Studio : déploiement d’une mise à jour de code](xref:web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-code-update). Suivez les instructions qui commencent par « pour utiliser un outil FTP, vous avez besoin de trois choses : l’URL FTP, le nom d’utilisateur et le mot de passe ».
+Vous pouvez trouver la version déployée du fichier Web.config sur votre propre ordinateur dans *ContosoUniversity\obj\Release\Package\PackageTmp\Web.config*. Vous pouvez accéder au fichier *Web.config* déployé lui-même à l’aide de FTP. Pour obtenir des instructions, consultez [déploiement Web ASP.net à l’aide de Visual Studio : déploiement d’une mise à jour de code](xref:web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-code-update). Suivez les instructions qui commencent par « pour utiliser un outil FTP, vous avez besoin de trois choses : l’URL FTP, le nom d’utilisateur et le mot de passe ».
 
 > [!NOTE]
 > L’application Web n’implémente pas la sécurité, de sorte que toute personne qui trouve l’URL peut modifier les données. Pour obtenir des instructions sur la façon de sécuriser le site Web, consultez [déploiement d’une application ASP.NET MVC sécurisée avec appartenance, OAuth et SQL Database sur Azure](/aspnet/core/security/authorization/secure-data). Vous pouvez empêcher d’autres personnes d’utiliser le site en arrêtant le service à l’aide d’Azure Portail de gestion ou **Explorateur de serveurs** dans Visual Studio.
@@ -213,7 +213,7 @@ Vous pouvez trouver la version déployée du fichier Web. config sur votre propr
 
 ## <a name="advanced-migrations-scenarios"></a>Scénarios de migration avancée
 
-Si vous déployez une base de données en exécutant automatiquement des migrations, comme indiqué dans ce didacticiel, et que vous déployez sur un site Web qui s’exécute sur plusieurs serveurs, vous pouvez obtenir plusieurs serveurs tentant d’exécuter des migrations en même temps. Les migrations sont atomiques. par conséquent, si deux serveurs essaient d’exécuter la même migration, l’un d’eux réussira et l’autre échouera (en supposant que les opérations ne peuvent pas être effectuées deux fois). Dans ce scénario, si vous souhaitez éviter ces problèmes, vous pouvez appeler des migrations manuellement et configurer votre propre code afin qu’il ne se produise qu’une seule fois. Pour plus d’informations, consultez [exécution et scripts de migration à partir du code](http://romiller.com/2012/02/09/running-scripting-migrations-from-code/) sur le blog de Rowan Miller et [Migrate. exe](/ef/ef6/modeling/code-first/migrations/migrate-exe) (pour exécuter des migrations à partir de la ligne de commande).
+Si vous déployez une base de données en exécutant automatiquement des migrations, comme indiqué dans ce didacticiel, et que vous déployez sur un site Web qui s’exécute sur plusieurs serveurs, vous pouvez obtenir plusieurs serveurs tentant d’exécuter des migrations en même temps. Les migrations sont atomiques. par conséquent, si deux serveurs essaient d’exécuter la même migration, l’un d’eux réussira et l’autre échouera (en supposant que les opérations ne peuvent pas être effectuées deux fois). Dans ce scénario, si vous souhaitez éviter ces problèmes, vous pouvez appeler des migrations manuellement et configurer votre propre code afin qu’il ne se produise qu’une seule fois. Pour plus d’informations, consultez [exécution et scripts de migration à partir du code](http://romiller.com/2012/02/09/running-scripting-migrations-from-code/) sur le blog de Rowan Miller et [Migrate.exe](/ef/ef6/modeling/code-first/migrations/migrate-exe) (pour exécuter des migrations à partir de la ligne de commande).
 
 Pour plus d’informations sur les autres scénarios de migration, consultez [série de captures vidéo sur les migrations](https://blogs.msdn.com/b/adonet/archive/2014/03/12/migrations-screencast-series.aspx).
 
