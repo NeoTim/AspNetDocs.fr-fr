@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
-title: Créer une API REST avec le routage par attributs dans ASP.NET Web API 2 | Microsoft Docs
+title: Créer une API REST avec routage d’attribut dans API Web ASP.NET 2 | Microsoft Docs
 author: MikeWasson
 description: ''
 ms.author: riande
@@ -8,249 +8,248 @@ ms.date: 06/26/2013
 ms.assetid: 23fc77da-2725-4434-99a0-ff872d96336b
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
 msc.type: authoredcontent
-ms.openlocfilehash: a58daa96410de734619bf65f84346137c7d3cf44
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6eac36767bf34857d5341188d0653e7fec7cade2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59393299"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "86188852"
 ---
-# <a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>Créer une API REST avec routage d’attributs dans ASP.NET Web API 2
+# <a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>Créer une API REST avec routage d’attribut dans API Web ASP.NET 2
 
 par [Mike Wasson](https://github.com/MikeWasson)
 
-Web API 2 prend en charge un nouveau type de routage, appelé *routage par attributs*. Pour obtenir une vue d’ensemble du routage par attributs, consultez [routage par attributs dans Web API 2](attribute-routing-in-web-api-2.md). Dans ce didacticiel, vous allez utiliser le routage par attributs pour créer une API REST pour un ensemble de livres. L’API prendra en charge les actions suivantes :
+L’API Web 2 prend en charge un nouveau type de routage, appelé *routage d’attribut*. Pour obtenir une vue d’ensemble générale du routage d’attributs, consultez [routage d’attributs dans l’API Web 2](attribute-routing-in-web-api-2.md). Dans ce didacticiel, vous allez utiliser le routage d’attributs pour créer une API REST pour une collection de livres. L’API prend en charge les actions suivantes :
 
 | Action | Exemple d’URI |
 | --- | --- |
-| Obtenir une liste de tous les livres. | documentation/api / |
-| Obtenir un livre par ID. | /API/Books/1 |
-| Obtenir les détails d’un livre. | /API/Books/1/Details |
-| Obtenir une liste de livres par genre. | /API/Books/fantasy |
-| Obtenir une liste de livres par date de publication. | /API/Books/date/2013-02-16 /api/books/date/2013/02/16 (autre forme) |
-| Obtenir une liste de livres publiés par un auteur spécifique. | /api/authors/1/books |
+| Obtenir la liste de tous les livres. | /api/books |
+| Obtenir un livre par ID. | /api/books/1 |
+| Obtenir les détails d’un livre. | /api/books/1/details |
+| Obtient une liste de livres par genre. | /api/books/fantasy |
+| Obtenir une liste de livres par date de publication. | /API/Books/date/2013-02-16/API/Books/date/2013/02/16 (autre forme) |
+| Obtenir la liste des livres d’un auteur donné. | /api/authors/1/books |
 
-Toutes les méthodes sont en lecture seule (requêtes HTTP GET).
+Toutes les méthodes sont en lecture seule (requêtes HTTP d’extraction).
 
-Pour la couche données, nous allons utiliser Entity Framework. Enregistrements de livre aura les champs suivants :
+Pour la couche de données, nous allons utiliser Entity Framework. Les enregistrements de livres comporteront les champs suivants :
 
-- Id
+- ID
 - Titre
 - Genre
 - Date de publication
 - Prix
 - Description
-- AuthorID (clé étrangère à une table Authors)
+- Réfaut-réfaut (clé étrangère à une table authors)
 
-Toutefois, pour la plupart des requêtes, l’API retourne un sous-ensemble de ces données (titre, auteur et genre). Pour obtenir des demandes de l’enregistrement complet, le client `/api/books/{id}/details`.
+Toutefois, pour la plupart des requêtes, l’API retourne un sous-ensemble de ces données (titre, auteur et genre). Pour obtenir l’enregistrement complet, le client demande `/api/books/{id}/details` .
 
 ## <a name="prerequisites"></a>Prérequis
 
-[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) Community, Professional ou Enterprise edition.
+[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) Community, Professional ou Enterprise Edition.
 
 ## <a name="create-the-visual-studio-project"></a>Créer le projet Visual Studio
 
-Commencez par exécuter Visual Studio. À partir de la **fichier** menu, sélectionnez **New** , puis sélectionnez **projet**.
+Commencez par exécuter Visual Studio. Dans le menu **File** (Fichier), sélectionnez **New** (Nouveau), puis **Project** (Projet).
 
-Développez le **installé** > **Visual C#** catégorie. Sous **Visual C#**, sélectionnez **Web**. Dans la liste des modèles de projet, sélectionnez **Application Web ASP.NET (.NET Framework)**. Nommez le projet &quot;BooksAPI&quot;.
+Développez **Installed**la  >  catégorie**Visual C#** installée. Sous **Visual C#**, sélectionnez **Web**. Dans la liste des modèles de projet, sélectionnez **application Web ASP.net (.NET Framework)**. Nommez le projet &quot; BooksAPI &quot; .
 
 ![](create-a-rest-api-with-attribute-routing/_static/image1.png)
 
-Dans le **nouvelle Application Web ASP.NET** boîte de dialogue, sélectionnez le **vide** modèle. Sous « Ajouter des dossiers et les références principales pour », sélectionnez le **API Web** case à cocher. Cliquez sur **OK**.
+Dans la boîte de dialogue **nouvelle application Web ASP.net** , sélectionnez le modèle **vide** . Sous « ajouter des dossiers et des références principales pour », activez la case à cocher **API Web** . Cliquez sur **OK**.
 
 ![](create-a-rest-api-with-attribute-routing/_static/image2.png)
 
-Cette opération crée une structure de projet qui est configuré pour la fonctionnalité de l’API Web.
+Cela crée un projet squelette configuré pour la fonctionnalité de l’API Web.
 
 ### <a name="domain-models"></a>Modèles de domaine
 
-Ensuite, ajoutez des classes pour les modèles de domaine. Dans l’Explorateur de solutions, cliquez sur le dossier de modèles. Sélectionnez **ajouter**, puis sélectionnez **classe**. Nommez la classe `Author`.
+Ensuite, ajoutez des classes pour les modèles de domaine. Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le dossier Modèles. Sélectionnez **Ajouter**, puis **classe**. Nommez la classe `Author`.
 
 ![](create-a-rest-api-with-attribute-routing/_static/image3.png)
 
-Remplacez le code dans Author.cs avec les éléments suivants :
+Remplacez le code dans Author.cs par le code suivant :
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample1.cs)]
 
-Ajoutez maintenant une autre classe nommée `Book`.
+Ajoutez maintenant une autre classe nommée `Book` .
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample2.cs)]
 
 ### <a name="add-a-web-api-controller"></a>Ajouter un contrôleur d’API Web
 
-Dans cette étape, nous allons ajouter un contrôleur d’API Web qui utilise Entity Framework en tant que la couche données.
+Dans cette étape, nous allons ajouter un contrôleur d’API Web qui utilise Entity Framework comme couche de données.
 
-Appuyez sur CTRL+MAJ+B pour générer le projet. Entity Framework utilise la réflexion pour découvrir les propriétés des modèles, de sorte qu’elle nécessite un assembly compilé créer le schéma de base de données.
+Appuyez sur CTRL+MAJ+B pour générer le projet. Entity Framework utilise la réflexion pour découvrir les propriétés des modèles. il requiert donc un assembly compilé pour créer le schéma de base de données.
 
-Dans l’Explorateur de solutions, cliquez sur le dossier contrôleurs. Sélectionnez **ajouter**, puis sélectionnez **contrôleur**.
+Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le dossier Contrôleurs. Sélectionnez **Ajouter**, puis **contrôleur**.
 
 ![](create-a-rest-api-with-attribute-routing/_static/image4.png)
 
-Dans le **ajouter une structure** boîte de dialogue, sélectionnez **contrôleur API Web 2 avec actions, à l’aide d’Entity Framework**.
+Dans la boîte de dialogue **Ajouter une structure** , sélectionnez **contrôleur d’API Web 2 avec actions, à l’aide de Entity Framework**.
 
 [![](create-a-rest-api-with-attribute-routing/_static/image6.png)](create-a-rest-api-with-attribute-routing/_static/image5.png)
 
-Dans le **ajouter un contrôleur** boîte de dialogue, pour **nom du contrôleur**, entrez &quot;BooksController&quot;. Sélectionnez le &quot;utiliser les actions de contrôleur asynchrones&quot; case à cocher. Pour **classe de modèle**, sélectionnez &quot;livre&quot;. (Si vous ne voyez pas la `Book` classe répertorié dans la liste déroulante, assurez-vous que vous avez créé le projet.) Cliquez ensuite sur le bouton « + ».
+Dans la boîte de dialogue **Ajouter un contrôleur** , pour **nom du contrôleur**, entrez &quot; BooksController &quot; . Cochez la &quot; case utiliser les actions du contrôleur Async &quot; . Pour **classe de modèle**, sélectionnez &quot; livre &quot; . (Si vous ne voyez pas la `Book` classe dans la liste déroulante, assurez-vous que vous avez créé le projet.) Cliquez ensuite sur le bouton « + ».
 
 ![](create-a-rest-api-with-attribute-routing/_static/image7.png)
 
-Cliquez sur **ajouter** dans le **nouveau contexte de données** boîte de dialogue.
+Cliquez sur **Ajouter** dans la boîte de dialogue **nouveau contexte de données** .
 
 ![](create-a-rest-api-with-attribute-routing/_static/image8.png)
 
-Cliquez sur **ajouter** dans le **ajouter un contrôleur** boîte de dialogue. La génération de modèles automatique ajoute une classe nommée `BooksController` qui définit le contrôleur d’API. Il ajoute également une classe nommée `BooksAPIContext` dans le dossier Modèles, qui définit le contexte de données pour Entity Framework.
+Cliquez sur **Ajouter** dans la boîte de dialogue **Ajouter un contrôleur** . La génération de modèles automatique ajoute une classe nommée `BooksController` qui définit le contrôleur d’API. Elle ajoute également une classe nommée `BooksAPIContext` dans le dossier Models, qui définit le contexte de données pour Entity Framework.
 
 ![](create-a-rest-api-with-attribute-routing/_static/image9.png)
 
 ### <a name="seed-the-database"></a>Amorcer la base de données
 
-Dans le menu Outils, sélectionnez **Gestionnaire de Package NuGet**, puis sélectionnez **Console du Gestionnaire de Package**.
+Dans le menu Outils, sélectionnez **Gestionnaire de package NuGet**, puis sélectionnez **console du gestionnaire de package**.
 
-Dans la fenêtre de Console du Gestionnaire de Package, entrez la commande suivante :
+Dans la fenêtre Console du Gestionnaire de package, entrez la commande suivante :
 
 [!code-powershell[Main](create-a-rest-api-with-attribute-routing/samples/sample3.ps1)]
 
-Cette commande crée un dossier Migrations et ajoute un nouveau fichier de code nommé Configuration.cs. Ouvrez ce fichier et ajoutez le code suivant à la `Configuration.Seed` (méthode).
+Cette commande crée un dossier migrations et ajoute un nouveau fichier de code nommé Configuration.cs. Ouvrez ce fichier et ajoutez le code suivant à la `Configuration.Seed` méthode.
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample4.cs)]
 
-Dans la fenêtre de Console du Gestionnaire de Package, tapez les commandes suivantes.
+Dans la fenêtre console du gestionnaire de package, tapez les commandes suivantes.
 
 [!code-powershell[Main](create-a-rest-api-with-attribute-routing/samples/sample5.ps1)]
 
-Ces commandes créent une base de données locale et appeler la méthode Seed pour remplir la base de données.
+Ces commandes créent une base de données locale et appellent la méthode Seed pour remplir la base de données.
 
 ![](create-a-rest-api-with-attribute-routing/_static/image10.png)
 
-## <a name="add-dto-classes"></a>Ajouter des Classes DTO
+## <a name="add-dto-classes"></a>Ajouter des classes DTO
 
-Si vous exécutez maintenant l’application et envoyez une demande GET à /api/books/1, la réponse ressemble à ce qui suit. (J’ai ajouté la mise en retrait pour une meilleure lisibilité).
+Si vous exécutez l’application maintenant et envoyez une requête d’extraction à/API/Books/1, la réponse ressemble à ce qui suit. (J’ai ajouté une mise en retrait pour une meilleure lisibilité.)
 
 [!code-json[Main](create-a-rest-api-with-attribute-routing/samples/sample6.json)]
 
-Au lieu de cela, je veux cette requête pour retourner un sous-ensemble des champs. En outre, je veux qu’il retourne le nom de l’auteur, plutôt que l’ID de l’auteur. Pour ce faire, nous allons modifier les méthodes de contrôleur pour retourner un *objet de transfert de données* (DTO) au lieu du modèle Entity Framework. Un objet DTO est un objet qui est conçu uniquement pour transporter des données.
+Au lieu de cela, je souhaite que cette requête retourne un sous-ensemble des champs. En outre, je souhaite qu’elle retourne le nom de l’auteur plutôt que l’ID de l’auteur. Pour ce faire, nous allons modifier les méthodes de contrôleur pour retourner un *objet de transfert de données* (DTO) à la place du modèle EF. Un DTO est un objet conçu uniquement pour transporter des données.
 
-Dans l’Explorateur de solutions, cliquez sur le projet et sélectionnez **ajouter** | **nouveau dossier**. Nommez le dossier &quot;DTO&quot;. Ajoutez une classe nommée `BookDto` dans le dossier DTO, avec la définition suivante :
+Dans Explorateur de solutions, cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter**  |  **nouveau dossier**. Nommez le dossier &quot; DTO &quot; . Ajoutez une classe nommée `BookDto` au dossier DTO, avec la définition suivante :
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample7.cs)]
 
-Ajouter une autre classe nommée `BookDetailDto`.
+Ajoutez une autre classe nommée `BookDetailDto`.
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample8.cs)]
 
-Ensuite, mettez à jour le `BooksController` classe pour retourner `BookDto` instances. Nous allons utiliser le [Queryable.Select](https://msdn.microsoft.com/library/system.linq.queryable.select.aspx) méthode au projet `Book` instances à `BookDto` instances. Voici le code mis à jour pour la classe de contrôleur.
+Ensuite, mettez à jour la `BooksController` classe pour retourner des `BookDto` instances. Nous allons utiliser la méthode [Queryable. Select](https://msdn.microsoft.com/library/system.linq.queryable.select.aspx) pour projeter des `Book` instances sur des instances `BookDto` . Voici le code mis à jour pour la classe Controller.
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample9.cs)]
 
 > [!NOTE]
-> J’ai supprimé le `PutBook`, `PostBook`, et `DeleteBook` méthodes, car ils ne sont pas nécessaires pour ce didacticiel.
+> J’ai supprimé `PutBook` les `PostBook` méthodes, et `DeleteBook` , car elles ne sont pas nécessaires pour ce didacticiel.
 
-
-Maintenant si vous exécutez l’application et que vous demandez /api/books/1, le corps de réponse doit ressembler à ceci :
+Maintenant, si vous exécutez l’application et demandez/API/Books/1, le corps de la réponse doit se présenter comme suit :
 
 [!code-json[Main](create-a-rest-api-with-attribute-routing/samples/sample10.json)]
 
-## <a name="add-route-attributes"></a>Ajouter des attributs de Route
+## <a name="add-route-attributes"></a>Ajouter des attributs de route
 
-Ensuite, nous allons convertir le contrôleur pour utiliser le routage par attributs. Tout d’abord, ajoutez un **RoutePrefix** attribut au contrôleur. Cet attribut définit les segments d’URI initiales pour toutes les méthodes sur ce contrôleur.
+Ensuite, nous allons convertir le contrôleur pour utiliser le routage d’attribut. Tout d’abord, ajoutez un attribut **RoutePrefix** au contrôleur. Cet attribut définit les segments d’URI initiaux pour toutes les méthodes sur ce contrôleur.
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample11.cs?highlight=1)]
 
-Ajoutez ensuite **[Route]** des attributs pour les actions de contrôleur, comme suit :
+Ajoutez ensuite les attributs **[route]** aux actions du contrôleur, comme suit :
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample12.cs?highlight=1,7)]
 
-Le modèle d’itinéraire pour chaque méthode de contrôleur est le préfixe ainsi que la chaîne spécifiée dans le **itinéraire** attribut. Pour le `GetBook` (méthode), le modèle d’itinéraire inclut la chaîne paramétrable &quot;{id : int}&quot;, qui met en correspondance si le segment d’URI contient une valeur entière.
+Le modèle de routage pour chaque méthode de contrôleur est le préfixe plus la chaîne spécifiée dans l’attribut de **routage** . Pour la `GetBook` méthode, le modèle de routage inclut la chaîne paramétrable &quot; {ID : int} &quot; , qui correspond si le segment d’URI contient une valeur entière.
 
 | Méthode | Modèle de routage | Exemple d’URI |
 | --- | --- | --- |
-| `GetBooks` | « api/books » | `http://localhost/api/books` |
-| `GetBook` | « api/la documentation / {id : int} » | `http://localhost/api/books/5` |
+| `GetBooks` | « API/livres » | `http://localhost/api/books` |
+| `GetBook` | « API/livres/{ID : int} » | `http://localhost/api/books/5` |
 
-## <a name="get-book-details"></a>Obtenir les détails des livres
+## <a name="get-book-details"></a>Récupérer les détails du livre
 
-Pour obtenir les détails des livres, le client envoie une demande GET à `/api/books/{id}/details`, où *{id}* est l’ID du livre.
+Pour obtenir les détails du livre, le client envoie une requête d’extraction à `/api/books/{id}/details` , où *{ID}* est l’ID du livre.
 
-Ajoutez la méthode suivante à la classe `BooksController` .
+Ajoutez la méthode suivante à la classe `BooksController`.
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample13.cs)]
 
-Si vous demandez `/api/books/1/details`, la réponse ressemble à ceci :
+Si vous demandez `/api/books/1/details` , la réponse ressemble à ceci :
 
 [!code-json[Main](create-a-rest-api-with-attribute-routing/samples/sample14.json)]
 
-## <a name="get-books-by-genre"></a>Obtenir la documentation par Genre
+## <a name="get-books-by-genre"></a>Récupérer des livres par genre
 
-Pour obtenir une liste de livres d’un genre spécifique, le client envoie une demande GET à `/api/books/genre`, où *genre* est le nom du genre. (Par exemple, `/api/books/fantasy`.)
+Pour obtenir une liste de livres dans un genre spécifique, le client envoie une requête d’extraction à `/api/books/genre` , où *genre* est le nom du genre. (Par exemple, `/api/books/fantasy`.)
 
-Ajoutez la méthode suivante à `BooksController`.
+Ajoutez la méthode suivante à `BooksController` .
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample15.cs)]
 
-Ici nous allons la définir un itinéraire qui contient un paramètre de {genre} dans le modèle d’URI. Notez que les API Web est en mesure de distinguer ces deux URI et de les acheminer vers les différentes méthodes :
+Ici, nous définissons un itinéraire qui contient un paramètre {genre} dans le modèle d’URI. Notez que l’API Web est en mesure de distinguer ces deux URI et de les acheminer vers différentes méthodes :
 
 `/api/books/1`
 
 `/api/books/fantasy`
 
-C’est parce que le `GetBook` méthode inclut une contrainte que le segment « id » doit être une valeur entière :
+Cela est dû au fait que la `GetBook` méthode comprend une contrainte indiquant que le segment « ID » doit être une valeur entière :
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample16.cs?highlight=1)]
 
-Si vous demandez /api/books/fantasy, la réponse ressemble à ceci :
+Si vous demandez/API/Books/Fantasy, la réponse ressemble à ceci :
 
 `[ { "Title": "Midnight Rain", "Author": "Ralls, Kim", "Genre": "Fantasy" }, { "Title": "Maeve Ascendant", "Author": "Corets, Eva", "Genre": "Fantasy" }, { "Title": "The Sundered Grail", "Author": "Corets, Eva", "Genre": "Fantasy" } ]`
 
-## <a name="get-books-by-author"></a>Obtenir la documentation par auteur
+## <a name="get-books-by-author"></a>Recevoir des livres par auteur
 
-Pour obtenir une liste d’une documentation pour un auteur particulier, le client envoie une demande GET à `/api/authors/id/books`, où *id* est l’ID de l’auteur.
+Pour obtenir la liste des livres d’un auteur donné, le client envoie une requête d’extraction à `/api/authors/id/books` , où *ID* est l’ID de l’auteur.
 
-Ajoutez la méthode suivante à `BooksController`.
+Ajoutez la méthode suivante à `BooksController` .
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample17.cs)]
 
-Cet exemple est intéressant car &quot;la documentation&quot; est traité une ressource enfant de &quot;auteurs&quot;. Ce modèle est assez courant dans les API RESTful.
+Cet exemple est intéressant, &quot; car &quot; la documentation est traitée comme une ressource enfant des &quot; auteurs &quot; . Ce modèle est assez courant dans les API RESTful.
 
-Le tilde (~) dans le modèle d’itinéraire remplace le préfixe d’itinéraire dans le **RoutePrefix** attribut.
+Le tilde (~) dans le modèle de routage remplace le préfixe d’itinéraire dans l’attribut **RoutePrefix** .
 
-## <a name="get-books-by-publication-date"></a>Obtenir la documentation par Date de Publication
+## <a name="get-books-by-publication-date"></a>Récupérer les livres par date de publication
 
-Pour obtenir une liste de livres par date de publication, le client envoie une demande GET à `/api/books/date/yyyy-mm-dd`, où *aaaa-mm-jj* correspond à la date.
+Pour obtenir une liste de livres par date de publication, le client envoie une requête d’extraction à `/api/books/date/yyyy-mm-dd` , où *aaaa-mm-jj* est la date.
 
 Voici une façon de procéder :
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample18.cs)]
 
-Le `{pubdate:datetime}` paramètre est contraint pour faire correspondre un **DateTime** valeur. Cela fonctionne, mais elle est en fait plus permissive que nous voudrions. Par exemple, ces URI correspondent également l’itinéraire :
+Le `{pubdate:datetime}` paramètre est restreint pour correspondre à une valeur **DateTime** . Cela fonctionne, mais il est en fait plus permissif que ce que nous aimerions. Par exemple, ces URI correspondent également à l’itinéraire :
 
 `/api/books/date/Thu, 01 May 2008`
 
 `/api/books/date/2000-12-16T00:00:00`
 
-Il n’existe pas de mal à autoriser ces URI. Toutefois, vous pouvez restreindre l’itinéraire dans un format particulier en ajoutant une contrainte d’expression régulière pour le modèle de routage :
+Il n’y a rien de mal à autoriser ces URI. Toutefois, vous pouvez limiter l’itinéraire à un format particulier en ajoutant une contrainte d’expression régulière au modèle de routage :
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample19.cs?highlight=1)]
 
-Désormais uniquement les dates sous la forme &quot;aaaa-mm-jj&quot; correspondra. Notez que nous n’utilisons l’expression régulière pour valider que nous avons une date réelle. Qui est gérée lors de l’API Web tente de convertir le segment d’URI dans un **DateTime** instance. Une date non valide comme « 2012-47-99 » ne pourra pas être converti, et le client reçoit une erreur 404.
+À présent, seules les dates au format &quot; aaaa-mm-jj &quot; correspondent. Notez que nous n’utilisons pas l’expression régulière pour confirmer que nous obtenons une date réelle. Qui est géré lorsque l’API Web tente de convertir le segment d’URI en une instance **DateTime** . Une date non valide telle que « 2012-47-99 » ne sera pas convertie et le client obtiendra une erreur 404.
 
-Vous pouvez prennent également en charge un séparateur de barre oblique (`/api/books/date/yyyy/mm/dd`) en ajoutant un autre **[Route]** attribut avec un autre regex.
+Vous pouvez également prendre en charge un séparateur de barre oblique ( `/api/books/date/yyyy/mm/dd` ) en ajoutant un autre attribut **[route]** avec une expression régulière différente.
 
 [!code-html[Main](create-a-rest-api-with-attribute-routing/samples/sample20.html)]
 
-Il existe un détail subtil mais important ici. Le second modèle d’itinéraire comporte un caractère générique (\*) au début du paramètre {pubdate} :
+Il y a un détail subtil mais important ici. Le deuxième modèle de routage comporte un caractère générique ( \* ) au début du paramètre {pubDate} :
 
 [!code-json[Main](create-a-rest-api-with-attribute-routing/samples/sample21.json)]
 
-Cela indique au moteur de routage que pubdate {} doit correspondre à celui de l’URI. Par défaut, un paramètre de modèle correspond à un seul segment d’URI. Dans ce cas, nous souhaitons {pubdate} s’étendent sur plusieurs segments d’URI :
+Cela indique au moteur de routage que {pubDate} doit correspondre au reste de l’URI. Par défaut, un paramètre de modèle correspond à un segment d’URI unique. Dans ce cas, nous souhaitons que {pubDate} couvre plusieurs segments d’URI :
 
 `/api/books/date/2013/06/17`
 
 ## <a name="controller-code"></a>Code du contrôleur
 
-Voici le code complet pour la classe BooksController.
+Voici le code complet de la classe BooksController.
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample22.cs)]
 
 ## <a name="summary"></a>Récapitulatif
 
-Routage par attributs vous donne davantage de contrôle et une plus grande flexibilité lors de la conception de l’URI pour votre API.
+Le routage des attributs vous offre davantage de contrôle et une plus grande flexibilité lors de la conception des URI de votre API.
