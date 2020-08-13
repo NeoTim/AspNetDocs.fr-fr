@@ -8,12 +8,12 @@ ms.date: 10/14/2017
 ms.assetid: 8935bf14-ca6d-4a4e-9dbe-b96ce74cef49
 msc.legacyurl: /ajax/cdn
 msc.type: content
-ms.openlocfilehash: b66e812f0324be95effdd8d232baa6a59302b9df
-ms.sourcegitcommit: 0cf7d06071a8ff986e6c028ac9daf0c0e7490412
+ms.openlocfilehash: 58e2d62da2181108f34bbf3e1e948977241e1dee
+ms.sourcegitcommit: b3c0e67bb231dbb0db9e8dfccd51cf715481edcc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85240602"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88161355"
 ---
 # <a name="microsoft-ajax-content-delivery-network"></a>Réseau de distribution de contenu Microsoft Ajax
 
@@ -163,6 +163,14 @@ Le CDN héberge certaines des bibliothèques JavaScript tierces les plus populai
 ### <a name="jquery-releases-on-the-cdn"></a>Versions jQuery sur le CDN
 
 Les versions suivantes de jQuery sont hébergées sur le CDN :
+
+#### <a name="jquery-version-351"></a>jQuery version 3.5.1
+- https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js
+- https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.min.js
+- https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.min.map
+- https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.slim.js
+- https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.slim.min.js
+- https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.slim.min.map
 
 #### <a name="jquery-version-350"></a>jQuery version 3.5.0
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.0.js
@@ -619,7 +627,7 @@ Les versions suivantes de la bibliothèque de l’interface utilisateur jQuery s
 - [jQuery UI 1.8.8](jquery-ui/cdnjqueryui188.md "jQuery UI 1.8.8 sur le CDN Microsoft Ajax")
 - [jQuery UI 1.8.7](jquery-ui/cdnjqueryui187.md "jQuery UI 1.8.7 sur le CDN Microsoft Ajax")
 - [jQuery UI 1.8.6](jquery-ui/cdnjqueryui186.md "jQuery UI 1.8.6 sur le CDN Microsoft Ajax")
-- [jQuery UI 1.8.5](jquery-ui/cdnjqueryui185.md "jQuery UI 1.8.5")
+- [jQuery UI 1.8.5](jquery-ui/cdnjqueryui185.md "jQuery UI 1.8.5")
 
 <a id="jQuery_Validation_Releases_on_the_CDN_3"></a>
 
@@ -645,8 +653,8 @@ Les versions suivantes du plug-in de [validation jQuery](https://jqueryvalidatio
 - [jQuery Validate 1.8.1](jquery-validate/cdnjqueryvalidate181.md "jquery.validate version 1.8.1")
 - [jQuery valider 1,8](jquery-validate/cdnjqueryvalidate18.md "jquery.validate version 1.8")
 - [jQuery valider 1,7](jquery-validate/cdnjqueryvalidate17.md "jquery.validate version 1.7")
-- [jQuery Validate 1.6](jquery-validate/cdnjqueryvalidate16.md "jQuery Validate 1.6")
-- [jQuery Validate 1.5.5](jquery-validate/cdnjqueryvalidate155.md "jQuery Validate 1.5.5")
+- [jQuery Validate 1.6](jquery-validate/cdnjqueryvalidate16.md "jQuery Validate 1.6")
+- [jQuery Validate 1.5.5](jquery-validate/cdnjqueryvalidate155.md "jQuery Validate 1.5.5")
 
 <a id="jQuery_Mobile_Releases_on_the_CDN_4"></a>
 
@@ -678,7 +686,7 @@ Les versions suivantes de la bibliothèque jQuery mobile sont hébergées sur ce
 
 Les versions suivantes du plug-in modèles jQuery sont hébergées sur ce CDN. Cliquez sur chaque lien pour afficher la liste réelle des fichiers.
 
-- [jQuery Templates Bêta 1](jquery-templates/cdnjquerytemplatesbeta1.md "jQuery Templates Bêta 1")
+- [jQuery Templates Bêta 1](jquery-templates/cdnjquerytemplatesbeta1.md "jQuery Templates Bêta 1")
 
 <a id="jQuery_Cycle_Releases_on_the_CDN_6"></a>
 
@@ -687,8 +695,8 @@ Les versions suivantes du plug-in modèles jQuery sont hébergées sur ce CDN. C
 Les versions suivantes du plug-in jQuery cycle sont hébergées sur ce CDN. Cliquez sur chaque lien pour afficher la liste réelle des fichiers.
 
 - [jQuery cycle 2,99](jquery-cycle/cdnjquerycycle299.md "jQuery Cycle 2.99")
-- [jQuery Cycle 2.94](jquery-cycle/cdnjquerycycle294.md "jQuery Cycle 2.94")
-- [jQuery Cycle 2.88](jquery-cycle/cdnjquerycycle288.md "jQuery Cycle 2.88")
+- [jQuery Cycle 2.94](jquery-cycle/cdnjquerycycle294.md "jQuery Cycle 2.94")
+- [jQuery Cycle 2.88](jquery-cycle/cdnjquerycycle288.md "jQuery Cycle 2.88")
 
 <a id="jQuery_DataTables_Releases_on_the_CDN_7"></a>
 
@@ -696,14 +704,14 @@ Les versions suivantes du plug-in jQuery cycle sont hébergées sur ce CDN. Cliq
 
 Les versions suivantes du plug-in jQuery DataTables sont hébergées sur ce CDN. Cliquez sur chaque lien pour afficher la liste réelle des fichiers.
 
-- [jQuery DataTables 1.10.5](jquery-datatables/cdnjquerydatatables105.md "jQuery DataTables 1.10.5")
-- [jQuery DataTables 1.10.4](jquery-datatables/cdnjquerydatatables104.md "jQuery DataTables 1.10.4")
-- [jQuery DataTables 1.9.4](jquery-datatables/cdnjquerydatatables194.md "jQuery DataTables 1.9.4")
-- [jQuery DataTables 1.9.3](jquery-datatables/cdnjquerydatatables193.md "jQuery DataTables 1.9.3")
-- [jQuery DataTables 1.9.2](jquery-datatables/cdnjquerydatatables192.md "jQuery DataTables 1.9.2")
-- [jQuery DataTables 1.9.1](jquery-datatables/cdnjquerydatatables191.md "jQuery DataTables 1.9.1")
+- [jQuery DataTables 1.10.5](jquery-datatables/cdnjquerydatatables105.md "jQuery DataTables 1.10.5")
+- [jQuery DataTables 1.10.4](jquery-datatables/cdnjquerydatatables104.md "jQuery DataTables 1.10.4")
+- [jQuery DataTables 1.9.4](jquery-datatables/cdnjquerydatatables194.md "jQuery DataTables 1.9.4")
+- [jQuery DataTables 1.9.3](jquery-datatables/cdnjquerydatatables193.md "jQuery DataTables 1.9.3")
+- [jQuery DataTables 1.9.2](jquery-datatables/cdnjquerydatatables192.md "jQuery DataTables 1.9.2")
+- [jQuery DataTables 1.9.1](jquery-datatables/cdnjquerydatatables191.md "jQuery DataTables 1.9.1")
 - [jQuery DataTables 1.9.0](jquery-datatables/cdnjquerydatatables190.md "jQuery DataTables 1.9.0")
-- [jQuery DataTables 1.8.2](jquery-datatables/cdnjquerydatatables182.md "jQuery DataTables 1.8.2")
+- [jQuery DataTables 1.8.2](jquery-datatables/cdnjquerydatatables182.md "jQuery DataTables 1.8.2")
 
 <a id="Modernizr_Releases_on_the_CDN_8"></a>
 
