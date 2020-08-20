@@ -9,10 +9,10 @@ ms.assetid: 64906a1d-f734-41cf-9615-ee95f8740996
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
 ms.openlocfilehash: f8f079f6d8ea663c6888456be422a2bae93a4b87
-ms.sourcegitcommit: ce28244209db8615bc9bdd576a2e2c88174d318d
+ms.sourcegitcommit: c9d9210e0d16fbb3829b7688cfb832dc263c79cc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/06/2020
+ms.lasthandoff: 08/20/2020
 ms.locfileid: "86163469"
 ---
 # <a name="advanced-entity-framework-scenarios-for-an-mvc-web-application-10-of-10"></a>Scénarios de Entity Framework avancés pour une application Web MVC (10 sur 10)
@@ -47,7 +47,7 @@ Et pour utiliser une requête de non-suivi, vous allez ajouter une nouvelle logi
 
 ## <a name="performing-raw-sql-queries"></a>Exécution de requêtes SQL brutes
 
-L’API Entity Framework Code First comprend des méthodes qui vous permettent de transmettre des commandes SQL directement à la base de données. Les options suivantes s’offrent à vous :
+L’API Entity Framework Code First comprend des méthodes qui vous permettent de transmettre des commandes SQL directement à la base de données. Vous disposez des options suivantes :
 
 - Utilisez la méthode `DbSet.SqlQuery` pour les requêtes qui renvoient des types d’entités. Les objets retournés doivent être du type attendu par l' `DbSet` objet, et ils sont suivis automatiquement par le contexte de base de données, sauf si vous désactivez le suivi. (Consultez la section suivante sur la `AsNoTracking` méthode.)
 - Utilisez la `Database.SqlQuery` méthode pour les requêtes qui retournent des types qui ne sont pas des entités. Les données renvoyées ne font pas l’objet d’un suivi par le contexte de base de données, même si vous utilisez cette méthode pour récupérer des types d’entités.
@@ -103,7 +103,7 @@ Dans le dossier *dal* , créez *CourseRepository.cs* et remplacez le code exista
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample5.cs)]
 
-Dans *UnitOfWork.cs*, remplacez le `Course` type de dépôt `GenericRepository<Course>` par`CourseRepository:`
+Dans *UnitOfWork.cs*, remplacez le `Course` type de dépôt `GenericRepository<Course>` par `CourseRepository:`
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample6.cs)]
 
@@ -257,7 +257,7 @@ Si vous effectuez le suivi d’un grand nombre d’entités et que vous appelez 
 
 Lorsque vous appelez la `SaveChanges` méthode, par défaut, la Entity Framework valide les données de toutes les propriétés de toutes les entités modifiées avant de mettre à jour la base de données. Si vous avez mis à jour un grand nombre d’entités et que vous avez déjà validé les données, ce travail n’est pas nécessaire et vous pouvez faire en sorte que le processus d’enregistrement des modifications prenne moins de temps en désactivant temporairement la validation. Vous pouvez le faire à l’aide de la propriété [ValidateOnSaveEnabled](https://msdn.microsoft.com/library/system.data.entity.infrastructure.dbcontextconfiguration.validateonsaveenabled(VS.103).aspx) . Pour plus d’informations, consultez [validation](https://blogs.msdn.com/b/adonet/archive/2010/12/15/ef-feature-ctp5-validation.aspx).
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cette série de didacticiels s’achève sur l’utilisation de la Entity Framework dans une application MVC ASP.NET. Vous trouverez des liens vers d’autres ressources de Entity Framework dans le [plan de contenu d’accès aux données ASP.net](../../../../whitepapers/aspnet-data-access-content-map.md).
 
