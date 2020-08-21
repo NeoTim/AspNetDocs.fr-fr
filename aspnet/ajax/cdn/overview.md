@@ -8,12 +8,12 @@ ms.date: 10/14/2017
 ms.assetid: 8935bf14-ca6d-4a4e-9dbe-b96ce74cef49
 msc.legacyurl: /ajax/cdn
 msc.type: content
-ms.openlocfilehash: 58e2d62da2181108f34bbf3e1e948977241e1dee
-ms.sourcegitcommit: b3c0e67bb231dbb0db9e8dfccd51cf715481edcc
+ms.openlocfilehash: 9eebe0e52af2a0fca967a51afb58c7db174d9fdb
+ms.sourcegitcommit: feb88edfb01b32f6fc9488f0f0ddb3c5b34e6ff0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88161355"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702918"
 ---
 # <a name="microsoft-ajax-content-delivery-network"></a>Réseau de distribution de contenu Microsoft Ajax
 
@@ -48,7 +48,7 @@ ms.locfileid: "88161355"
  [Répondre aux mises en production sur le CDN](#Respond_Releases_on_the_CDN_13)  
  [Versions d’amorçage sur le CDN](#Bootstrap_Releases_on_the_CDN_14)  
  [Release TouchCarousel releases sur le CDN](#BootstrapTouchCarousel_Releases_on_the_CDN_18)  
- [Versions deHammer.js sur le CDN](#Hammerjs_Releases_on_the_CDN_19)  
+ [ Versions deHammer.js sur le CDN](#Hammerjs_Releases_on_the_CDN_19)  
  [ASP.NET Web Forms et les versions Ajax sur le CDN](#ASPNET_Web_Forms_and_Ajax_Releases_on_the_CDN_15)  
  [Versions de ASP.NET MVC sur le CDN](#ASPNET_MVC_Releases_on_the_CDN_16)  
  [Mises en production de Signalr ASP.NET sur le CDN](#ASPNET_SignalR_Releases_on_the_CDN_17)
@@ -84,8 +84,8 @@ Si vous souhaitez envoyer votre bibliothèque JavaScript et que votre bibliothè
 
 Le CDN utilisé pour utiliser le nom de domaine microsoft.com et a été modifié pour utiliser le nom de domaine aspnetcdn.com. Cette modification a été apportée pour améliorer les performances, car lorsqu’un navigateur référençait le domaine microsoft.com, il enverra tous les cookies de ce domaine sur le réseau avec chaque demande. L’attribution d’un nouveau nom à un nom de domaine autre que microsoft.com les performances peut être augmentée jusqu’à 25%. Remarque ajax.microsoft.com continuera à fonctionner, mais ajax.aspnetcdn.com est recommandé.
 
-- Ancien format :https://ajax.microsoft.com/ajax/jQuery/jquery-1.8.0.js
-- Nouveau format :https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js
+- Ancien format : https://ajax.microsoft.com/ajax/jQuery/jquery-1.8.0.js
+- Nouveau format : https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js
 
 <a id="Visual_Studio_vsdoc_Support_19"></a>
 
@@ -830,6 +830,21 @@ Les versions de [réponse](https://github.com/scottjehl/Respond "Réponse") suiv
 ### <a name="bootstrap-releases-on-the-cdn"></a>Versions d’amorçage sur le CDN
 
 Les versions suivantes de bootstrap [GetBootstrap.com](http://getbootstrap.com "getbootstrap.com") sont hébergées sur le CDN :
+
+#### <a name="bootstrap-version-452"></a>Version d’amorçage 4.5.2
+
+- https://ajax.aspnetcdn.com/ajax/bootstrap/4.5.2/bootstrap.js
+- https://ajax.aspnetcdn.com/ajax/bootstrap/4.5.2/bootstrap.min.js
+- https://ajax.aspnetcdn.com/ajax/bootstrap/4.5.2/bootstrap.bundle.js
+- https://ajax.aspnetcdn.com/ajax/bootstrap/4.5.2/css/bootstrap.css
+- https://ajax.aspnetcdn.com/ajax/bootstrap/4.5.2/css/bootstrap.css.map
+- https://ajax.aspnetcdn.com/ajax/bootstrap/4.5.2/css/bootstrap.min.css
+- https://ajax.aspnetcdn.com/ajax/bootstrap/4.5.2/css/bootstrap-grid.css
+- https://ajax.aspnetcdn.com/ajax/bootstrap/4.5.2/css/bootstrap-grid.min.css
+- https://ajax.aspnetcdn.com/ajax/bootstrap/4.5.2/css/bootstrap-grid.css.map
+- https://ajax.aspnetcdn.com/ajax/bootstrap/4.5.2/css/bootstrap-reboot.css
+- https://ajax.aspnetcdn.com/ajax/bootstrap/4.5.2/css/bootstrap-reboot.min.css
+- https://ajax.aspnetcdn.com/ajax/bootstrap/4.5.2/css/bootstrap-reboot.css.map
 
 #### <a name="bootstrap-version-450"></a>Bootstrap version 4.5.0
 
