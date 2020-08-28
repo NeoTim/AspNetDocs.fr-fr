@@ -8,14 +8,14 @@ ms.date: 04/21/2011
 ms.assetid: b3193d33-2d0b-4d98-9712-58bd897c62ec
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: bc031dd5be61cc6707c522f85f6af77a420c8b31
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: 24d3f028a9a720e5b526518624c9c1c2ce2c37d4
+ms.sourcegitcommit: 4e6d586faadbe4d9ef27122f86335ec9385134af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78539276"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89044946"
 ---
-# <a name="part-6-using-data-annotations-for-model-validation"></a>Partie 6 : utilisation d’annotations de données pour la validation de modèle
+# <a name="part-6-using-data-annotations-for-model-validation"></a>Partie 6 : Utilisation d’annotations des données pour la validation de modèle
 
 par [Jon Galloway](https://github.com/jongalloway)
 
@@ -34,13 +34,13 @@ Nous pouvons facilement ajouter la validation à notre application en ajoutant d
 Nous allons utiliser les attributs d’annotation de données suivants :
 
 - **Required** : indique que la propriété est un champ obligatoire
-- **DisplayName** : définit le texte que nous souhaitons utiliser sur les champs de formulaire et les messages de validation
+- **DisplayName** : définit le texte à utiliser dans les champs de formulaire et les messages de validation
 - **StringLength** : définit une longueur maximale pour un champ de chaîne.
 - **Plage** : donne une valeur maximale et minimale pour un champ numérique
 - **Bind** : répertorie les champs à exclure ou inclure lors de la liaison de valeurs de paramètre ou de formulaire à des propriétés de modèle
 - **ScaffoldColumn** : permet de masquer les champs des formulaires de l’éditeur
 
-*Remarque : pour plus d’informations sur la validation de modèle à l’aide des attributs d’annotation de données, consultez la documentation MSDN à l’adresse* [`https://go.microsoft.com/fwlink/?LinkId=159063`](https://go.microsoft.com/fwlink/?LinkId=159063)
+*Remarque : pour plus d’informations sur la validation de modèle à l’aide des attributs d’annotation de données, consultez la documentation MSDN à l’adresse*[`https://go.microsoft.com/fwlink/?LinkId=159063`](https://go.microsoft.com/fwlink/?LinkId=159063)
 
 Ouvrez la classe album et ajoutez les instructions *using* suivantes en haut.
 
@@ -77,5 +77,5 @@ Si vous tapez une seule lettre dans le champ titre conforme aux exigences de val
 ![](mvc-music-store-part-6/_static/image3.png)
 
 > [!div class="step-by-step"]
-> [Précédent](mvc-music-store-part-5.md)
-> [Suivant](mvc-music-store-part-7.md)
+> [Précédent](mvc-music-store-part-5.md) 
+>  [Suivant](mvc-music-store-part-7.md)

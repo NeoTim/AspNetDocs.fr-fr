@@ -8,38 +8,38 @@ ms.date: 03/26/2015
 ms.assetid: f1d2a916-626c-4a54-8df4-77e6b9fff355
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-details-and-delete-methods
 msc.type: authoredcontent
-ms.openlocfilehash: da06815b5c1d76a939fdfb77ce11774081dfb881
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: 9c4e66454d6995bd750b62ef8b461bcfbdfb4b4f
+ms.sourcegitcommit: 4e6d586faadbe4d9ef27122f86335ec9385134af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78582508"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89045089"
 ---
 # <a name="examining-the-details-and-delete-methods"></a>Examen des méthodes Details et Delete
 
 par [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[!INCLUDE [Tutorial Note](index.md)]
+[!INCLUDE [consider RP](~/includes/razor.md)]
 
-Dans cette partie du didacticiel, vous allez examiner les méthodes de `Details` et de `Delete` générées automatiquement.
+Dans cette partie du didacticiel, vous allez examiner les méthodes et générées automatiquement `Details` `Delete` .
 
 ## <a name="examining-the-details-and-delete-methods"></a>Examen des méthodes Details et Delete
 
-Ouvrez le contrôleur `Movie` et examinez la méthode `Details`.
+Ouvrez le `Movie` contrôleur et examinez la `Details` méthode.
 
 ![](examining-the-details-and-delete-methods/_static/image1.png)
 
 [!code-csharp[Main](examining-the-details-and-delete-methods/samples/sample1.cs)]
 
-Le moteur de génération de modèles automatique MVC qui a créé cette méthode d’action ajoute un commentaire indiquant une requête HTTP qui appelle la méthode. Dans ce cas, il s’agit d’une demande `GET` avec trois segments d’URL, le contrôleur de `Movies`, la méthode `Details` et une valeur `ID`.
+Le moteur de génération de modèles automatique MVC qui a créé cette méthode d’action ajoute un commentaire indiquant une requête HTTP qui appelle la méthode. Dans ce cas, il s’agit d’une `GET` demande avec trois segments d’URL, le `Movies` contrôleur, la `Details` méthode et une `ID` valeur.
 
-Code First facilite la recherche de données à l’aide de la méthode `Find`. Une fonctionnalité de sécurité importante intégrée à la méthode est que le code vérifie que la méthode `Find` a trouvé un film avant que le code ne tente d’en faire quelque chose. Par exemple, un pirate peut introduire des erreurs dans le site en modifiant l’URL créée par les liens de `http://localhost:xxxx/Movies/Details/1` à une valeur telle que `http://localhost:xxxx/Movies/Details/12345` (ou une autre valeur qui ne représente pas un film réel). Si vous n’avez pas vérifié un film null, un film null entraînerait une erreur de base de données.
+Code First facilite la recherche de données à l’aide de la `Find` méthode. Une fonctionnalité de sécurité importante intégrée à la méthode est que le code vérifie que la `Find` méthode a trouvé un film avant que le code ne tente d’en faire quelque chose. Par exemple, un pirate peut introduire des erreurs dans le site en modifiant l’URL créée par les liens de `http://localhost:xxxx/Movies/Details/1` à quelque façon que ce `http://localhost:xxxx/Movies/Details/12345` soit (ou une autre valeur qui ne représente pas un film réel). Si vous n’avez pas vérifié un film null, un film null entraînerait une erreur de base de données.
 
 Examinez les méthodes `Delete` et `DeleteConfirmed`.
 
 [!code-csharp[Main](examining-the-details-and-delete-methods/samples/sample2.cs?highlight=17)]
 
-Notez que la méthode HTTP d' `Delete` ne supprime pas le film spécifié, mais renvoie une vue du film dans laquelle vous pouvez envoyer (`HttpPost`) la suppression. L’exécution d’une opération de suppression en réponse à une requête GET (ou encore l’exécution d’une opération de modification, d’une opération de création ou de toute autre opération qui modifie des données) génère une faille de sécurité. Pour plus d’informations à ce sujet, consultez entrée de blog de Stephen Walther [ASP.net Conseil MVC #46 — n’utilisez pas supprimer les liens, car ils créent des failles de sécurité](http://stephenwalther.com/blog/archive/2009/01/21/asp.net-mvc-tip-46-ndash-donrsquot-use-delete-links-because.aspx).
+Notez que la méthode HTTP obten `Delete` ne supprime pas le film spécifié, mais retourne une vue du film où vous pouvez envoyer ( `HttpPost` ) la suppression. L’exécution d’une opération de suppression en réponse à une requête GET (ou encore l’exécution d’une opération de modification, d’une opération de création ou de toute autre opération qui modifie des données) génère une faille de sécurité. Pour plus d’informations à ce sujet, consultez entrée de blog de Stephen Walther [ASP.net Conseil MVC #46 — n’utilisez pas supprimer les liens, car ils créent des failles de sécurité](http://stephenwalther.com/blog/archive/2009/01/21/asp.net-mvc-tip-46-ndash-donrsquot-use-delete-links-because.aspx).
 
 La méthode `HttpPost` qui supprime les données est nommée `DeleteConfirmed` pour donner à la méthode HTTP POST une signature ou un nom unique. Les signatures des deux méthodes sont illustrées ci-dessous :
 
@@ -47,13 +47,13 @@ La méthode `HttpPost` qui supprime les données est nommée `DeleteConfirmed` p
 
 Le Common Language Runtime (CLR) nécessite des méthodes surchargées pour avoir une signature à paramètre unique (même nom de méthode, mais liste de paramètres différentes). Toutefois, ici, vous avez besoin de deux méthodes Delete, une pour obtenir et une pour la publication, qui ont toutes les deux la même signature de paramètre. (Elles doivent toutes les deux accepter un entier unique comme paramètre.)
 
-Pour le trier, vous pouvez effectuer quelques opérations. La première consiste à attribuer des noms différents aux méthodes. C’est ce qu’a fait le mécanisme de génération de modèles automatique dans l’exemple précédent. Toutefois, elle présente un petit problème : ASP.NET mappe des segments d’une URL à des méthodes d’action par nom. Si vous renommez une méthode, il est probable que le routage ne pourra pas trouver cette méthode. La solution consiste à faire ce que vous voyez dans l’exemple, c’est-à-dire à ajouter l’attribut `ActionName("Delete")` à la méthode `DeleteConfirmed`. Cela permet d’effectuer le mappage pour le système de routage de sorte qu’une URL qui comprend */Delete/* pour une requête de publication trouve la méthode `DeleteConfirmed`.
+Pour le trier, vous pouvez effectuer quelques opérations. La première consiste à attribuer des noms différents aux méthodes. C’est ce qu’a fait le mécanisme de génération de modèles automatique dans l’exemple précédent. Toutefois, elle présente un petit problème : ASP.NET mappe des segments d’une URL à des méthodes d’action par nom. Si vous renommez une méthode, il est probable que le routage ne pourra pas trouver cette méthode. La solution consiste à faire ce que vous voyez dans l’exemple, c’est-à-dire à ajouter l’attribut `ActionName("Delete")` à la méthode `DeleteConfirmed`. Cela permet d’effectuer le mappage pour le système de routage de sorte qu’une URL qui comprend */Delete/* pour une requête de publication trouve la `DeleteConfirmed` méthode.
 
 Une autre méthode courante pour éviter un problème avec les méthodes qui ont des noms et des signatures identiques consiste à modifier artificiellement la signature de la méthode de publication pour inclure un paramètre inutilisé. Par exemple, certains développeurs ajoutent un type de paramètre `FormCollection` qui est passé à la méthode de publication, puis n’utilisent pas le paramètre :
 
 [!code-csharp[Main](examining-the-details-and-delete-methods/samples/sample4.cs)]
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Vous disposez maintenant d’une application MVC ASP.NET complète qui stocke les données dans une base de données de base de données locale. Vous pouvez créer, lire, mettre à jour, supprimer et Rechercher des films.
 
@@ -65,8 +65,8 @@ Une fois que vous avez créé et testé une application Web, l’étape suivante
 
 Nous vous invitons à nous faire part de vos commentaires.
 
-— [Rick Anderson](https://blogs.msdn.com/rickAndy) twitter : [@RickAndMSFT](https://twitter.com/RickAndMSFT)  
-— [Scott Hanselman](http://www.hanselman.com/blog/) twitter : [@shanselman](https://twitter.com/shanselman)
+— [Rick Anderson](https://blogs.msdn.com/rickAndy) Twitter : [@RickAndMSFT](https://twitter.com/RickAndMSFT)  
+— [Scott Hanselman](http://www.hanselman.com/blog/) Twitter : [@shanselman](https://twitter.com/shanselman)
 
 > [!div class="step-by-step"]
 > [Précédent](adding-validation.md)

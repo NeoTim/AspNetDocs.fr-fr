@@ -8,12 +8,12 @@ ms.date: 06/26/2013
 ms.assetid: 23fc77da-2725-4434-99a0-ff872d96336b
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
 msc.type: authoredcontent
-ms.openlocfilehash: 6eac36767bf34857d5341188d0653e7fec7cade2
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: f6ff5fa18a44b3e6717ec0141ebe101bcdc0bee4
+ms.sourcegitcommit: 4e6d586faadbe4d9ef27122f86335ec9385134af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "86188852"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89045180"
 ---
 # <a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>Créer une API REST avec routage d’attribut dans API Web ASP.NET 2
 
@@ -238,7 +238,7 @@ Vous pouvez également prendre en charge un séparateur de barre oblique ( `/api
 
 Il y a un détail subtil mais important ici. Le deuxième modèle de routage comporte un caractère générique ( \* ) au début du paramètre {pubDate} :
 
-[!code-json[Main](create-a-rest-api-with-attribute-routing/samples/sample21.json)]
+[!code-json[Main](create-a-rest-api-with-attribute-routing/samples/sample21.txt)]
 
 Cela indique au moteur de routage que {pubDate} doit correspondre au reste de l’URI. Par défaut, un paramètre de modèle correspond à un segment d’URI unique. Dans ce cas, nous souhaitons que {pubDate} couvre plusieurs segments d’URI :
 
@@ -250,6 +250,6 @@ Voici le code complet de la classe BooksController.
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample22.cs)]
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Le routage des attributs vous offre davantage de contrôle et une plus grande flexibilité lors de la conception des URI de votre API.

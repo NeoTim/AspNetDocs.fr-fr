@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 64906a1d-f734-41cf-9615-ee95f8740996
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: f8f079f6d8ea663c6888456be422a2bae93a4b87
-ms.sourcegitcommit: c9d9210e0d16fbb3829b7688cfb832dc263c79cc
+ms.openlocfilehash: 85dd59016d904a9f654c438db977b5ae2c0187d2
+ms.sourcegitcommit: 4e6d586faadbe4d9ef27122f86335ec9385134af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "86163469"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89045050"
 ---
 # <a name="advanced-entity-framework-scenarios-for-an-mvc-web-application-10-of-10"></a>Scénarios de Entity Framework avancés pour une application Web MVC (10 sur 10)
 
@@ -191,7 +191,7 @@ Dans *Controllers/CourseController*, remplacez la `Index` méthode par le code s
 
 À présent, définissez un point d’arrêt dans *GenericRepository.cs* sur les `return query.ToList();` `return orderBy(query).ToList();` instructions et de la `Get` méthode. Exécutez le projet en mode débogage et sélectionnez la page index du cours. Lorsque le code atteint le point d’arrêt, examinez la `query` variable. Vous voyez la requête qui est envoyée à SQL Server. Il s’agit d’une simple `Select` instruction :
 
-[!code-json[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample14.json)]
+[!code-json[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample14.sql)]
 
 ![](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image12.png)
 
@@ -219,7 +219,7 @@ Les points d’arrêt étant toujours définis dans la `GenericRepository` class
 
 Cette fois, le premier point d’arrêt est destiné à la requête Departments pour la liste déroulante. Ignorez cette valeur et affichez la `query` variable la prochaine fois que le code atteint le point d’arrêt afin de voir à quoi `Course` ressemble la requête. Vous verrez un résultat similaire à ce qui suit :
 
-[!code-json[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample17.json)]
+[!code-json[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample17.sql)]
 
 Vous pouvez voir que la requête est désormais une `JOIN` requête qui charge `Department` des données avec les `Course` données et qu’elle comprend une `WHERE` clause.
 

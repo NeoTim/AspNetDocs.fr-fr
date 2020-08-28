@@ -8,16 +8,16 @@ ms.date: 01/17/2019
 ms.assetid: df001954-18bf-4550-b03d-43911a0ea186
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-search
 msc.type: authoredcontent
-ms.openlocfilehash: f6d6d32a648fed453be924790a1b55698c9cf209
-ms.sourcegitcommit: 0d583ed9253103f3e50b6d729276e667591cdd41
+ms.openlocfilehash: be4e4d13e574b0fcb77d2d0fb8c6f58041b1ece2
+ms.sourcegitcommit: 4e6d586faadbe4d9ef27122f86335ec9385134af
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86211475"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89044856"
 ---
 # <a name="search"></a>Recherche
 
-[!INCLUDE [Tutorial Note](index.md)]
+[!INCLUDE [consider RP](~/includes/razor.md)]
 
 ## <a name="adding-a-search-method-and-search-view"></a>Ajout d’une méthode de recherche et d’un affichage de recherche
 
@@ -27,7 +27,7 @@ Dans cette section, vous allez ajouter la fonctionnalité de recherche à la `In
 
 Pour faire correspondre les captures d’écran de cette section, vous devez exécuter l’application (F5) et ajouter les films suivants à la base de données.
 
-| Titre | Date de sortie | Genre | Prix |
+| Intitulé | Date de version | Genre | Prix |
 | ----- | ------------ | ----- | ----- |
 | Ghostbusters | 6/8/1984 | Comédie | 6,99 |
 | Ghostbusters II | 6/16/1989 | Comédie | 6,99 |
@@ -62,7 +62,7 @@ Exécutez l’application et accédez à */movies/index*. Ajoutez une chaîne de
 
 Si vous modifiez la signature de la `Index` méthode pour qu’elle ait un paramètre nommé `id` , le `id` paramètre correspondra à l' `{id}` espace réservé pour les itinéraires par défaut définis dans le fichier *app \_ Start\RouteConfig.cs* .
 
-[!code-json[Main](adding-search/samples/sample4.json)]
+[!code-json[Main](adding-search/samples/sample4.txt)]
 
 La méthode d’origine se `Index` présente comme suit :
 
