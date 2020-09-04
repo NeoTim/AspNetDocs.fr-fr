@@ -8,22 +8,24 @@ ms.date: 01/28/2011
 ms.assetid: 1febce65-cdd4-47da-bdb5-1e6022ccd20a
 msc.legacyurl: /mobile
 msc.type: content
-ms.openlocfilehash: 769484ee505599eef48ff4a106ddd4f7ec7d99af
-ms.sourcegitcommit: 0cf7d06071a8ff986e6c028ac9daf0c0e7490412
+ms.openlocfilehash: 41cf393f307808e457e0ab2529129ca8ecbc3b5d
+ms.sourcegitcommit: dfd3ce87ffc9e3a7076f8252abb5d5d6b991333b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85240736"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89449702"
 ---
 # <a name="mobile-apps--sites-with-aspnet"></a>Mobile Apps des sites & avec ASP.NET
 
 ## <a name="develop-mobile-apps"></a>Développez Mobile Apps
 
-### <a name="cloud-connected-mobile-apps---create-a-web-service-with-azure-web-apps-and-webjobspart-1"></a>[Mobile Apps connecté au Cloud-créer un service Web avec Azure Web Apps et webjobs](https://msdn.microsoft.com/magazine/mt185572)(partie 1)
+### <a name="cloud-connected-mobile-apps"></a>Mobile Apps connectés au Cloud
+
+[Partie 1 : création d’un service Web avec Azure Web Apps et webjobs](https://msdn.microsoft.com/magazine/mt185572)
 
 Dans la première partie d’un article en deux parties, les auteurs explorent certains des problèmes liés à la création d’un back end Cloud qui agrège et traite les données et les transmet aux clients mobiles.
 
-### <a name="cloud-connected-mobile-apps---build-a-xamarin-app-with-authentication-and-offline-supportpart-2"></a>[Mobile Apps connecté au Cloud-créer une application Xamarin avec l’authentification et la prise en charge hors connexion](https://msdn.microsoft.com/magazine/mt422581.aspx)(2e partie)
+[Partie 2 : créer une application Xamarin avec l’authentification et la prise en charge hors connexion](https://msdn.microsoft.com/magazine/mt422581.aspx)
 
 Dans le deuxième article de leur série, les auteurs discutent de la façon dont ils utilisent Xamarin pour cibler plusieurs plateformes clientes mobiles, et indiquent comment implémenter l’authentification et maintenir un cache côté client synchronisé des données.
 
