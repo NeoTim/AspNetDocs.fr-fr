@@ -8,12 +8,12 @@ ms.date: 08/15/2012
 ms.assetid: c7e4e1ab-4932-4614-9f53-aaf7c706d498
 msc.legacyurl: /mvc/overview/views/using-page-inspector-in-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 5da3e142c52a770f59222c21d9f9a53cbbdbf498
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: 42d5683ce75467a159c9d13edf302bd6bf24a11d
+ms.sourcegitcommit: 45754124123403520b9fa2e706a4d1292494159b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78538016"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89643696"
 ---
 # <a name="using-page-inspector-in-aspnet-mvc"></a>Utilisation de l'Inspecteur de page dans ASP.NET MVC
 
@@ -27,7 +27,7 @@ par Tim Ammann
 > 
 > Ce didacticiel contient les sections suivantes :
 > 
-> - [Conditions préalables](#_1_prerequisites)
+> - [Composants requis](#_1_prerequisites)
 > - [Créer une application Web](#_2_creating_a)
 > - [Utiliser Inspecteur de page pour accéder à une vue](#_3_using_page)
 > - [Activer Mode d’inspection](#_4_inspection_mode)
@@ -40,7 +40,7 @@ par Tim Ammann
 
 <a id="_prerequisites"></a><a id="_1_prerequisites"></a>
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 - [Visual Studio 2012](https://www.microsoft.com/visualstudio/11) ou [Visual Studio Express 2012 pour le Web](https://www.microsoft.com/visualstudio/11/downloads#express-web).
 
@@ -53,7 +53,7 @@ Inspecteur de page est fourni avec Microsoft Web Developer Tools. La version la 
 
 ## <a name="create-a-web-application"></a>Créer une application Web
 
-Tout d’abord, créez une application Web que vous utiliserez Inspecteur de page avec. Dans Visual Studio, choisissez **fichier** &gt; **nouveau projet**. À gauche, développez **visuel C#** , sélectionnez **Web**, puis sélectionnez **application Web ASP.net MVC4**.
+Tout d’abord, créez une application Web que vous utiliserez Inspecteur de page avec. Dans Visual Studio, sélectionnez **Fichier** &gt; **Nouveau projet**. Sur la gauche, développez **Visual C#**, sélectionnez **Web**, puis sélectionnez **application Web ASP.net MVC4**.
 
 ![Nouvelle application ASP.NET MVC](using-page-inspector-in-aspnet-mvc/_static/image2.png)
 
@@ -111,23 +111,23 @@ Inspecteur de page vous permet de trouver le balisage dont l’emplacement n’e
 
 Pour le voir, cliquez sur **inspecter** , puis faites défiler la page jusqu’en bas de la page dans la fenêtre de inspecteur de page.
 
-Lorsque vous déplacez le pointeur de la souris dans la zone de pied de page, Inspecteur de page ouvre le fichier \_Layout. cshtml et met en surbrillance la section de la page de disposition que vous avez sélectionnée. Comme vous pouvez le voir, le pied de page est défini dans le fichier de disposition, et non dans la vue elle-même.
+Lorsque vous déplacez le pointeur de la souris dans la zone de pied de page, Inspecteur de page ouvre le \_ fichier Layout. cshtml et met en surbrillance la section de la page de disposition que vous avez sélectionnée. Comme vous pouvez le voir, la zone de pied de page est définie dans le fichier de disposition, et non dans la vue elle-même.
 
 ![Pied de page](using-page-inspector-in-aspnet-mvc/_static/image16.png)
 
-À présent, déplacez le pointeur de la souris sur la <a id="a"> </a>ligne avec la mention de droits d’auteur. Dans la page disposition. cshtml \_, la ligne correspondante est mise en surbrillance.
+À présent, déplacez le pointeur de la souris sur la ligne avec la mention de droits d’auteur <a id="a"></a> . Dans la \_ page layout. cshtml, la ligne correspondante est mise en surbrillance.
 
 ![Ligne de copyright du pied de page en surbrillance](using-page-inspector-in-aspnet-mvc/_static/image18.png)
 
-Ajoutez du texte à la fin de la ligne dans le fichier \_Layout. cshtml.
+Ajoutez du texte à la fin de la ligne dans le \_ fichier Layout. cshtml.
 
-&lt;p&gt;&amp;copie ; @DateTime.Now.Year-mon application ASP.NET MVC Rocks !&lt;/p&gt;
+&lt;p &gt; &amp; copier ; @DateTime.Now.Year -mon application ASP.NET MVC Rocks ! &lt; /p&gt;
 
 Maintenant, appuyez sur Ctrl + Alt + Entrée ou cliquez sur la barre de mise à jour pour afficher les résultats dans la fenêtre du navigateur Inspecteur de page.
 
 ![Mon application ASP.NET Rocks !](using-page-inspector-in-aspnet-mvc/_static/image20.png)
 
-Vous avez peut-être pensé que le pied de page est défini dans index. cshtml, mais il s’est avéré dans le \_Layout. cshtml, et Inspecteur de page l’a trouvé pour vous.
+Vous avez peut-être pensé que le pied de page est défini dans index. cshtml, mais il s’est avéré être dans \_ Layout. cshtml et inspecteur de page l’a trouvé pour vous.
 
 <a id="_inspection_mode_and_1"></a><a id="_6_inspection_mode"></a>
 
@@ -143,7 +143,7 @@ Déplacez maintenant le pointeur de la souris vers la fenêtre **HTML** . Lorsqu
 
 ![Fenêtre HTML](using-page-inspector-in-aspnet-mvc/_static/image22.png)
 
-Comme précédemment, Inspecteur de page ouvre le fichier \_Layout. cshtml pour vous dans un onglet temporaire. cliquez sur l’onglet \_Layout. cshtml temporaire, et le balisage correspondant sera mis en surbrillance dans la section&gt; d’en-tête de &lt;pour vous :
+Comme précédemment, Inspecteur de page ouvre le \_ fichier Layout. cshtml pour vous dans un onglet temporaire. cliquez sur l' \_ onglet temporaire Layout. cshtml, et le balisage correspondant sera mis en surbrillance dans la &lt; section d’en-tête &gt; pour vous :
 
 ![Balisage en surbrillance](using-page-inspector-in-aspnet-mvc/_static/image24.png)
 
@@ -187,7 +187,7 @@ La fenêtre **styles** affiche toutes les règles CSS pour cet élément. Faites
 
 ![](using-page-inspector-in-aspnet-mvc/_static/image32.png)
 
-À présent, remplacez la valeur de `background-color` par « Red ». La modification s’affiche immédiatement dans le navigateur Inspecteur de page.
+À présent, remplacez la valeur par `background-color` « Red ». La modification s’affiche immédiatement dans le navigateur Inspecteur de page.
 
 ![](using-page-inspector-in-aspnet-mvc/_static/image34.png)
 
@@ -196,7 +196,7 @@ La fenêtre **styles** affiche toutes les règles CSS pour cet élément. Faites
 
 L’éditeur CSS dans Visual Studio 2012 possède un sélecteur de couleurs qui facilite la sélection et l’insertion de couleurs. Le sélecteur de couleurs contient une palette de couleurs standard, prend en charge les couleurs standard, les codes de hachage, les couleurs RVB, RVBA, TSL et HSLA, et conserve une liste des couleurs que vous avez utilisées le plus récemment dans le document.
 
-Dans la section précédente, vous avez modifié la valeur de la propriété `background-color`. Pour appeler le sélecteur de couleurs, placez le point d’insertion après le nom de la propriété et tapez **#** ou **RVB (** .
+Dans la section précédente, vous avez modifié la valeur de la `background-color` propriété. Pour appeler le sélecteur de couleurs, placez le point d’insertion après le nom et le type de la propriété **#** ou **RVB (**.
 
 ![Barre du sélecteur de couleurs CSS](using-page-inspector-in-aspnet-mvc/_static/image36.png)
 
@@ -236,7 +236,7 @@ Avec la version 1,3, Inspecteur de page pouvez maintenant mapper des éléments 
 > [!NOTE]
 > Le modèle SPA requiert la mise à jour [ASP.NET et Web Tools 2012,2](https://go.microsoft.com/fwlink/?LinkId=282650) .
 
-Dans Visual Studio, choisissez **fichier** &gt; **nouveau projet**. À gauche, développez **visuel C#** , sélectionnez **Web**, puis sélectionnez **application Web ASP.net MVC4**. Cliquez sur **OK**.
+Dans Visual Studio, sélectionnez **Fichier** &gt; **Nouveau projet**. Sur la gauche, développez **Visual C#**, sélectionnez **Web**, puis sélectionnez **application Web ASP.net MVC4**. Cliquez sur **OK**.
 
 Dans la boîte de dialogue **nouveau projet ASP.NET MVC 4** , sélectionnez **application à page unique**.
 
