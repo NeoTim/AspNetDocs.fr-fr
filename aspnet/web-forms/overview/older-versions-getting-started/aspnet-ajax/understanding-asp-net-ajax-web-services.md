@@ -9,10 +9,10 @@ ms.assetid: 3332d6e7-e2e1-4144-b805-e71d51e7e415
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-web-services
 msc.type: authoredcontent
 ms.openlocfilehash: eac3d53fd871d0cb5a2870488ce752c057cc5b1a
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.sourcegitcommit: 45754124123403520b9fa2e706a4d1292494159b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 09/12/2020
 ms.locfileid: "86162792"
 ---
 # <a name="understanding-aspnet-ajax-web-services"></a>Présentation des services web ASP.NET AJAX
@@ -289,7 +289,7 @@ L’attribut ScriptService doit être appliqué au service Web appelé, comme in
 
 ASP.NET AJAX offre une excellente prise en charge de l’appel de services Web sans écrire un grand nombre de code JavaScript personnalisé pour gérer les messages de demande et de réponse. Dans cet article, vous avez vu comment AJAX permet aux services Web .NET de les autoriser à traiter des messages JSON et à définir des proxies JavaScript à l’aide du contrôle ScriptManager. Vous avez également vu comment les proxies JavaScript peuvent être utilisés pour appeler des services Web, gérer des types simples et complexes et gérer les défaillances. Enfin, vous avez vu comment les méthodes de page peuvent être utilisées pour simplifier le processus de création et d’appel de service Web, ainsi que la façon dont le contrôle AutoCompleteExtender peut fournir de l’aide aux utilisateurs finaux au fur et à mesure de leur saisie. Bien que l’UpdatePanel disponible dans ASP.NET AJAX soit certainement le contrôle de choix pour de nombreux programmeurs AJAX en raison de sa simplicité, savoir comment appeler des services Web par le biais de proxys JavaScript peut être utile dans de nombreuses applications.
 
-## <a name="bio"></a>Équivalence
+## <a name="bio"></a>Bio
 
 Dan Wahlin (professionnel Microsoft le plus précieux pour ASP.NET et les services Web XML) est un formateur de développement .NET et un consultant en architecture à la formation technique d’interface ( [http://www.interfacett.com](http://www.interfacett.com) ). Dan a créé le site Web XML for ASP.NET Developers ([www.XMLforASP.net](http://www.XMLforASP.NET)), se trouve sur le Bureau du conférencier INETA et participe à plusieurs conférences. Dan co-auteur professionnel Windows DNA (Wrox), ASP.NET : conseils, didacticiels et code (Sams), ASP.NET 1,1 Insider solutions, professionnel ASP.NET 2,0 AJAX (Wrox), ASP.NET 2,0 hackers MVP et auteur XML for ASP.NET Developers (Sams). Lorsqu’il n’écrit pas de code, d’articles ou de livres, Dan aime écrire et enregistrer de la musique et écouter du golf et du basket avec sa femme et ses enfants.
 
