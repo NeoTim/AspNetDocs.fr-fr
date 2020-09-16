@@ -8,22 +8,22 @@ ms.date: 05/04/2012
 ms.assetid: ba92788f-9f03-44b1-b6b2-af8413e6a35d
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: f93cf11085fb19afb97b71aca8f638bd88fe658b
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: ed11720e6ea00df22f58d9afd32ccce95a5d1a60
+ms.sourcegitcommit: 4ed0b65ae32d9f35e42ee6296b877747e063df4d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78547781"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90609663"
 ---
 # <a name="configuring-a-web-server-for-web-deploy-publishing-offline-deployment"></a>Configuration d’un serveur web pour la publication Web Deploy (Déploiement hors connexion)
 
 par [Jason Lee](https://github.com/jrjlee)
 
-[Télécharger PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
+[Télécharger le PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > Cette rubrique explique comment configurer un serveur Web IIS pour prendre en charge la publication et le déploiement Web hors connexion.
 > 
-> Lorsque vous utilisez l’outil de déploiement Web de Internet Information Services (IIS) (Web Deploy) 2,0 ou version ultérieure, vous disposez de trois approches principales pour obtenir vos applications ou sites sur un serveur Web. Vous pouvez :
+> Lorsque vous utilisez l’outil de déploiement Web de Internet Information Services (IIS) (Web Deploy) 2,0 ou version ultérieure, vous disposez de trois approches principales pour obtenir vos applications ou sites sur un serveur Web. Vous pouvez :
 > 
 > - Utilisez le *service de l’agent distant Web Deploy*. Cette approche requiert moins de configuration du serveur Web, mais vous devez fournir les informations d’identification d’un administrateur de serveur local pour pouvoir déployer n’importe quoi sur le serveur.
 > - Utilisez le *Gestionnaire de Web Deploy*. Cette approche est beaucoup plus complexe et nécessite plus de travail initial pour configurer le serveur Web. Toutefois, lorsque vous utilisez cette approche, vous pouvez configurer IIS pour permettre aux utilisateurs non-administrateurs d’effectuer le déploiement. Le gestionnaire de Web Deploy est disponible uniquement dans IIS version 7 ou ultérieure.
@@ -31,7 +31,7 @@ par [Jason Lee](https://github.com/jrjlee)
 > 
 > Pour plus d’informations sur les fonctionnalités principales, les avantages et les inconvénients de ces approches, consultez [choix de l’approche appropriée pour le déploiement Web](choosing-the-right-approach-to-web-deployment.md).
 
-Oui, si votre infrastructure réseau ou des restrictions de sécurité empêchent le déploiement à distance. Cela est probablement le cas dans les environnements de production accessibles sur Internet, où les serveurs Web sont isolés&#x2014;soit physiquement, soit par des pare-feu et&#x2014;des sous-réseaux du reste de votre infrastructure de serveur.
+Oui, si votre infrastructure réseau ou des restrictions de sécurité empêchent le déploiement à distance. Cela est probablement le cas dans les environnements de production accessibles sur Internet, où les serveurs Web sont isolés&#x2014;physiquement ou par des pare-feu et des sous-réseaux&#x2014;du reste de votre infrastructure de serveur.
 
 Évidemment, cette approche devient moins souhaitable si vos applications Web sont mises à jour régulièrement. Si votre infrastructure l’autorise, vous souhaiterez peut-être activer le déploiement à distance à l’aide du gestionnaire de Web Deploy ou du service d’agent distant Web Deploy.
 
@@ -66,7 +66,7 @@ Dans ce cas, vous devez installer les éléments suivants :
 
 - **Configuration recommandée pour IIS 7**. Cela active le rôle de **serveur Web (IIS)** sur votre serveur Web et installe l’ensemble des modules et composants IIS dont vous avez besoin pour héberger une application ASP.net.
 - **.NET Framework 4,0**. Cela est nécessaire pour exécuter des applications qui ont été générées sur cette version du .NET Framework.
-- **Outil de déploiement Web 2,1 ou version ultérieure**. Cela installe Web Deploy (et son exécutable sous-jacent, MSDeploy. exe) sur votre serveur. Web Deploy s’intègre à IIS et vous permet d’importer et d’exporter des packages Web.
+- **Outil de déploiement Web 2,1 ou version ultérieure**. Cela installe Web Deploy (et son fichier exécutable sous-jacent, MSDeploy.exe) sur votre serveur. Web Deploy s’intègre à IIS et vous permet d’importer et d’exporter des packages Web.
 - **ASP.NET MVC 3**. Cela installe les assemblys dont vous avez besoin pour exécuter les applications MVC 3.
 
 > [!NOTE]
@@ -91,13 +91,13 @@ Dans ce cas, vous devez installer les éléments suivants :
 7. Dans le volet de navigation, cliquez sur **serveur**.
 8. Dans la ligne **Configuration recommandée pour IIS 7** , cliquez sur **Ajouter**.
 9. Dans la ligne de l' **outil de déploiement Web 2,1** , cliquez sur **Ajouter**.
-10. Cliquez sur **Suivant**. Le Web Platform Installer affiche une liste des produits&#x2014;avec les dépendances&#x2014;associées à installer et vous invite à accepter les termes du contrat de licence.
+10. Cliquez sur **Installer**. Le Web Platform Installer affiche une liste des produits&#x2014;avec les dépendances associées&#x2014;à installer et vous invite à accepter les termes du contrat de licence.
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image2.png)
 11. Passez en revue les termes du contrat de licence et, si vous en acceptez les termes, cliquez sur **J’accepte**.
 12. Une fois l’installation terminée, cliquez sur **Terminer**, puis fermez la fenêtre **Web Platform Installer 3,0** .
 
-Si vous avez installé le .NET Framework 4,0 avant d’installer IIS, vous devez exécuter l' [outil d’inscription ASP.NET IIS](https://msdn.microsoft.com/library/k6h9cz8h(v=VS.100).aspx) (ASPNET\_regiis. exe) pour inscrire la dernière version de ASP.net auprès d’IIS. Si vous ne le faites pas, vous constaterez que le service IIS traite le contenu statique (comme les fichiers HTML) sans aucun problème, mais renvoie l' **erreur HTTP 404,0 – introuvable** lorsque vous tentez d’accéder au contenu ASP.net. Vous pouvez utiliser la procédure suivante pour vous assurer que ASP.NET 4,0 est inscrit.
+Si vous avez installé le .NET Framework 4,0 avant d’installer IIS, vous devez exécuter l' [outil ASP.NET IIS Registration Tool](https://msdn.microsoft.com/library/k6h9cz8h(v=VS.100).aspx) (ASPNET \_regiis.exe) pour inscrire la dernière version de ASP.net avec IIS. Si vous ne le faites pas, vous constaterez que le service IIS traite le contenu statique (comme les fichiers HTML) sans aucun problème, mais renvoie l' **erreur HTTP 404,0 – introuvable** lorsque vous tentez d’accéder au contenu ASP.net. Vous pouvez utiliser la procédure suivante pour vous assurer que ASP.NET 4,0 est inscrit.
 
 **Pour inscrire ASP.NET 4,0 avec IIS**
 
@@ -127,7 +127,7 @@ Bien que rien ne vous empêche de déployer du contenu vers le site Web par déf
 **Pour créer et configurer un site Web IIS**
 
 1. Sur le système de fichiers local, créez un dossier pour stocker votre contenu (par exemple, **C:\DemoSite**).
-2. Dans le menu **Démarrer** , pointez sur **Outils d’administration**, puis cliquez sur gestionnaire de **Internet Information Services (IIS)** .
+2. Dans le menu **Démarrer** , pointez sur **Outils d’administration**, puis cliquez sur gestionnaire de **Internet Information Services (IIS)**.
 3. Dans le gestionnaire des services Internet, dans le volet **connexions** , développez le nœud du serveur (par exemple, **PROWEB1**).
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image3.png)
@@ -154,9 +154,9 @@ Bien que rien ne vous empêche de déployer du contenu vers le site Web par déf
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image6.png)
 
     > [!NOTE]
-    > La première liaison de site vous permet d’accéder au site localement à l’aide de l’adresse IP et du port ou `http://localhost:85`. La deuxième liaison de site vous permet d’accéder au site à partir d’autres ordinateurs sur le domaine à l’aide du nom de l’ordinateur (par exemple, http://proweb1:85).
+    > La première liaison de site vous permet d’accéder au site localement à l’aide de l’adresse IP et du port ou `http://localhost:85` . La deuxième liaison de site vous permet d’accéder au site à partir d’autres ordinateurs sur le domaine à l’aide du nom de l’ordinateur (par exemple, http://proweb1:85) .
 13. Dans la boîte de dialogue **Liaisons de site Web**, cliquez sur **Fermer**.
-14. Dans le volet **connexions** , cliquez sur **pools d’applications**.
+14. Dans le volet **Connexions**, cliquez sur **Pools d'applications**.
 15. Dans le volet **pools d’applications** , cliquez avec le bouton droit sur le nom de votre pool d’applications, puis cliquez sur **paramètres de base**. Par défaut, le nom de votre pool d’applications correspond au nom de votre site Web (par exemple, **DemoSite**).
 16. Dans la liste **.NET Framework version** , sélectionnez **.NET Framework v 4.0.30319**, puis cliquez sur **OK**.
 
@@ -165,14 +165,14 @@ Bien que rien ne vous empêche de déployer du contenu vers le site Web par déf
     > [!NOTE]
     > L’exemple de solution requiert .NET Framework 4,0. Cela n’est pas obligatoire pour les Web Deploy en général.
 
-Pour que votre site Web puisse traiter du contenu, l’identité du pool d’applications doit avoir des autorisations de lecture sur le dossier local qui stocke le contenu. Dans IIS 7,5, les pools d’applications s’exécutent avec une identité de pool d’applications unique par défaut (contrairement aux versions antérieures d’IIS, où les pools d’applications s’exécutent généralement en utilisant le compte de service réseau). L’identité du pool d’applications n’est pas un compte d’utilisateur réel et n’apparaît pas sur les listes d'&#x2014;utilisateurs ou de groupes à la place, elle est créée dynamiquement au démarrage du pool d’applications. Chaque identité du pool d’applications est ajoutée au groupe de sécurité **IIS\_IUSRS** local en tant qu’élément masqué.
+Pour que votre site Web puisse traiter du contenu, l’identité du pool d’applications doit avoir des autorisations de lecture sur le dossier local qui stocke le contenu. Dans IIS 7,5, les pools d’applications s’exécutent avec une identité de pool d’applications unique par défaut (contrairement aux versions antérieures d’IIS, où les pools d’applications s’exécutent généralement en utilisant le compte de service réseau). L’identité du pool d’applications n’est pas un compte d’utilisateur réel et n’apparaît pas sur les listes d’utilisateurs ou de groupes&#x2014;à la place, elle est créée dynamiquement au démarrage du pool d’applications. Chaque identité du pool d’applications est ajoutée au groupe de sécurité **IIS local \_ IUSRS** en tant qu’élément masqué.
 
 Pour accorder des autorisations à l’identité d’un pool d’applications sur un fichier ou un dossier, deux options s’offrent à vous :
 
-- Affectez directement des autorisations à l’identité du pool d’applications, à l’aide du format <strong>\<d’IIS AppPool/strong ><em>[nom du pool d’applications]</em>(par exemple, <strong>IIS AppPool\DemoSite</strong>).
-- Attribuez des autorisations au groupe **IUSRS IIS\_** .
+- Affectez directement des autorisations à l’identité du pool d’applications, en utilisant le format ** \( nom du pool d’applications IIS AppPool** (par exemple, **IIS AppPool\DemoSite**).
+- Affectez des autorisations au groupe ** \_ IUSRS IIS** .
 
-L’approche la plus courante consiste à assigner des autorisations au groupe local **IIS\_IUSRS** , car cette approche vous permet de modifier les pools d’applications sans reconfigurer les autorisations du système de fichiers. La procédure suivante utilise cette approche basée sur les groupes.
+L’approche la plus courante consiste à assigner des autorisations au groupe local **IIS \_ IUSRS** , car cette approche vous permet de modifier les pools d’applications sans reconfigurer les autorisations du système de fichiers. La procédure suivante utilise cette approche basée sur les groupes.
 
 > [!NOTE]
 > Pour plus d’informations sur les identités du pool d’applications dans IIS 7,5, consultez [identités du pool d’applications](https://go.microsoft.com/?linkid=9805123).
@@ -180,14 +180,14 @@ L’approche la plus courante consiste à assigner des autorisations au groupe l
 **Pour configurer les autorisations de dossier pour un site Web IIS**
 
 1. Dans l’Explorateur Windows, accédez à l’emplacement de votre dossier local.
-2. Cliquez avec le bouton droit sur le dossier, puis cliquez sur **Propriétés**.
+2. Cliquez avec le bouton droit sur le dossier et cliquez sur **Propriétés**.
 3. Sous l'onglet **Security**, cliquez sur **Edit**, puis sur **Add**.
 4. Cliquez sur **Emplacements**. Dans la boîte de dialogue **emplacements** , sélectionnez le serveur local, puis cliquez sur **OK**.
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image8.png)
-5. Dans la boîte de dialogue **Sélectionner des utilisateurs ou des groupes** , tapez **IIS\_IUSRS**, cliquez sur **vérifier les noms**, puis cliquez sur **OK**.
-6. Dans la boîte de dialogue <strong>autorisations pour</strong><em>[nom du dossier]</em> , Notez que les autorisations <strong>lecture &amp; exécuter</strong>, <strong>afficher le contenu du dossier</strong>et <strong>lecture</strong> sont affectées par défaut au nouveau groupe. Laissez ce n’est pas modifié, puis cliquez sur <strong>OK</strong>.
-7. Cliquez sur <strong>OK</strong> pour fermer la boîte de dialogue<strong>Propriétés</strong> de <em>[nom du dossier]</em>.
+5. Dans la boîte de dialogue **Sélectionner des utilisateurs ou des groupes** , tapez **IIS \_ IUSRS**, cliquez sur **vérifier les noms**, puis cliquez sur **OK**.
+6. Dans la boîte de dialogue **autorisations pour (nom du dossier)** , Notez que les autorisations **lecture & exécuter**, **afficher le contenu du dossier**et **lecture** sont affectées par défaut au nouveau groupe. Laissez ce n’est pas modifié, puis cliquez sur **OK**.
+7. Cliquez sur **OK** pour fermer la boîte de dialogue **Propriétés de (nom du dossier)** .
 
 ## <a name="disable-the-remote-agent-service"></a>Désactiver le service de l’agent distant
 
@@ -219,5 +219,5 @@ Vous pouvez arrêter et désactiver un service de plusieurs façons, à l’aide
 - Avez-vous arrêté le service Web Deployment Agent ?
 
 > [!div class="step-by-step"]
-> [Précédent](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md)
-> [Suivant](configuring-a-database-server-for-web-deploy-publishing.md)
+> [Précédent](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md) 
+>  [Suivant](configuring-a-database-server-for-web-deploy-publishing.md)
