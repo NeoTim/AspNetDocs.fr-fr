@@ -10,10 +10,10 @@ ms.assetid: 50e6e62b-e72e-4a29-8293-4b67377bd21f
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/supporting-odata-query-options
 msc.type: authoredcontent
 ms.openlocfilehash: 96820fab7ac89885058962f44ded86cb0184ee97
-ms.sourcegitcommit: ce28244209db8615bc9bdd576a2e2c88174d318d
+ms.sourcegitcommit: 4ed0b65ae32d9f35e42ee6296b877747e063df4d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/06/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "86188617"
 ---
 # <a name="supporting-odata-query-options-in-aspnet-web-api-2"></a>Prise en charge des options de requête OData dans API Web ASP.NET 2
@@ -81,12 +81,12 @@ L’option $top indique le nombre maximal d’entrées à retourner et l’optio
 
 L’option $filter permet à un client de filtrer les résultats en appliquant une expression booléenne. Les expressions de filtre sont très puissantes. elles incluent des opérateurs logiques et arithmétiques, des fonctions de chaîne et des fonctions de date.
 
-| Retourne tous les produits dont la catégorie est égale à « jouets ». | `http://localhost/Products?$filter=Category`« Jouets » EQ |
+| Retourne tous les produits dont la catégorie est égale à « jouets ». | `http://localhost/Products?$filter=Category` « Jouets » EQ |
 | --- | --- |
-| Retourne tous les produits dont le prix est inférieur à 10. | `http://localhost/Products?$filter=Price`lt 10 |
-| Opérateurs logiques : retournent tous les produits où Price >= 5 et Price <= 15. | `http://localhost/Products?$filter=Price`GE 5 et prix le 15 |
+| Retourne tous les produits dont le prix est inférieur à 10. | `http://localhost/Products?$filter=Price` lt 10 |
+| Opérateurs logiques : retournent tous les produits où Price >= 5 et Price <= 15. | `http://localhost/Products?$filter=Price` GE 5 et prix le 15 |
 | Fonctions de chaîne : retourne tous les produits dont le nom comporte « ZZ ». | `http://localhost/Products?$filter=substringof('zz',Name)` |
-| Fonctions de date : retournent tous les produits avec la version finale après 2005. | `http://localhost/Products?$filter=year(ReleaseDate)`gt 2005 |
+| Fonctions de date : retournent tous les produits avec la version finale après 2005. | `http://localhost/Products?$filter=year(ReleaseDate)` gt 2005 |
 
 **Tri**
 
